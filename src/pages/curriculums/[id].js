@@ -22,7 +22,7 @@ function CurriculumPage() {
         </TabPanel>
         <TabPanel header="Grafo Lerning Units">
           <div>
-            <iframe src={frameUrl}></iframe>
+            <iframe title="frameGraph" src={frameUrl}></iframe>
           </div>
         </TabPanel>
       </TabView>

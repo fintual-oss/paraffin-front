@@ -35,7 +35,6 @@ const edges = [
 ];
 
 const MyGraph = () => {
-
   return (
     <div>
       <GraphCanvas nodes={nodes} edges={edges} />
@@ -44,4 +43,3 @@ const MyGraph = () => {
 };
 
 export default MyGraph;
-
