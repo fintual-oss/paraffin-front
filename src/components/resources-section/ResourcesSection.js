@@ -30,7 +30,7 @@ const ResourcesSection = ({ learningUnitId }) => {
       headers: { 'Content-Type': 'application/json' },
       body: bodyValues,
     };
-    fetch('http://localhost:3001/api/learning_units/' + learningUnitId + '/resources', requestOptions).then(() => {
+    fetch(`http://${process.env.NEXT_PUBLIC_FRONT_URL}/api/learning_units/${learningUnitId}/resources`, requestOptions).then(() => {
       mutateResources();
       setDisplayBasic(false);
     });
