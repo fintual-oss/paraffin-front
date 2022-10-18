@@ -3,15 +3,16 @@ import { useEffect } from 'react';
 import useSignOut from '@hooks/useSignOut';
 import useSignIn from '@hooks/useSignIn';
 import useCurrentUser from '@hooks/useCurrentUser';
+import { endpoints } from '@utils/endpoints';
 
-function UnuthGuard({ children }) {
+function UnauthGuard({ children }) {
   const signOut = useSignOut();
   const signIn = useSignIn();
   const currentUser = useCurrentUser();
 
   useEffect(() => {
     if (!currentUser) {
-      fetch(`http://localhost:3001/api/current_user`)
+      fetch(endpoints('currentUser'))
         .then((response) => {
           if (response.ok) return response.json();
           signOut();
@@ -23,4 +24,4 @@ function UnuthGuard({ children }) {
   return children;
 }
 
-export default UnuthGuard;
+export default UnauthGuard;

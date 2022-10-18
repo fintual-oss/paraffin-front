@@ -1,16 +1,19 @@
 export const endpoints = (operationId, param) => {
-  const baseUrl = 'http://localhost:3001/api';
+  const baseUrl = 'http://localhost:3001';
+  const apiBaseUrl = 'http://localhost:3001/api';
 
   const endpointsList = {
-    curriculum: baseUrl + `/curriculums/${param}`,
-    learningUnit: baseUrl + `/learning_units/${param}`,
-    resource: baseUrl + `/resources/${param}`,
-    curriculumLearningUnits: baseUrl + `/curriculums/${param}/learning_units`,
-    isLearningUnitCompleted: baseUrl + `/learning_units/${param}/completed`,
-    learningUnitResources: baseUrl + `/learning_units/${param}/resources`,
-    resourceEvaluation: baseUrl + `/resources/${param}/evaluation`,
-    resourceEvaluations: baseUrl + `/resources/${param}/resource_evaluations`,
-    resourceAverage: baseUrl + `/resources/${param}/average_evaluation`,
+    curriculum: apiBaseUrl + `/curriculums/${param}`,
+    learningUnit: apiBaseUrl + `/learning_units/${param}`,
+    resource: apiBaseUrl + `/resources/${param}`,
+    curriculumLearningUnits: apiBaseUrl + `/curriculums/${param}/learning_units`,
+    isLearningUnitCompleted: apiBaseUrl + `/learning_units/${param}/completed`,
+    learningUnitResources: apiBaseUrl + `/learning_units/${param}/resources`,
+    resourceEvaluation: apiBaseUrl + `/resources/${param}/evaluation`,
+    resourceEvaluations: apiBaseUrl + `/resources/${param}/resource_evaluations`,
+    resourceAverage: apiBaseUrl + `/resources/${param}/average_evaluation`,
+    currentUser: apiBaseUrl + `/current_user`,
+    signOut: baseUrl + `/users/sign_out`,
   };
 
   return endpointsList[operationId];
