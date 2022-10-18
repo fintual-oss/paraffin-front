@@ -1,6 +1,6 @@
 export const endpoints = (operationId, param) => {
   const baseUrl = 'http://localhost:3001';
-  const apiBaseUrl = 'http://localhost:3001/api';
+  const apiBaseUrl = baseUrl + '/api';
 
   const endpointsList = {
     curriculum: apiBaseUrl + `/curriculums/${param}`,
