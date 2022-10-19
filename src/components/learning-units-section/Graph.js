@@ -1,7 +1,7 @@
 import React from 'react';
 import { GraphCanvas } from 'reagraph';
 
-const nodes = [
+const dummyNodes = [
   {
     id: '1',
     label: 'GitHub',
@@ -28,7 +28,7 @@ const nodes = [
   },
 ];
 
-const edges = [
+const dummyEdges = [
   {
     source: '1',
     target: '2',
@@ -69,7 +69,7 @@ const edges = [
 const Graph = () => {
   return (
     <div>
-      <GraphCanvas nodes={nodes} edges={edges} />
+      <GraphCanvas nodes={dummyNodes} edges={dummyEdges} />
     </div>
   );
 };

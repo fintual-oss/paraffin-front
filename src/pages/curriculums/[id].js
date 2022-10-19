@@ -5,13 +5,13 @@ import LearningUnitsSection from '@components/learning-units-section/LearningUni
 import { Skeleton } from 'primereact/skeleton';
 import { TabView, TabPanel } from 'primereact/tabview';
 
+const Graph = dynamic(() => import('../../components/learning-units-section/Graph'), {
+  ssr: false,
+});
+
 function CurriculumPage() {
   const { query, isReady } = useRouter();
   const curriculumId = query.id;
-
-  const Graph = dynamic(() => import('../../components/learning-units-section/Graph'), {
-    ssr: false,
-  });
 
   if (!isReady) return <Skeleton shape="rectangle" width="100%" height="100%" />;
 
