@@ -7,7 +7,9 @@ import { Button } from 'primereact/button';
 import { Panel } from 'primereact/panel';
 import ResourcesList from '@components/resources-section/resourcesList/ResourcesList';
 import AddNewResourceModal from '@components/resources-section/addNewResourceModal/AddNewResourceModal';
+import LearningUnitInformation from './LearningUnitInformation';
 import styles from './ResourcesSection.module.scss';
+/* import styles from '@styles/ResourcesList.module.scss'; */
 
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();
@@ -54,10 +56,13 @@ const ResourcesSection = ({ learningUnitId }) => {
   };
 
   return (
-    <Panel header={header}>
-      {displayBasic && <AddNewResourceModal handlers={modalHandlers} learningUnitId={learningUnitId} />}
-      <ResourcesList resources={resources} learningUnitId={learningUnitId} />
-    </Panel>
+    <div className={styles.container}>
+      <LearningUnitInformation learningUnit={learningUnit} />
+      <Panel header={header}>
+        {displayBasic && <AddNewResourceModal handlers={modalHandlers} learningUnitId={learningUnitId} />}
+        <ResourcesList resources={resources} learningUnitId={learningUnitId} />
+      </Panel>
+    </div>
   );
 };
 
