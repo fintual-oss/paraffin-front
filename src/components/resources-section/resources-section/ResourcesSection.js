@@ -5,6 +5,7 @@ import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import { Button } from 'primereact/button';
 import { Panel } from 'primereact/panel';
+import { Sidebar } from 'primereact/sidebar';
 import ResourcesList from '@components/resources-section/resources-list/ResourcesList';
 import AddNewResourceModal from '@components/resources-section/add-new-resource-modal/AddNewResourceModal';
 import LearningUnitInformation from '@components/resources-section/learning-unit-information/LearningUnitInformation';
@@ -13,6 +14,8 @@ import styles from './ResourcesSection.module.scss';
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();
   const [displayBasic, setDisplayBasic] = useState(false);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [activeResource, setActiveResource] = useState(null);
 
   const { data: learningUnit, isLoading: isLoadingUnit, isError: isErrorUnit } = useGet(endpoints('learningUnit', learningUnitId));
 
@@ -42,6 +45,11 @@ const ResourcesSection = ({ learningUnitId }) => {
     onSave: saveResourceHandler,
   };
 
+  const resourceViewButtonHandler = (resource) => {
+    setActiveResource(resource);
+    setSidebarVisible(true);
+  };
+
   const header = () => {
     return (
       <div className={styles.resourceHeader}>
@@ -59,7 +67,10 @@ const ResourcesSection = ({ learningUnitId }) => {
       <Panel header={header}>
         <LearningUnitInformation learningUnit={learningUnit} />
         {displayBasic && <AddNewResourceModal handlers={modalHandlers} learningUnitId={learningUnitId} />}
-        <ResourcesList resources={resources} learningUnitId={learningUnitId} />
+        <ResourcesList resources={resources} learningUnitId={learningUnitId} resourceViewButtonHandler={(resource) => resourceViewButtonHandler(resource)} />
+        <Sidebar visible={sidebarVisible} position="right" onHide={() => setSidebarVisible(false)}>
+          {activeResource && activeResource.name}
+        </Sidebar>
       </Panel>
     </div>
   );
