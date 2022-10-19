@@ -21,7 +21,7 @@ function CurriculumPage() {
         <TabPanel header="Lista Learning Units">
           <LearningUnitsSection curriculumId={curriculumId} />
         </TabPanel>
-        <TabPanel header="Grafo Lerning Units">
+        <TabPanel header="Grafo Learning Units">
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             <div style={{ height: 600, width: 800, margin: 15, position: 'relative' }}>
               <Graph />
