@@ -1,6 +1,7 @@
 import { AuthContext } from '/src/contexts/AuthContext';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { endpoints } from '@utils/endpoints';
 
 const AuthenticationProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(false);
@@ -13,7 +14,7 @@ const AuthenticationProvider = ({ children }) => {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     };
-    fetch(`http://localhost:3001/users/sign_out`, requestOptions).then((response) => {
+    fetch(endpoints('signOut'), requestOptions).then((response) => {
       if (response.ok) {
         setCurrentUser(undefined);
         if (router.pathname != '/') {
