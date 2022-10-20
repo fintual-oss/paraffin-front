@@ -24,7 +24,6 @@ const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
   } = useGet(endpoints("resourceAverage", resourceId));
 
   const {
-    data: evaluations,
     isLoading: isLoadingEvaluations,
     isError: isErrorEvaluations,
     mutate: updateEvaluations,
@@ -91,8 +90,9 @@ const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
   return (
     <ResourceSidebar
       visible={visible}
-      onHideHanlder={onHideHandler}
+      onHideHandler={() => onHideHandler()}
       activeResource={resource}
+      formOptions={formOptions}
     />
   );
 };
