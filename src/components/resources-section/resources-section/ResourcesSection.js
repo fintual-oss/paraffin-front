@@ -5,12 +5,12 @@ import { endpoints } from "@utils/endpoints";
 import { Skeleton } from "primereact/skeleton";
 import { Button } from "primereact/button";
 import { Panel } from "primereact/panel";
-import { Sidebar } from "primereact/sidebar";
 import ResourcesList from "@components/resources-section/resources-list/ResourcesList";
 import AddNewResourceModal from "@components/resources-section/add-new-resource-modal/AddNewResourceModal";
 import LearningUnitInformation from "@components/resources-section/learning-unit-information/LearningUnitInformation";
-import styles from "./ResourcesSection.module.scss";
+import ResourceSidebar from "@components/resources-section/resource-sidebar/ResourceSidebar";
 import ResourcesScroller from "../resources-scroller/ResourcesScroller";
+import styles from "./ResourcesSection.module.scss";
 
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();
@@ -97,13 +97,13 @@ const ResourcesSection = ({ learningUnitId }) => {
             resourceViewButtonHandler(resource)
           }
         />
-        <Sidebar
-          visible={sidebarVisible}
-          position="right"
-          onHide={() => setSidebarVisible(false)}
-        >
-          {activeResource && activeResource.name}
-        </Sidebar>
+        {activeResource && (
+          <ResourceSidebar
+            visible={sidebarVisible}
+            onHideHandler={() => setSidebarVisible(false)}
+            activeResource={activeResource}
+          />
+        )}
       </Panel>
     </div>
   );
