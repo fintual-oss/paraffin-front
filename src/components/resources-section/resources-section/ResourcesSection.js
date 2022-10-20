@@ -8,8 +8,8 @@ import { Panel } from "primereact/panel";
 import ResourcesList from "@components/resources-section/resources-list/ResourcesList";
 import AddNewResourceModal from "@components/resources-section/add-new-resource-modal/AddNewResourceModal";
 import LearningUnitInformation from "@components/resources-section/learning-unit-information/LearningUnitInformation";
-import ResourceSidebar from "@components/resources-section/resource-sidebar/ResourceSidebar";
 import ResourcesScroller from "../resources-scroller/ResourcesScroller";
+import ResourceSection from "@components/resource-section/resource-section/ResourceSection";
 import styles from "./ResourcesSection.module.scss";
 
 const ResourcesSection = ({ learningUnitId }) => {
@@ -98,10 +98,10 @@ const ResourcesSection = ({ learningUnitId }) => {
           }
         />
         {activeResource && (
-          <ResourceSidebar
+          <ResourceSection
             visible={sidebarVisible}
             onHideHandler={() => setSidebarVisible(false)}
-            activeResource={activeResource}
+            resourceId={activeResource.id}
           />
         )}
       </Panel>
