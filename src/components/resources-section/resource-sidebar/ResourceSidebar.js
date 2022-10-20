@@ -1,5 +1,5 @@
 import { Sidebar } from 'primereact/sidebar';
-import LinkButton from './LinkButton';
+import LinkButton from '@components/learning-units-section/link-button/LinkButton';
 import { Card } from 'primereact/card';
 
 const ResourceSidebar = ({ visible, onHideHandler, activeResource }) => {

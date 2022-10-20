@@ -1,35 +1,34 @@
-import ResourcePanel from '../resource-panel/ResourcePanel';
-import EvaluationList from '../evaluation-list/EvaluationList';
-import useGet from '@hooks/useGet';
-import { endpoints } from '@utils/endpoints';
-import { useRef } from 'react';
+import ResourceSidebar from "./ResourceSidebar";
+import useGet from "@hooks/useGet";
+import { endpoints } from "@utils/endpoints";
+import { useRef } from "react";
 
-const ResourceSection = ({ resourceId }) => {
+const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
   const {
     data: resourceData,
     isLoading: isLoadingResource,
     isError: isErrorResource,
-  } = useGet(endpoints('resource', resourceId));
+  } = useGet(endpoints("resource", resourceId));
 
   const {
     data,
     isLoading: isLoadingEvaluation,
     isError: isErrorEvaluation,
-  } = useGet(endpoints('resourceEvaluation', resourceId));
+  } = useGet(endpoints("resourceEvaluation", resourceId));
 
   const {
     data: average_evaluation,
     isLoading: isLoadingAverage,
     isError: isErrorAverage,
     mutate: updateAverage,
-  } = useGet(endpoints('resourceAverage', resourceId));
+  } = useGet(endpoints("resourceAverage", resourceId));
 
   const {
     data: evaluations,
     isLoading: isLoadingEvaluations,
     isError: isErrorEvaluations,
     mutate: updateEvaluations,
-  } = useGet(endpoints('resourceEvaluations', resourceId));
+  } = useGet(endpoints("resourceEvaluations", resourceId));
 
   const toast = useRef(null);
 
@@ -39,7 +38,7 @@ const ResourceSection = ({ resourceId }) => {
     isLoadingEvaluations ||
     isLoadingEvaluation
   )
-    return 'loading';
+    return "loading";
 
   if (
     isErrorResource ||
@@ -47,13 +46,13 @@ const ResourceSection = ({ resourceId }) => {
     isErrorEvaluations ||
     isErrorEvaluation
   )
-    return 'error';
+    return "error";
 
   const showSuccess = () =>
     toast.current.show({
-      severity: 'success',
-      summary: 'Tu evaluación quedó registrada',
-      detail: 'Gracias por contribuir!',
+      severity: "success",
+      summary: "Tu evaluación quedó registrada",
+      detail: "Gracias por contribuir!",
     });
 
   async function handleSubmitForm(evaluation, comment) {
@@ -61,12 +60,12 @@ const ResourceSection = ({ resourceId }) => {
       return;
     }
     const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ evaluation: evaluation, comment: comment }),
     };
     const response = await fetch(
-      endpoints('resourceEvaluation', resourceId),
+      endpoints("resourceEvaluation", resourceId),
       requestOptions
     );
     await response.json();
@@ -90,10 +89,11 @@ const ResourceSection = ({ resourceId }) => {
   };
 
   return (
-    <>
-      <ResourcePanel resource={resource} formOptions={formOptions} />
-      <EvaluationList evaluationsData={evaluations} />
-    </>
+    <ResourceSidebar
+      visible={visible}
+      onHideHanlder={onHideHandler}
+      activeResource={resource}
+    />
   );
 };
 
