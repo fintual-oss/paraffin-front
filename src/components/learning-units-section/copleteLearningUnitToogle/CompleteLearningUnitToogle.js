@@ -1,5 +1,5 @@
 import { ToggleButton } from 'primereact/togglebutton';
-import styles from '@styles/LearningUnitsList.module.scss';
+import styles from './CompleteLearningUnitToogle.module.scss';
 
 export const CompleteLearningUnitToggle = ({ completed, onChangeHandler }) => {
   return (

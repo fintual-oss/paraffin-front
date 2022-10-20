@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import ResourceSection from '@components/resource-section/ResourceSection';
+import ResourceSection from '@components/resource-section/resourceSection/ResourceSection';
 import { Skeleton } from 'primereact/skeleton';
 
 const ResourcePage = () => {

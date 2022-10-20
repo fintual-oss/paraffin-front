@@ -2,9 +2,9 @@ import { Panel } from 'primereact/panel';
 import { useRouter } from 'next/router';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
-import LinkButton from './LinkButton';
-import styles from '@styles/ResourceEvaluations.module.scss';
-import AddEvaluation from '@components/resource-section/AddEvaluation';
+import LinkButton from '../linkButton/LinkButton';
+import styles from './ResourcePanel.module.scss';
+import AddEvaluation from '@components/resource-section/addEvaluation/AddEvaluation';
 
 const ResourcePanel = ({ resource, formOptions }) => {
   const router = useRouter();

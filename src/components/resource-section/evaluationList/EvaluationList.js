@@ -1,7 +1,7 @@
 import { OrderList } from 'primereact/orderlist';
 import { Avatar } from 'primereact/avatar';
 import { Rating } from 'primereact/rating';
-import styles from '@styles/ResourceEvaluations.module.scss';
+import styles from './EvaluationList.module.scss';
 import { Card } from 'primereact/card';
 import { InputTextarea } from 'primereact/inputtextarea';
 

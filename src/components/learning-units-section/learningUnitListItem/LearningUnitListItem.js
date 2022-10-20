@@ -1,11 +1,11 @@
 import { Card } from 'primereact/card';
 import Image from 'next/image';
-import styles from '@styles/LearningUnitsList.module.scss';
-import { CompleteLearningUnitToggle } from './CompleteLearningUnitToogle';
+import { CompleteLearningUnitToggle } from '../copleteLearningUnitToogle/CompleteLearningUnitToogle';
 import { endpoints } from '@utils/endpoints';
 import useGet from '@hooks/useGet';
 import { Skeleton } from 'primereact/skeleton';
 import Link from 'next/link';
+import styles from './LearningUnitListItem.module.scss';
 
 function LearningUnitItem({ unit, showSuccess }) {
   const completedLearningUnitEndpoint = endpoints('isLearningUnitCompleted', unit.id);

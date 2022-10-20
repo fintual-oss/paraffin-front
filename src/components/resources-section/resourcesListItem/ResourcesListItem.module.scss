@@ -1,13 +1,3 @@
-.colFW {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: stretch;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
 .resourceGridItem {
   margin: 0.5em;
   border: 1px solid var(--surface-border);
@@ -78,18 +68,4 @@
   margin: 0.4rem 0;
   gap: 1rem;
   text-align: center;
-}
-
-.resourceHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  width: 95vw;
-}
-
-.navButtons {
-  display: flex;
-  gap: 1rem;
 }

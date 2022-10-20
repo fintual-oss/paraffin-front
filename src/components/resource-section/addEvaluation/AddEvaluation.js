@@ -4,7 +4,7 @@ import { Rating } from 'primereact/rating';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
-import styles from '@styles/ResourceEvaluations.module.scss';
+import styles from './AddEvaluation.module.scss';
 
 const AddEvaluation = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);

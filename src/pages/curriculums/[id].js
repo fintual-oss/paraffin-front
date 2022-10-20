@@ -1,11 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import LearningUnitsSection from '@components/learning-units-section/LearningUnitsSection';
+import LearningUnitsSection from '@components/learning-units-section/learningUnitsSection/LearningUnitsSection';
 import { Skeleton } from 'primereact/skeleton';
 import { TabView, TabPanel } from 'primereact/tabview';
 
-const Graph = dynamic(() => import('../../components/learning-units-section/Graph'), {
+const Graph = dynamic(() => import('@components/learning-units-section/Graph/Graph'), {
   ssr: false,
 });
 
