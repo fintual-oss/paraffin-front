@@ -7,7 +7,7 @@ import profilePic from "@utils/images/resource.jpg";
 
 const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
   return (
-    <div className="col-12 md:col-3">
+    <div>
       <div className={styles.resourceGridItem}>
         <div className={styles.resourceListItem}>
           <Link href={`/resources/${resource.id}`}>
