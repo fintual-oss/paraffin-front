@@ -9,23 +9,23 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/api/:path*`,
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/api/:path*`,
       },
       {
         source: '/users/sign_in',
-        destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_in`,
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_in`,
       },
       {
         source: '/users/sign_up',
-        destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_up`,
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_up`,
       },
       {
         source: '/users/sign_out',
-        destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_out`,
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_out`,
       },
       {
         source: '/api-docs/:path*',
-        destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/api-docs/:path*`,
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/api-docs/:path*`,
       },
     ];
   },
