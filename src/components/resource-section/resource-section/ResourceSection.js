@@ -1,10 +1,9 @@
-import ResourcePanel from '../resource-panel/ResourcePanel';
-import EvaluationList from '../evaluation-list/EvaluationList';
+import ResourceSidebar from './ResourceSidebar';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { useRef } from 'react';
 
-const ResourceSection = ({ resourceId }) => {
+const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
   const { data: resourceData, isLoading: isLoadingResource, isError: isErrorResource } = useGet(endpoints('resource', resourceId));
 
   const { data, isLoading: isLoadingEvaluation, isError: isErrorEvaluation } = useGet(endpoints('resourceEvaluation', resourceId));
@@ -51,12 +50,7 @@ const ResourceSection = ({ resourceId }) => {
     toast: toast,
   };
 
-  return (
-    <>
-      <ResourcePanel resource={resource} formOptions={formOptions} />
-      <EvaluationList evaluationsData={evaluations} />
-    </>
-  );
+  return <ResourceSidebar visible={visible} onHideHanlder={onHideHandler} activeResource={resource} />;
 };
 
 export default ResourceSection;
