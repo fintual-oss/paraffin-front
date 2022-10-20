@@ -57,8 +57,8 @@ const ResourcesSection = ({ learningUnitId }) => {
 
   return (
     <div className={styles.container}>
-      <LearningUnitInformation learningUnit={learningUnit} />
       <Panel header={header}>
+        <LearningUnitInformation learningUnit={learningUnit} />
         {displayBasic && <AddNewResourceModal handlers={modalHandlers} learningUnitId={learningUnitId} />}
         <ResourcesList resources={resources} learningUnitId={learningUnitId} />
       </Panel>
