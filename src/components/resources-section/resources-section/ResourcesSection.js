@@ -9,7 +9,6 @@ import ResourcesList from '@components/resources-section/resources-list/Resource
 import AddNewResourceModal from '@components/resources-section/add-new-resource-modal/AddNewResourceModal';
 import LearningUnitInformation from '@components/resources-section/learning-unit-information/LearningUnitInformation';
 import styles from './ResourcesSection.module.scss';
-/* import styles from '@styles/ResourcesList.module.scss'; */
 
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();
