@@ -16,6 +16,10 @@ const nextConfig = {
         destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_in`,
       },
       {
+        source: '/users/sign_up',
+        destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_up`,
+      },
+      {
         source: '/users/sign_out',
         destination: `http://${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_out`,
       },
