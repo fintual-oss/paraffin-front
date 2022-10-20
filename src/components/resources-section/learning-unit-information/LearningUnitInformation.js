@@ -1,6 +1,6 @@
 import { Card } from 'primereact/card';
 import Image from 'next/image';
-import styles from '@styles/LearningUnitInformation.module.scss';
+import styles from './LearningUnitInformation.module.scss';
 
 const LearningUnitInformation = ({ learningUnit }) => {
   return (
