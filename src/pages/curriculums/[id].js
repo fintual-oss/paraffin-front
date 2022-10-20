@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import LearningUnitsSection from '@components/learning-units-section/learningUnitsSection/LearningUnitsSection';
+import LearningUnitsSection from '@components/learning-units-section/learning-units-section/LearningUnitsSection';
 import { Skeleton } from 'primereact/skeleton';
 import { TabView, TabPanel } from 'primereact/tabview';
 

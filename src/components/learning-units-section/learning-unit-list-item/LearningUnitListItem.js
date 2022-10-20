@@ -1,6 +1,6 @@
 import { Card } from 'primereact/card';
 import Image from 'next/image';
-import { CompleteLearningUnitToggle } from '../copleteLearningUnitToogle/CompleteLearningUnitToogle';
+import { CompleteLearningUnitToggle } from '../complete-learning-unit-toogle/CompleteLearningUnitToogle';
 import { endpoints } from '@utils/endpoints';
 import useGet from '@hooks/useGet';
 import { Skeleton } from 'primereact/skeleton';

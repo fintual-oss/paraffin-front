@@ -1,4 +1,4 @@
-import ResourcesListItem from '@components/resources-section/resourcesListItem/ResourcesListItem';
+import ResourcesListItem from '@components/resources-section/resources-list-item/ResourcesListItem';
 import { DataView } from 'primereact/dataview';
 
 const ResourcesList = ({ resources }) => {
