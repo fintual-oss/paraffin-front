@@ -11,25 +11,24 @@ const Graph = dynamic(() => import('../../components/learning-units-section/Grap
 
 function CurriculumPage() {
   const { query, isReady } = useRouter();
-  const curriculumId = query.id;
 
   if (!isReady) return <Skeleton shape="rectangle" width="100%" height="100%" />;
 
+  const curriculumId = query.id;
+
   return (
-    <div>
-      <TabView>
-        <TabPanel header="Lista Learning Units">
-          <LearningUnitsSection curriculumId={curriculumId} />
-        </TabPanel>
-        <TabPanel header="Grafo Learning Units">
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <div style={{ height: 600, width: 800, margin: 15, position: 'relative' }}>
-              <Graph />
-            </div>
+    <TabView>
+      <TabPanel header="Lista Learning Units">
+        <LearningUnitsSection curriculumId={curriculumId} />
+      </TabPanel>
+      <TabPanel header="Grafo Learning Units">
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div style={{ height: 600, width: 800, margin: 15, position: 'relative' }}>
+            <Graph />
           </div>
-        </TabPanel>
-      </TabView>
-    </div>
+        </div>
+      </TabPanel>
+    </TabView>
   );
 }
 
