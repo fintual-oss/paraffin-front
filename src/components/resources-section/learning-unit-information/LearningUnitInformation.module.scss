@@ -53,20 +53,6 @@
   text-align: center;
 }
 
-.productCategoryIcon {
-  vertical-align: middle;
-  margin-right: .5rem;
-}
-
-.productCategory {
-  font-weight: 600;
-  vertical-align: middle;
-}
-
-.productPrice {
-  align-self: center;
-}
-
 .img {
   max-width: 50px !important;
   width: 306px;
@@ -102,19 +88,6 @@
 
   .productListDetail {
       text-align: center;
-      width: 100%;
-  }
-
-  .productListAction {
-      display: flex;
-      flex-direction: column;
-  }
-
-  .productListAction {
-      margin-top: 2rem;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
       width: 100%;
   }
 }
