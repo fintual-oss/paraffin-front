@@ -3,8 +3,6 @@ import LearningUnitListItem from '@components/learning-units-section/learningUni
 import { Toast } from 'primereact/toast';
 import { DataView } from 'primereact/dataview';
 
-import styles from './LearningUnitsList.module.scss';
-
 const LearningUnitsList = ({ learningUnits }) => {
   const toast = useRef(null);
   const showSuccess = () => {
