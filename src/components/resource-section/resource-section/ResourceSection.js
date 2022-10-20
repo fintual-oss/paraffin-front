@@ -1,4 +1,4 @@
-import ResourceSidebar from "./ResourceSidebar";
+import ResourceSidebar from "@components/resources-section/resource-sidebar/ResourceSidebar";
 import useGet from "@hooks/useGet";
 import { endpoints } from "@utils/endpoints";
 import { useRef } from "react";
