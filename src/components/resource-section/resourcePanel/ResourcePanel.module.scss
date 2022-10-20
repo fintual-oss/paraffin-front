@@ -1,0 +1,21 @@
+.resourceHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 96vw;
+}
+
+.wrapEvaluation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.averageSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}

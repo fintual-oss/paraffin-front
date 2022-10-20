@@ -1,6 +1,6 @@
 import { Button } from 'primereact/button';
-import Average from './Average';
-import styles from '@styles/ResourcesList.module.scss';
+import Average from '../average/Average';
+import styles from './ResourcesListItem.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import profilePic from '@utils/images/resource.jpg';
@@ -8,8 +8,8 @@ import profilePic from '@utils/images/resource.jpg';
 const ResourcesListItem = ({ resource }) => {
   return (
     <div className="col-12 md:col-3">
-      <div className={`${styles.resourceGridItem}`}>
-        <div className={`${styles.resourceListItem}`}>
+      <div className={styles.resourceGridItem}>
+        <div className={styles.resourceListItem}>
           <Link href={`/resources/${resource.id}`}>
             <Image className={styles.img} src={profilePic} alt={resource.name} />
           </Link>

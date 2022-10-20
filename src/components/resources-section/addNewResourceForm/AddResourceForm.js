@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import { Button } from 'primereact/button';
 import * as yup from 'yup';
-import styles from '@styles/Modal.module.scss';
+import styles from './AddResourceForm.module.scss';
 
 const AddResourceForm = ({ onHide, onSubmit }) => {
   const SignupSchema = yup.object().shape({
@@ -32,14 +32,14 @@ const AddResourceForm = ({ onHide, onSubmit }) => {
               <label htmlFor="name" className={styles.label}>
                 Nombre
               </label>
-              <Field name="name" id="name" type="text" className={styles.pInputtext} />
+              <Field name="name" id="name" type="text" className={styles.pInputText} />
               {errors.name && touched.name ? <div className={styles.error}>{errors.name}</div> : null}
             </div>
             <div>
               <label htmlFor="url" className={styles.label}>
                 Url
               </label>
-              <Field name="url" id="url" type="text" className={styles.pInputtext} />
+              <Field name="url" id="url" type="text" className={styles.pInputText} />
               {errors.url && touched.url ? <div className={styles.error}>{errors.url}</div> : null}
             </div>
             <div className="dialog-demo">

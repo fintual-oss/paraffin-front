@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import ResourcesSection from '@components/resources-section/ResourcesSection';
+import ResourcesSection from '@components/resources-section/resourcesSection/ResourcesSection';
 import { Skeleton } from 'primereact/skeleton';
 
 const LearningUnitPage = () => {

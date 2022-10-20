@@ -5,9 +5,9 @@ import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import { Button } from 'primereact/button';
 import { Panel } from 'primereact/panel';
-import ResourcesList from '@components/resources-section/ResourcesList';
-import AddNewResourceModal from '@components/resources-section/AddNewResourceModal';
-import styles from '@styles/ResourcesList.module.scss';
+import ResourcesList from '@components/resources-section/resourcesList/ResourcesList';
+import AddNewResourceModal from '@components/resources-section/addNewResourceModal/AddNewResourceModal';
+import styles from './ResourcesSection.module.scss';
 
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();

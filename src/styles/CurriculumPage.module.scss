@@ -1,0 +1,11 @@
+.graphContainer {
+  display: 'flex';
+  flex-wrap: 'wrap';
+}
+
+.graphDisplay {
+  height: 600;
+  width: 800;
+  margin: 15;
+  position: 'relative';
+}

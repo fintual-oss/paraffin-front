@@ -1,6 +1,5 @@
-import ResourcesListItem from '@components/resources-section/ResourcesListItem';
+import ResourcesListItem from '@components/resources-section/resourcesListItem/ResourcesListItem';
 import { DataView } from 'primereact/dataview';
-import '@styles/ResourcesList.module.scss';
 
 const ResourcesList = ({ resources }) => {
   const renderGridItem = (resource) => <ResourcesListItem resource={resource} />;

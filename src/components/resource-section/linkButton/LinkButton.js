@@ -1,5 +1,5 @@
 import { Button } from 'primereact/button';
-import styles from '@styles/ResourceEvaluations.module.scss';
+import styles from './LinkButton.module.scss';
 
 const LinkButton = ({ url }) => {
   if (!url) return <></>;

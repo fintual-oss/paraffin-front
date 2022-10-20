@@ -1,5 +1,5 @@
 import { Dialog } from 'primereact/dialog';
-import AddResourceForm from '@components/resources-section/AddResourceForm';
+import AddResourceForm from '@components/resources-section/addNewResourceForm/AddResourceForm';
 import useCurrentUser from '@hooks/useCurrentUser';
 
 const AddNewResourceModal = ({ handlers }) => {

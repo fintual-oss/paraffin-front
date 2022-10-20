@@ -2,7 +2,7 @@ import { Panel } from 'primereact/panel';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
-import LearningUnitsList from './LearningUnitsList';
+import LearningUnitsList from '../learningUnitsList/LearningUnitsList';
 
 const LearningUnitsSection = ({ curriculumId }) => {
   const { data: learningUnits, isLoading: isLoadingCurriculum, isError: isErrorCurriculum } = useGet(endpoints('curriculumLearningUnits', curriculumId));

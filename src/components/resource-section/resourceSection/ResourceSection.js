@@ -1,5 +1,5 @@
-import ResourcePanel from './ResourcePanel';
-import EvaluationList from './EvaluationList';
+import ResourcePanel from '../resourcePanel/ResourcePanel';
+import EvaluationList from '../evaluationList/EvaluationList';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { useRef } from 'react';

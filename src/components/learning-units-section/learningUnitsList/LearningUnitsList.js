@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import LearningUnitListItem from '@components/learning-units-section/LearningUnitListItem';
+import LearningUnitListItem from '@components/learning-units-section/learningUnitListItem/LearningUnitListItem';
 import { Toast } from 'primereact/toast';
 import { DataView } from 'primereact/dataview';
 
-import styles from '@styles/LearningUnitsList.module.scss';
+import styles from './LearningUnitsList.module.scss';
 
 const LearningUnitsList = ({ learningUnits }) => {
   const toast = useRef(null);
@@ -18,9 +18,7 @@ const LearningUnitsList = ({ learningUnits }) => {
   return (
     <div>
       <Toast ref={toast} position="bottom-center" />
-      <div className={styles.listLayout}>
-        <DataView value={learningUnits} layout="list" itemTemplate={renderListItem} paginator rows={9} />
-      </div>
+      <DataView value={learningUnits} layout="list" itemTemplate={renderListItem} paginator rows={9} />
     </div>
   );
 };
