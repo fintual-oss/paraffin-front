@@ -10,7 +10,7 @@ const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
 
   const { data: average_evaluation, isLoading: isLoadingAverage, isError: isErrorAverage, mutate: updateAverage } = useGet(endpoints('resourceAverage', resourceId));
 
-  const { data: evaluations, isLoading: isLoadingEvaluations, isError: isErrorEvaluations, mutate: updateEvaluations } = useGet(endpoints('resourceEvaluations', resourceId));
+  const { isLoading: isLoadingEvaluations, isError: isErrorEvaluations, mutate: updateEvaluations } = useGet(endpoints('resourceEvaluations', resourceId));
 
   const toast = useRef(null);
 
@@ -50,7 +50,7 @@ const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
     toast: toast,
   };
 
-  return <ResourceSidebar visible={visible} onHideHanlder={onHideHandler} activeResource={resource} />;
+  return <ResourceSidebar visible={visible} onHideHandler={() => onHideHandler()} activeResource={resource} formOptions={formOptions} />;
 };
 
 export default ResourceSection;
