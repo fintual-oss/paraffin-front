@@ -1,0 +1,28 @@
+@import "@styles/variables.scss";
+
+.solution {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.solution__card {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 10rem;
+  align-items: center;
+  img {
+    clip-path: polygon(33.33% 0%, 66.66% 0%, 100% 33.33%, 100% 66.66%, 66.66% 100%, 33.33% 100%, 0 66.66%, 0 33.33%);
+  }
+}
+
+.solution__cards {
+  display: flex;
+}
+
+.solution__card__title {
+  width: 100%;
+}
+.solution__card__description {
+  width: 100%;
+}

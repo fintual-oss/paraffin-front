@@ -1,0 +1,63 @@
+@import "@styles/variables.scss";
+
+#problem {
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  clip-path: polygon(0 0, 100% 40px, 100% 100%, 0% 93%);
+  color: #6366F1;
+  padding: 4rem 0;
+  position: relative;
+  z-index: 0;
+  &::before {
+    content: ”;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 100px);
+    clip-path: polygon(0% 0%, 100% 150px, 100% 100%, 0% 150px);
+  }
+}
+.problem__cards {
+  display: flex;
+  flex-direction: row;
+}
+.problem__card {
+  padding:1rem 3rem;
+  text-align: center;
+  color: darken($color_principal, 30%);
+  img {
+    border-radius: 50% 50%;
+    box-shadow: 3px 2px 2px 1px #eee;
+    display: block;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.5s ease;
+    width: 150px;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #ADDDD0, 3px 2px 2px 1px #eee;
+    }
+  }
+  h3 {
+    color: rgb(29, 29, 29);
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 1px #eee;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+  }
+}
+.titleSections {
+  width: 100%;
+  h2 {
+    color: darken($color_principal, 40%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 2rem 0 4rem;
+    text-shadow: 2px 2px 2px #eee;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+}
