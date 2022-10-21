@@ -1,0 +1,5 @@
+.myScroller {
+  & > [class~="p-datascroller-content"] {
+    padding: 0;
+  }
+}
