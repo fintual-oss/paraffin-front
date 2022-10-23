@@ -1,7 +1,7 @@
 import { ToggleButton } from 'primereact/togglebutton';
 import styles from './CompleteLearningUnitToogle.module.scss';
 
-export const CompleteLearningUnitToggle = ({ completed, onChangeHandler, disabled }) => {
+export const CompleteLearningUnitToggle = ({ completed, onChangeHandler, className }) => {
   return (
     <div className={styles.checkbox}>
       <ToggleButton
@@ -11,6 +11,8 @@ export const CompleteLearningUnitToggle = ({ completed, onChangeHandler, disable
         offIcon="pi pi-times"
         checked={completed}
         onChange={onChangeHandler}
+        className={className}
+        tooltipOptions={{ showOnDisabled: true }}
       />
     </div>
   );

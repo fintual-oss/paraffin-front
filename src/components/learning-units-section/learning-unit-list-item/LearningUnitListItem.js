@@ -1,14 +1,22 @@
 import { Card } from 'primereact/card';
 import Image from 'next/image';
-import { CompleteLearningUnitToggle } from '../complete-learning-unit-toogle/CompleteLearningUnitToogle';
-import { endpoints } from '@utils/endpoints';
-import useGet from '@hooks/useGet';
-import { Skeleton } from 'primereact/skeleton';
 import Link from 'next/link';
 import styles from './LearningUnitListItem.module.scss';
-import { CompleteLearningUnitToggleCheckuser } from '../complete-learning-unit-toogle/CompleteLearningUnitToogleCheckuser';
+import useCurrentUser from '@hooks/useCurrentUser';
+import { CompleteLearningUnitToggleAuth } from '../complete-learning-unit-toogle/CompleteLearningUnitToogleAuth';
+import { CompleteLearningUnitToggleNoAuth } from '../complete-learning-unit-toogle/CompleteLearningUnitNoAuth';
 
 function LearningUnitItem({ unit, showSuccess }) {
+  const currentUser = useCurrentUser();
+
+  const toogleButton = () => {
+    if (currentUser) {
+      return <CompleteLearningUnitToggleAuth unit={unit} showSuccess={showSuccess} />;
+    } else {
+      return <CompleteLearningUnitToggleNoAuth />;
+    }
+  };
+
   return (
     <Card className={styles.cardFull}>
       <div className={styles.productListItem}>
@@ -33,7 +41,7 @@ function LearningUnitItem({ unit, showSuccess }) {
               <Link href={`/learning-units/${unit.id}`}>{unit.name}</Link>
             </div>
           </div>
-          <CompleteLearningUnitToggleCheckuser unit={unit} showSuccess={showSuccess} />
+          {toogleButton()}
         </div>
       </div>
     </Card>
