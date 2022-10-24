@@ -41,7 +41,9 @@ function Navbar() {
 
   function setHeader() {
     if (currentUser) {
-      return <Button label="Sign Out" icon="pi pi-power-off" onClick={signOut} />;
+      return (
+        <Button label="Sign Out" icon="pi pi-power-off" onClick={signOut} />
+      );
     } else {
       return (
         <Link href="/users/sign_in">

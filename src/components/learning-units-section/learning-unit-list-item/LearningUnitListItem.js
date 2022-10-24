@@ -8,9 +8,17 @@ import Link from 'next/link';
 import styles from './LearningUnitListItem.module.scss';
 
 function LearningUnitItem({ unit, showSuccess }) {
-  const completedLearningUnitEndpoint = endpoints('isLearningUnitCompleted', unit.id);
+  const completedLearningUnitEndpoint = endpoints(
+    'isLearningUnitCompleted',
+    unit.id
+  );
 
-  const { data: isCompleted, isLoading, isError, mutate } = useGet(completedLearningUnitEndpoint);
+  const {
+    data: isCompleted,
+    isLoading,
+    isError,
+    mutate,
+  } = useGet(completedLearningUnitEndpoint);
 
   const changeHandler = (clicked) => {
     const requestOptions = {
@@ -56,7 +64,10 @@ function LearningUnitItem({ unit, showSuccess }) {
               <Link href={`/learning-units/${unit.id}`}>{unit.name}</Link>
             </div>
           </div>
-          <CompleteLearningUnitToggle completed={isCompleted.completed} onChangeHandler={changeHandler} />
+          <CompleteLearningUnitToggle
+            completed={isCompleted.completed}
+            onChangeHandler={changeHandler}
+          />
         </div>
       </div>
     </Card>

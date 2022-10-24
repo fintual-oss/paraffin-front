@@ -17,7 +17,9 @@ const ResourcesListItem = ({ resource }) => {
             <Link href={`/resources/${resource.id}`}>{resource.name}</Link>
           </div>
           <div className={styles.resourceValidation}>
-            <Average average={parseFloat(resource.average_evaluation).toFixed(1)} />
+            <Average
+              average={parseFloat(resource.average_evaluation).toFixed(1)}
+            />
           </div>
           <div className={styles.resourceUrl}>
             <i className="pi pi-link"></i>{' '}
@@ -27,7 +29,11 @@ const ResourcesListItem = ({ resource }) => {
           </div>
           <div className={styles.resourceLink}>
             <Link href={`/resources/${resource.id}`}>
-              <Button label="Ver recurso" icon="pi pi-book" className="p-button-outlined p-button-sm" />
+              <Button
+                label="Ver recurso"
+                icon="pi pi-book"
+                className="p-button-outlined p-button-sm"
+              />
             </Link>
           </div>
         </div>
