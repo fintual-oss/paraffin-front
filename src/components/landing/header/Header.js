@@ -3,7 +3,8 @@ import styles from './Header.module.scss';
 
 import { Button } from 'primereact/button';
 import Image from 'next/image';
-import developer_header from '@utils/images/developer_header.png';
+// import developer_header from '@utils/images/developer_header.png';
+import fin_logo from '@utils/images/fin_logo.png'
 
 const Header = () => {
   return (
@@ -21,7 +22,7 @@ const Header = () => {
         <Button label="Quiero registrarme en Paraffin" />
       </div>
       <div className={`col-12 md:col-6 xl:col-3 ${styles.header__image}`}>
-        <Image src={developer_header} alt="Logo" id={styles.header__logo} />
+        <Image src={fin_logo} alt="Logo" id={styles.header__logo} />
       </div>
     </section>
   );
