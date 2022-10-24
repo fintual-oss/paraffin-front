@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import LearningUnitListItem from '@components/learning-units-section/learning-unit-list-item/LearningUnitListItem';
 import { Toast } from 'primereact/toast';
 import { DataView } from 'primereact/dataview';
+import { LoginDialog } from '@components/layout/loginDialog';
 
 const LearningUnitsList = ({ learningUnits }) => {
   const toast = useRef(null);

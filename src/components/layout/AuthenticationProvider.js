@@ -5,6 +5,7 @@ import { endpoints } from '@utils/endpoints';
 
 const AuthenticationProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(false);
+  const [displayLoginDialog, setDisplayLoginDialog] = useState(false);
   const router = useRouter();
 
   const signInHandler = (data) => setCurrentUser(data);
@@ -25,9 +26,11 @@ const AuthenticationProvider = ({ children }) => {
   };
 
   const value = {
-    currentUser: currentUser,
+    currentUser,
     signIn: signInHandler,
     signOut: signOutHandler,
+    displayLoginDialog,
+    setDisplayLoginDialog,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

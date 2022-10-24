@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-
 import useSignOut from '@hooks/useSignOut';
 import useSignIn from '@hooks/useSignIn';
 import useCurrentUser from '@hooks/useCurrentUser';
