@@ -19,6 +19,9 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
               <Average
                 average={parseFloat(resource.average_evaluation).toFixed(1)}
               />
+              <span className={styles.small_number}>
+                ({resource.number_of_evaluations})
+              </span>
             </div>
             <div className={styles.resourceUrl}>
               <i className="pi pi-link"></i>
