@@ -11,7 +11,11 @@ const ResourcePanel = ({ resource, formOptions }) => {
   const header = (
     <div className={styles.resourceHeader}>
       {resource.name}
-      <Button label="Volver" icon="pi pi-arrow-left" onClick={() => router.back()} />
+      <Button
+        label="Volver"
+        icon="pi pi-arrow-left"
+        onClick={() => router.back()}
+      />
     </div>
   );
 

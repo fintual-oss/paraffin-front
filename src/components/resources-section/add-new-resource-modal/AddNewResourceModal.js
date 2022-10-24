@@ -16,7 +16,12 @@ const AddNewResourceModal = ({ handlers }) => {
   };
 
   return (
-    <Dialog header="Nuevo recurso" visible={true} style={{ width: '50vw' }} onHide={handlers.onHide}>
+    <Dialog
+      header="Nuevo recurso"
+      visible={true}
+      style={{ width: '50vw' }}
+      onHide={handlers.onHide}
+    >
       <AddResourceForm onHide={handlers.onHide} onSubmit={save} />
     </Dialog>
   );

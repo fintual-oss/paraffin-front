@@ -6,7 +6,11 @@ import { DataView } from 'primereact/dataview';
 const LearningUnitsList = ({ learningUnits }) => {
   const toast = useRef(null);
   const showSuccess = () => {
-    toast.current.show({ severity: 'success', summary: 'Learning unit actualizado', life: 2000 });
+    toast.current.show({
+      severity: 'success',
+      summary: 'Learning unit actualizado',
+      life: 2000,
+    });
   };
 
   const renderListItem = (unit) => {
@@ -16,7 +20,13 @@ const LearningUnitsList = ({ learningUnits }) => {
   return (
     <div>
       <Toast ref={toast} position="bottom-center" />
-      <DataView value={learningUnits} layout="list" itemTemplate={renderListItem} paginator rows={9} />
+      <DataView
+        value={learningUnits}
+        layout="list"
+        itemTemplate={renderListItem}
+        paginator
+        rows={9}
+      />
     </div>
   );
 };

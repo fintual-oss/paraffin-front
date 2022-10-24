@@ -11,13 +11,22 @@ const RatingField = ({ resource }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ evaluation: new_evaluation }),
     };
-    const response = await fetch(endpoints('resourceEvaluation', resource.id), requestOptions);
+    const response = await fetch(
+      endpoints('resourceEvaluation', resource.id),
+      requestOptions
+    );
     const data = await response.json();
     setEvaluation(data.evaluation);
     resource.update_evaluation();
   }
 
-  return <Rating value={evaluation} onChange={(e) => handleNewEvaluation(e.value)} cancel={false} />;
+  return (
+    <Rating
+      value={evaluation}
+      onChange={(e) => handleNewEvaluation(e.value)}
+      cancel={false}
+    />
+  );
 };
 
 export default RatingField;

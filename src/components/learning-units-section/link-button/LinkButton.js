@@ -5,7 +5,11 @@ const LinkButton = ({ url }) => {
   return (
     <div>
       <Link href={url}>
-        <Button icon="pi pi-external-link" label="Go to Learning Unit" disabled={false}></Button>
+        <Button
+          icon="pi pi-external-link"
+          label="Go to Learning Unit"
+          disabled={false}
+        ></Button>
       </Link>
     </div>
   );
