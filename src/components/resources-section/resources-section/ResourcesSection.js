@@ -68,7 +68,9 @@ const ResourcesSection = ({ learningUnitId }) => {
         <LearningUnitInformation learningUnit={learningUnit} />
         {displayBasic && <AddNewResourceModal handlers={modalHandlers} learningUnitId={learningUnitId} />}
         <ResourcesList resources={resources} learningUnitId={learningUnitId} resourceViewButtonHandler={(resource) => resourceViewButtonHandler(resource)} />
-        {activeResource && <ResourceSection visible={sidebarVisible} onHideHandler={() => setSidebarVisible(false)} resourceId={activeResource.id} />}
+        {activeResource && (
+          <ResourceSection visible={sidebarVisible} onHideHandler={() => setSidebarVisible(false)} onEvaluationSubmitionHandler={() => mutateResources()} resourceId={activeResource.id} />
+        )}
       </Panel>
     </div>
   );
