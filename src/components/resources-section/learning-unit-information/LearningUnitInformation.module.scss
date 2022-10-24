@@ -1,5 +1,5 @@
 .cardFull{
-  width: 100%;
+  width: 50%;
   transition: all 0.3s ease-in-out;
   display: flex;
   justify-content: space-evenly;
@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (max-width: 981px) {
+@media screen and (max-width: 980px) {
   .cardFull{
     width: 100%;
   }
