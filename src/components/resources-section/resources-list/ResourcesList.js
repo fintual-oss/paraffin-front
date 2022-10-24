@@ -5,7 +5,9 @@ const ResourcesList = ({ resources, resourceViewButtonHandler }) => {
   const renderGridItem = (resource) => {
     <ResourcesListItem
       resource={resource}
-      resourceViewButtonHandler={resourceViewButtonHandler}
+      resourceViewButtonHandler={(activeResource) =>
+        resourceViewButtonHandler(activeResource)
+      }
     />;
   };
 

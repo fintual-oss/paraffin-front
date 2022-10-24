@@ -5,7 +5,6 @@ import { endpoints } from "@utils/endpoints";
 import { Skeleton } from "primereact/skeleton";
 import { Button } from "primereact/button";
 import { Panel } from "primereact/panel";
-import ResourcesList from "@components/resources-section/resources-list/ResourcesList";
 import AddNewResourceModal from "@components/resources-section/add-new-resource-modal/AddNewResourceModal";
 import LearningUnitInformation from "@components/resources-section/learning-unit-information/LearningUnitInformation";
 import ResourcesScroller from "../resources-scroller/ResourcesScroller";
@@ -89,15 +88,13 @@ const ResourcesSection = ({ learningUnitId }) => {
             learningUnitId={learningUnitId}
           />
         )}
-        <ResourcesScroller resources={resources} />
-
-        <ResourcesList
+        <ResourcesScroller
           resources={resources}
-          learningUnitId={learningUnitId}
           resourceViewButtonHandler={(resource) =>
             resourceViewButtonHandler(resource)
           }
         />
+
         {activeResource && (
           <ResourceSection
             visible={sidebarVisible}
