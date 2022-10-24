@@ -10,13 +10,7 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
     <div>
       <div className={styles.resourceGridItem}>
         <div className={styles.resourceListItem}>
-          <Link href={`/resources/${resource.id}`}>
-            <Image
-              className={styles.img}
-              src={profilePic}
-              alt={resource.name}
-            />
-          </Link>
+          <Image className={styles.img} src={profilePic} alt={resource.name} />
           <div className="product-list-detail">
             <div className={styles.resourceName}>
               <Link href={`/resources/${resource.id}`}>{resource.name}</Link>
