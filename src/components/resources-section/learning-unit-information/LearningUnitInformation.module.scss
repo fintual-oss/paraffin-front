@@ -1,5 +1,7 @@
+@use '/src/styles/globals';
+
 .cardFull{
-  width: 100%;
+  width: 50%;
   transition: all 0.3s ease-in-out;
   display: flex;
   justify-content: space-evenly;
@@ -9,6 +11,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  justify-content: center;
 }
 
 .productListDetail {
@@ -67,7 +70,7 @@
   }
 }
 
-@media screen and (max-width: 981px) {
+@media screen and (max-width: globals.$max_screen_width) {
   .cardFull{
     width: 100%;
   }
