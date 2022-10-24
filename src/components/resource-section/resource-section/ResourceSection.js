@@ -3,7 +3,12 @@ import useGet from "@hooks/useGet";
 import { endpoints } from "@utils/endpoints";
 import { useRef } from "react";
 
-const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
+const ResourceSection = ({
+  visible,
+  onHideHandler,
+  resourceId,
+  onEvaluationSubmitionHandler,
+}) => {
   const {
     data: resourceData,
     isLoading: isLoadingResource,
@@ -70,6 +75,7 @@ const ResourceSection = ({ visible, onHideHandler, resourceId }) => {
     await response.json();
     updateEvaluations();
     updateAverage();
+    onEvaluationSubmitionHandler();
     showSuccess();
   }
 

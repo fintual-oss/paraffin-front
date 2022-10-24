@@ -90,6 +90,7 @@ const ResourcesSection = ({ learningUnitId }) => {
           />
         )}
         <ResourcesScroller resources={resources} />
+
         <ResourcesList
           resources={resources}
           learningUnitId={learningUnitId}
@@ -101,6 +102,7 @@ const ResourcesSection = ({ learningUnitId }) => {
           <ResourceSection
             visible={sidebarVisible}
             onHideHandler={() => setSidebarVisible(false)}
+            onEvaluationSubmitionHandler={() => mutateResources()}
             resourceId={activeResource.id}
           />
         )}
