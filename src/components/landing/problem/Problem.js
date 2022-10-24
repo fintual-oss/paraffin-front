@@ -13,7 +13,7 @@ const Problem = () => {
           <div class={styles.problem__card_wrap_info}>
             <h3 className={styles.problem__card__title}>Todo está en Internet</h3>
             <p className={styles.problem__card__description}>
-            Para ser.dev puedes conseguir todo lo que necesitas en Internet, solo necesitas buscar bien pero ¿Cómo saber esa información te servirá?
+            Para ser.dev puedes conseguir todo lo que necesitas en Internet, solo necesitas buscar bien pero, ¿Cómo saber que esa información te servirá?
             </p>
           </div>
         </div>
