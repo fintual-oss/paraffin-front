@@ -24,5 +24,5 @@ export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess }) => {
   if (isError) {
     return 'error';
   }
-  return <CompleteLearningUnitToggle completed={isCompleted.completed} onChangeHandler={changeHandler} disabled={false} />;
+  return <CompleteLearningUnitToggle completed={isCompleted.completed} onChangeHandler={changeHandler} />;
 };
