@@ -1,37 +1,43 @@
-import React from 'react'
-import styles from './Problem.module.scss'
+import React from 'react';
+import styles from './Problem.module.scss';
 
 const Problem = () => {
   return (
     <section id={`${styles.problem}`} className={`grid`}>
       <div className={`${styles.titleSections}`}>
-        <h2 class={`${styles.textCenter}`}>(Describir el problema)</h2>
+        <h2 class={`${styles.textCenter}`}>¿Por dónde comienzo mi estudio para ser.dev?</h2>
       </div>
       <div className={`${styles.problem__cards} grid`}>
         <div className={`col-12 md:col-4 ${styles.problem__card}`}>
           <img src="https://picsum.photos/300" alt="Logo" />
-          <h3 className={styles.problem__card__title}>¿Qué es Paraffin?</h3>
-          <p className={styles.problem__card__description}>
-            Paraffin es una plataforma educativa que busca ayudar a los jóvenes a encontrar su vocación y a los profesionales a encontrar su próximo talento.
-          </p>
+          <div class={styles.problem__card_wrap_info}>
+            <h3 className={styles.problem__card__title}>Todo está en Internet</h3>
+            <p className={styles.problem__card__description}>
+            Para ser.dev puedes conseguir todo lo que necesitas en Internet, solo necesitas buscar bien pero ¿Cómo saber esa información te servirá?
+            </p>
+          </div>
         </div>
         <div className={`col-12 md:col-4 ${styles.problem__card}`}>
           <img src="https://picsum.photos/300" alt="Logo" />
-          <h3 className={styles.problem__card__title}>¿Qué es Paraffin?</h3>
-          <p className={styles.problem__card__description}>
-            Paraffin es una plataforma educativa que busca ayudar a los jóvenes a encontrar su vocación y a los profesionales a encontrar su próximo talento.
-          </p>
+          <div class={styles.problem__card_wrap_info}>
+            <h3 className={styles.problem__card__title}>Parálisis por análisis</h3>
+            <p className={styles.problem__card__description}>
+              Tenemos al alcance de nuestras manos, toda la información necesaria pero esto nos puede paralizar y dejar nuestro estudio por la sobre-información.
+            </p>
+          </div>
         </div>
         <div className={`col-12 md:col-4 ${styles.problem__card}`}>
           <img src="https://picsum.photos/300" alt="Logo" />
-          <h3 className={styles.problem__card__title}>¿Qué es Paraffin?</h3>
-          <p className={styles.problem__card__description}>
-            Paraffin es una plataforma educativa que busca ayudar a los jóvenes a encontrar su vocación y a los profesionales a encontrar su próximo talento.
-          </p>
+          <div class={styles.problem__card_wrap_info}>
+            <h3 className={styles.problem__card__title}>¿Con qué continúo?</h3>
+            <p className={styles.problem__card__description}>
+              Puedes encontrar un recurso excelente y al terminarlo probablemente no sabrás como continuar. Internet está lleno de recursos sin conexión.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Problem
+export default Problem;
