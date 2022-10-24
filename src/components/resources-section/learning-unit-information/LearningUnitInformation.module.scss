@@ -1,3 +1,5 @@
+@use '/src/styles/globals';
+
 .cardFull{
   width: 50%;
   transition: all 0.3s ease-in-out;
@@ -68,7 +70,7 @@
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: globals.$max_screen_width) {
   .cardFull{
     width: 100%;
   }

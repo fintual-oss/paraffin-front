@@ -1,3 +1,5 @@
+@use '/src/styles/globals';
+
 .myScroller {
   display: flex;
   flex-direction: column;
@@ -11,7 +13,7 @@
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: globals.$max_screen_width) {
   .myScroller {
     & > [class~="p-datascroller-content"] {
       width: 100%
