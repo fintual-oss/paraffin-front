@@ -6,7 +6,7 @@ const LinkButton = ({ url }) => {
 
   return (
     <p>
-      <a className={styles.link} href={url} target="blank">
+      <a className={styles.link} href={url} target="_blank" rel="noreferrer">
         <Button icon="pi pi-external-link" label={'Ir a recurso'}></Button>
       </a>
     </p>
