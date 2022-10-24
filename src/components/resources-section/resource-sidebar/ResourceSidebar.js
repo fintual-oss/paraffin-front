@@ -11,7 +11,7 @@ const ResourceSidebar = ({ visible, onHideHandler, activeResource, formOptions }
         {parseFloat(activeResource.average_evaluation).toFixed(1)} <i class="pi pi-star-fill"></i>
         <LinkButton url={activeResource.url} />
       </Card>
-      {formOptions && <AddEvaluation formOptions={formOptions} />}
+      <AddEvaluation formOptions={formOptions} />
     </Sidebar>
   );
 };
