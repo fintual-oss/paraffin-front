@@ -31,6 +31,7 @@
 
   .header__image {
     img {
+      filter: invert(100%) opacity(0.7);
       object-fit: fill;
     }
   }
