@@ -8,7 +8,7 @@ const Faqs = () => {
       <div className={`${styles.titleSections}`}>
         <h2 class={`${styles.textCenter} ${styles.fin_font}`}>Preguntas frecuentes</h2>
       </div>
-      <div className={`col-12 ${styles.faqs__accordion_wrap}`}>
+      <div className={`col-8 ${styles.faqs__accordion_wrap}`}>
         <Accordion activeIndex={0} className={`${styles.full_width} ${styles.faqsAccordion}`}>
           <AccordionTab header="Header I">
             <p>
