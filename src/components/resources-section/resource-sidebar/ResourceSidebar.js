@@ -1,5 +1,5 @@
 import { Sidebar } from 'primereact/sidebar';
-import LinkButton from '@components/learning-units-section/link-button/LinkButton';
+import LinkButton from '@components/resource-section/link-button/LinkButton';
 import { Card } from 'primereact/card';
 import AddEvaluation from '@components/resource-section/add-evaluation/AddEvaluation';
 import styles from './ResourceSidebar.module.scss';
