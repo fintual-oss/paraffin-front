@@ -5,7 +5,7 @@ import { AuthContext } from 'contexts/AuthContext';
 const useLoginDialog = () => {
   const context = useContext(AuthContext);
 
-  return context?.displayLoginDialog;
+  return context?.loginDialog;
 };
 
 export default useLoginDialog;

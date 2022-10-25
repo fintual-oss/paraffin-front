@@ -29,8 +29,10 @@ const AuthenticationProvider = ({ children }) => {
     currentUser,
     signIn: signInHandler,
     signOut: signOutHandler,
-    displayLoginDialog,
-    setDisplayLoginDialog,
+    loginDialog: {
+      displayLoginDialog,
+      setDisplayLoginDialog,
+    },
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

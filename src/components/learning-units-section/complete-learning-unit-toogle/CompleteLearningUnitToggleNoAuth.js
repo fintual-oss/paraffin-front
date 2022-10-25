@@ -1,14 +1,14 @@
 import { CompleteLearningUnitToggleButton } from './CompleteLearningUnitToggleButton';
-import useSetLoginDialog from '@hooks/useSetLoginDialog';
 import { Button } from 'primereact/button';
 import style from './CompleteLearningUnitToogle.module.scss';
+import useLoginDialog from '@hooks/useLoginDialog';
 
 export const CompleteLearningUnitToggleNoAuth = () => {
-  const setLoginDialog = useSetLoginDialog();
+  const loginDialog = useLoginDialog();
   return (
     <div>
-      <Button className={`p-button-text p-button-plain ${style.button_without_style}`} onClick={() => setLoginDialog(true)}>
-        <CompleteLearningUnitToggleButton className="p-disabled" tooltip="Necesita ingresar para completar" />
+      <Button className={`p-button-text p-button-plain ${style.button_without_style}`} onMouseEnter={() => loginDialog.setDisplayLoginDialog(true)}>
+        <CompleteLearningUnitToggleButton className="p-disabled" />
       </Button>
     </div>
   );
