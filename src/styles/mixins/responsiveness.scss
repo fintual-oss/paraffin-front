@@ -1,0 +1,19 @@
+@import '@styles/mixins/breakpoints';
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone_land {
+    @media only screen and (min-width: $xs-em) { @content; };
+  }
+  @if $breakpoint == tab_port {
+    @media only screen and (min-width: $sm-em) { @content; };
+  }
+  @if $breakpoint == tab_land {
+    @media only screen and (min-width: $md-em) { @content; };
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (min-width: $lg-em) { @content; };
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: $xl-em) { @content; };
+  }
+}

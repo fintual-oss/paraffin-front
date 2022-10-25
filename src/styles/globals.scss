@@ -1,1 +1,22 @@
+@import "./mixins/breakpoints.scss";
+@import "./mixins/responsiveness.scss";
+html {
+  // we redefine root value to scale up our down all sizes defined in 'rem'
+  font-size: 50%;
+
+  @include respond(tab_port) {
+    // This defines what 1rem is
+    // 62.5% is equal to 10px in most browsers. So 1rem is now 10px, 1.6rem  = 16px, etc.
+    font-size: 62.5%;
+  }
+
+  @include respond(laptop) {
+    font-size: 70%;
+  }
+
+  @include respond(desktop) {
+    font-size: 75%;
+  }
+}
+
 $max_screen_width: 980px;
