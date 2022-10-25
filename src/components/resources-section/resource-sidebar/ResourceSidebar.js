@@ -17,6 +17,8 @@ const ResourceSidebar = ({
       position="right"
       onHide={() => onHideHandler()}
       className={styles.resourceSidebar}
+      modal={false}
+      dismissable={false}
     >
       <h1>{activeResource.name}</h1>
       <Card title="Evaluación promedio">
