@@ -1,23 +1,10 @@
-import React, { useEffect } from 'react';
 import { Card } from 'primereact/card';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './LearningUnitListItem.module.scss';
-import useCurrentUser from '@hooks/useCurrentUser';
-import { CompleteLearningUnitToggleAuth } from '../complete-learning-unit-toogle/CompleteLearningUnitToogleAuth';
-import { CompleteLearningUnitToggleNoAuth } from '../complete-learning-unit-toogle/CompleteLearningUnitNoAuth';
+import { CompleteLearningUnitToggle } from '../complete-learning-unit-toogle/completeLearningUnitToggle';
 
 function LearningUnitItem({ unit, showSuccess }) {
-  const currentUser = useCurrentUser();
-
-  const toogleButton = () => {
-    if (currentUser) {
-      return <CompleteLearningUnitToggleAuth unit={unit} showSuccess={showSuccess} />;
-    } else {
-      return <CompleteLearningUnitToggleNoAuth />;
-    }
-  };
-
   return (
     <Card className={styles.cardFull}>
       <div className={styles.productListItem}>
@@ -42,7 +29,7 @@ function LearningUnitItem({ unit, showSuccess }) {
               <Link href={`/learning-units/${unit.id}`}>{unit.name}</Link>
             </div>
           </div>
-          {toogleButton()}
+          <CompleteLearningUnitToggle unit={unit} showSuccess={showSuccess} />
         </div>
       </div>
     </Card>

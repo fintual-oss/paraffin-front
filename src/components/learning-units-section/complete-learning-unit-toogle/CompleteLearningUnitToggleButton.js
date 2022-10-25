@@ -1,7 +1,7 @@
 import { ToggleButton } from 'primereact/togglebutton';
 import styles from './CompleteLearningUnitToogle.module.scss';
 
-export const CompleteLearningUnitToggle = ({ completed, onChangeHandler, className, tooltip }) => {
+export const CompleteLearningUnitToggleButton = ({ completed, onChangeHandler, className, tooltip }) => {
   return (
     <div className={styles.checkbox}>
       <ToggleButton

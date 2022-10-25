@@ -1,7 +1,7 @@
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
-import { CompleteLearningUnitToggle } from './CompleteLearningUnitToogle';
+import { CompleteLearningUnitToggleButton } from './CompleteLearningUnitToggleButton';
 
 export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess }) => {
   const completedLearningUnitEndpoint = endpoints('isLearningUnitCompleted', unit.id);
@@ -24,5 +24,5 @@ export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess }) => {
   if (isError) {
     return 'error';
   }
-  return <CompleteLearningUnitToggle completed={isCompleted.completed} onChangeHandler={changeHandler} />;
+  return <CompleteLearningUnitToggleButton completed={isCompleted.completed} onChangeHandler={changeHandler} />;
 };

@@ -11,8 +11,9 @@ export const LoginDialog = () => {
 
   return (
     <Dialog visible={loginDialog} style={{ width: '50vw' }} onHide={() => setLoginDialog(false)}>
-      <p> ¡Únete a Paraffin! y ayúdanos a construir una gran comunidad </p>
-      <p> Con tu cuenta puedes guardar tu progreso y ayudar a la comunidad añadiendo nuevos recursos y evaluando los existentes</p>
+      <h3> ¡Únete a ser.dev! </h3>
+      <p> Construyamos juntos una gran comunidad de aprendizaje</p>
+      <p> Ingresando con tu cuenta puedes guardar tu progreso y ayudar a la comunidad añadiendo nuevos recursos y evaluando los existentes </p>
       <Button label="Ingresar" onClick={() => router.push('/users/sign_in')} />
     </Dialog>
   );
