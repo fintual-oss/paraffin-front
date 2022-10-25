@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { InputTextarea } from "primereact/inputtextarea";
-import { Rating } from "primereact/rating";
-import { Card } from "primereact/card";
-import { Button } from "primereact/button";
-import { Toast } from "primereact/toast";
-import styles from "./AddEvaluation.module.scss";
+import React, { useState } from 'react';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { Rating } from 'primereact/rating';
+import { Card } from 'primereact/card';
+import { Button } from 'primereact/button';
+import { Toast } from 'primereact/toast';
+import styles from './AddEvaluation.module.scss';
 
 const AddEvaluation = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);
@@ -12,13 +12,13 @@ const AddEvaluation = ({ formOptions }) => {
   const [evaluated, setEvaluated] = useState(formOptions.evaluated);
 
   const handleErase = () => {
-    setComment("");
-    setEvaluation("");
+    setComment('');
+    setEvaluation('');
   };
-  let title = evaluated ? "Tu evaluación" : "Agregar comentario";
+  let title = evaluated ? 'Tu evaluación' : 'Agregar comentario';
 
-  const handleSubmit = () => {
-    formOptions.handleSubmitForm(evaluation, comment);
+  const handleSubmit = async () => {
+    await formOptions.handleSubmitForm(evaluation, comment);
     setEvaluated(true);
   };
 
@@ -34,7 +34,7 @@ const AddEvaluation = ({ formOptions }) => {
       <InputTextarea
         rows={4}
         cols={80}
-        value={comment}
+        value={comment ? comment : ''}
         onChange={(e) => setComment(e.target.value)}
         disabled={evaluated}
         autoResize

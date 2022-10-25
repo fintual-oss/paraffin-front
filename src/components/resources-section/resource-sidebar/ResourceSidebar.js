@@ -5,9 +5,19 @@ import AddEvaluation from '@components/resource-section/add-evaluation/AddEvalua
 import Average from '@components/resources-section/average/Average';
 import styles from './ResourceSidebar.module.scss';
 
-const ResourceSidebar = ({ visible, onHideHandler, activeResource, formOptions }) => {
+const ResourceSidebar = ({
+  visible,
+  onHideHandler,
+  activeResource,
+  formOptions,
+}) => {
   return (
-    <Sidebar visible={visible} position="right" onHide={() => onHideHandler()} className={styles.resourceSidebar}>
+    <Sidebar
+      visible={visible}
+      position="right"
+      onHide={() => onHideHandler()}
+      className={styles.resourceSidebar}
+    >
       <h1>{activeResource.name}</h1>
       <Card title="Evaluación promedio">
         <Average average={activeResource.average_evaluation} />
