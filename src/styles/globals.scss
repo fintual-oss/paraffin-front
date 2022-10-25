@@ -1,5 +1,8 @@
 @import "./mixins/breakpoints.scss";
 @import "./mixins/responsiveness.scss";
+@import "font_faces.scss";
+@import "variables.scss";
+
 html {
   // we redefine root value to scale up our down all sizes defined in 'rem'
   font-size: 50%;
@@ -17,6 +20,17 @@ html {
   @include respond(desktop) {
     font-size: 75%;
   }
+  body {
+    & > div,
+    & * {
+      font-family: 'Roboto', sans-serif;
+    }
+    & .pi {
+      font-family: 'primeicons', sans-serif;
+    }
+  }
 }
+
+
 
 $max_screen_width: 980px;
