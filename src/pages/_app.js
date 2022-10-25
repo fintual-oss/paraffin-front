@@ -5,7 +5,7 @@ import 'primeicons/primeicons.css'; //icons
 import Navbar from '@components/layout/Navbar';
 import AuthenticationProvider from '@components/layout/AuthenticationProvider';
 import UnauthGuard from '@components/guards/UnauthGuard';
-import "@styles/globals.scss";
+import '@styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
