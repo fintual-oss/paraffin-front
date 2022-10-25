@@ -27,7 +27,14 @@ function CurriculumPage() {
         </TabPanel>
         <TabPanel header="Grafo Learning Units">
           <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <div style={{ height: 600, width: 800, margin: 15, position: 'relative' }}>
+            <div
+              style={{
+                height: 600,
+                width: 800,
+                margin: 15,
+                position: 'relative',
+              }}
+            >
               <GraphSection
               cycleId={1}
               handleNodeClick={(id) => handleLearningUnitClick(id)}
