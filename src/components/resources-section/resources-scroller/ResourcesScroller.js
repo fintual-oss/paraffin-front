@@ -1,6 +1,6 @@
-import { DataScroller } from "primereact/datascroller";
-import ResourcesListItem from "../resources-list-item/ResourcesListItem";
-import styles from "./ResourceScroller.module.scss";
+import { DataScroller } from 'primereact/datascroller';
+import ResourcesListItem from '../resources-list-item/ResourcesListItem';
+import styles from './ResourceScroller.module.scss';
 
 const ResourcesScroller = ({ resources, resourceViewButtonHandler }) => {
   const itemTemplate = (resource) => (

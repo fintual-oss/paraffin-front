@@ -1,5 +1,5 @@
-import ResourcesListItem from "@components/resources-section/resources-list-item/ResourcesListItem";
-import { DataView } from "primereact/dataview";
+import ResourcesListItem from '@components/resources-section/resources-list-item/ResourcesListItem';
+import { DataView } from 'primereact/dataview';
 
 const ResourcesList = ({ resources, resourceViewButtonHandler }) => {
   const renderGridItem = (resource) => {

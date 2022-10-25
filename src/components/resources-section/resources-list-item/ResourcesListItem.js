@@ -1,9 +1,9 @@
-import { Button } from "primereact/button";
-import Average from "../average/Average";
-import styles from "./ResourcesListItem.module.scss";
-import Link from "next/link";
-import Image from "next/image";
-import profilePic from "@utils/images/resource.jpg";
+import { Button } from 'primereact/button';
+import Average from '../average/Average';
+import styles from './ResourcesListItem.module.scss';
+import Link from 'next/link';
+import Image from 'next/image';
+import profilePic from '@utils/images/resource.jpg';
 
 const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
   return (
@@ -21,7 +21,7 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
               />
             </div>
             <div className={styles.resourceUrl}>
-              <i className="pi pi-link"></i>{" "}
+              <i className="pi pi-link"></i>{' '}
               <a href={resource.url} target="_blank" rel="noreferrer">
                 Enlace del recurso
               </a>

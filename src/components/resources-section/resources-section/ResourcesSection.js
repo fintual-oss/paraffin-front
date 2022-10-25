@@ -1,15 +1,15 @@
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import useGet from "@hooks/useGet";
-import { endpoints } from "@utils/endpoints";
-import { Skeleton } from "primereact/skeleton";
-import { Button } from "primereact/button";
-import { Panel } from "primereact/panel";
-import AddNewResourceModal from "@components/resources-section/add-new-resource-modal/AddNewResourceModal";
-import LearningUnitInformation from "@components/resources-section/learning-unit-information/LearningUnitInformation";
-import ResourcesScroller from "../resources-scroller/ResourcesScroller";
-import ResourceSection from "@components/resource-section/resource-section/ResourceSection";
-import styles from "./ResourcesSection.module.scss";
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import useGet from '@hooks/useGet';
+import { endpoints } from '@utils/endpoints';
+import { Skeleton } from 'primereact/skeleton';
+import { Button } from 'primereact/button';
+import { Panel } from 'primereact/panel';
+import AddNewResourceModal from '@components/resources-section/add-new-resource-modal/AddNewResourceModal';
+import LearningUnitInformation from '@components/resources-section/learning-unit-information/LearningUnitInformation';
+import ResourcesScroller from '../resources-scroller/ResourcesScroller';
+import ResourceSection from '@components/resource-section/resource-section/ResourceSection';
+import styles from './ResourcesSection.module.scss';
 
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();
@@ -21,30 +21,30 @@ const ResourcesSection = ({ learningUnitId }) => {
     data: learningUnit,
     isLoading: isLoadingUnit,
     isError: isErrorUnit,
-  } = useGet(endpoints("learningUnit", learningUnitId));
+  } = useGet(endpoints('learningUnit', learningUnitId));
 
   const {
     data: resources,
     isLoading: isLoadingResources,
     isError: isErrorResources,
     mutate: mutateResources,
-  } = useGet(endpoints("learningUnitResources", learningUnitId));
+  } = useGet(endpoints('learningUnitResources', learningUnitId));
 
   if (isLoadingUnit || isLoadingResources) {
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
   }
   if (isErrorUnit || isErrorResources) {
-    return "error";
+    return 'error';
   }
 
   const saveResourceHandler = (bodyValues) => {
     const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: bodyValues,
     };
     fetch(
-      endpoints("learningUnitResources", learningUnitId),
+      endpoints('learningUnitResources', learningUnitId),
       requestOptions
     ).then(() => {
       mutateResources();
