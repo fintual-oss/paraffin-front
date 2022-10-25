@@ -15,7 +15,7 @@ const Problem = () => {
           <div class={styles.problem__card_wrap_info}>
             <h3 className={styles.problem__card__title}>Todo está en Internet</h3>
             <p className={styles.problem__card__description}>
-            Para ser.dev puedes conseguir todo lo que necesitas en Internet, solo necesitas buscar bien pero, ¿Cómo saber que esa información te servirá?
+            Hoy en día puedes encontrar todo lo que necesitas en internet. Si tu intención es convertirte en dev dispones de una gran cantidad de recursos en línea. ¿Pero cómo podrás determinar si la información que encuentres en verdad es valiosa y será útil para tu formación? E incluso, ¿cómo puedes saber por dónde empezar a buscar?
             </p>
           </div>
         </div>
@@ -24,7 +24,7 @@ const Problem = () => {
           <div class={styles.problem__card_wrap_info}>
             <h3 className={styles.problem__card__title}>Parálisis por análisis</h3>
             <p className={styles.problem__card__description}>
-              Tenemos al alcance de nuestras manos, toda la información necesaria pero esto nos puede paralizar y dejar nuestro estudio por la sobre-información.
+            ¿Alguna vez te ha pasado que pasas horas decidiendo qué película o serie ver, y al final no ves ninguna? En un mundo donde tenemos tanta información al alcance de nuestras manos, llegar a ser difícil decidir con cuál quedarnos. Este exceso de información puede paralizarnos y hasta hacer que dejemos nuestro estudio de lado.
             </p>
           </div>
         </div>
@@ -33,7 +33,7 @@ const Problem = () => {
           <div class={styles.problem__card_wrap_info}>
             <h3 className={styles.problem__card__title}>¿Con qué continúo?</h3>
             <p className={styles.problem__card__description}>
-              Puedes encontrar un recurso excelente y al terminarlo probablemente no sabrás como continuar. Internet está lleno de recursos sin conexión.
+            Podría pasar que encuentres un recurso excelente y lo sigas de principio a fin, pero probablemente al terminarlo no sabrás hacia dónde continuar. Internet está lleno de recursos sin conexión que no te marcan un camino que seguir. ¿Deberías seguir con el mismo tema en un nivel más avanzado? ¿O deberías empezar con un tema nuevo?
             </p>
           </div>
         </div>
