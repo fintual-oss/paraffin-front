@@ -9,17 +9,15 @@ import styles from './AddEvaluation.module.scss';
 const AddEvaluation = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);
   const [comment, setComment] = useState(formOptions.comment);
-  const [evaluated, setEvaluated] = useState(formOptions.evaluated);
 
   const handleErase = () => {
     setComment('');
     setEvaluation('');
   };
-  let title = evaluated ? 'Tu evaluación' : 'Agregar comentario';
+  let title = formOptions.evaluated ? 'Tu evaluación' : 'Agregar comentario';
 
-  const handleSubmit = async () => {
-    await formOptions.handleSubmitForm(evaluation, comment);
-    setEvaluated(true);
+  const handleSubmit = () => {
+    formOptions.handleSubmitForm(evaluation, comment);
   };
 
   return (
@@ -28,15 +26,15 @@ const AddEvaluation = ({ formOptions }) => {
         value={evaluation}
         onChange={(e) => setEvaluation(e.value)}
         cancel={false}
-        readOnly={evaluated}
+        readOnly={formOptions.evaluated}
         className={styles.inputRating}
       />
       <InputTextarea
         rows={4}
-        cols={80}
+        cols={15}
         value={comment ? comment : ''}
         onChange={(e) => setComment(e.target.value)}
-        disabled={evaluated}
+        disabled={formOptions.evaluated}
         autoResize
       />
       <div className="dialog-demo">
@@ -46,14 +44,14 @@ const AddEvaluation = ({ formOptions }) => {
           icon="pi pi-times"
           className="p-button-text"
           onClick={() => handleErase()}
-          visible={!evaluated}
+          visible={!formOptions.evaluated}
         />
         <Button
           type="submit"
           label="Guardar evaluación"
           icon="pi pi-check"
           onClick={handleSubmit}
-          visible={!evaluated}
+          visible={!formOptions.evaluated}
           disabled={evaluation < 1}
         />
       </div>
