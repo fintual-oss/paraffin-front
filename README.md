@@ -8,10 +8,17 @@ First, clone the repo and cd into your directory
 git clone https://github.com/fintual-oss/paraffin-front.git && cd paraffin-front
 ```
 
-Create a `.env.local` file and ask someone for the ENV variables
+Create a `.env.local` file
 
 ```bash
 touch .env.local
+```
+
+Add this env variables (ask someone for the values)
+
+```bash
+NEXT_PUBLIC_BACK_URL=
+NEXT_PUBLIC_FRONT_URL=
 ```
 
 Install dependencies
@@ -23,8 +30,6 @@ yarn install
 Run the development server
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
