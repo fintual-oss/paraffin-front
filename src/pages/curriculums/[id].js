@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import LearningUnitsSection from '@components/learning-units-section/learning-units-section/LearningUnitsSection';
 import { Skeleton } from 'primereact/skeleton';
 import { TabView, TabPanel } from 'primereact/tabview';
-import { LoginDialog } from '@components/layout/loginDialog';
+import { LoginDialog } from '@components/login-dialog/loginDialog';
 import GraphSection from '@components/learning-units-section/graph-section/GraphSection';
 
 function CurriculumPage() {
