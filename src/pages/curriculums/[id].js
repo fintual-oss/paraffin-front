@@ -1,25 +1,23 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
+
 import LearningUnitsSection from '@components/learning-units-section/learning-units-section/LearningUnitsSection';
 import { Skeleton } from 'primereact/skeleton';
 import { TabView, TabPanel } from 'primereact/tabview';
-
-const Graph = dynamic(
-  () => import('@components/learning-units-section/Graph/Graph'),
-  {
-    ssr: false,
-  }
-);
+import GraphSection from '@components/learning-units-section/graph-section/GraphSection';
 
 function CurriculumPage() {
-  const { query, isReady } = useRouter();
+  const router = useRouter();
+  const { query, isReady } = router;
 
   if (!isReady)
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
 
   const curriculumId = query.id;
 
+  const handleLearningUnitClick = (id) => {
+    router.push(`/learning-units/${id}`);
+  };
   return (
     <TabView>
       <TabPanel header="Lista Learning Units">
@@ -35,7 +33,10 @@ function CurriculumPage() {
               position: 'relative',
             }}
           >
-            <Graph />
+            <GraphSection
+              cycleId={1}
+              handleNodeClick={(id) => handleLearningUnitClick(id)}
+            />
           </div>
         </div>
       </TabPanel>
