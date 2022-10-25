@@ -4,8 +4,16 @@ import { Skeleton } from 'primereact/skeleton';
 import { CompleteLearningUnitToggleButton } from './CompleteLearningUnitToggleButton';
 
 export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess }) => {
-  const completedLearningUnitEndpoint = endpoints('isLearningUnitCompleted', unit.id);
-  const { data: isCompleted, isLoading, isError, mutate } = useGet(completedLearningUnitEndpoint);
+  const completedLearningUnitEndpoint = endpoints(
+    'isLearningUnitCompleted',
+    unit.id
+  );
+  const {
+    data: isCompleted,
+    isLoading,
+    isError,
+    mutate,
+  } = useGet(completedLearningUnitEndpoint);
   const changeHandler = (clicked) => {
     const requestOptions = {
       method: clicked.value ? 'POST' : 'DELETE',
@@ -24,5 +32,10 @@ export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess }) => {
   if (isError) {
     return 'error';
   }
-  return <CompleteLearningUnitToggleButton completed={isCompleted.completed} onChangeHandler={changeHandler} />;
+  return (
+    <CompleteLearningUnitToggleButton
+      completed={isCompleted.completed}
+      onChangeHandler={changeHandler}
+    />
+  );
 };
