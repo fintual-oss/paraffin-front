@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './Header.module.scss';
-
 import { Button } from 'primereact/button';
-import Image from 'next/image';
 // import developer_header from '@utils/images/developer_header.png';
-import fin_logo from '@utils/images/fin_logo.png'
+import Image from 'next/image';
+import logo from '@utils/images/fin-logo.svg';
 
 const Header = () => {
   return (
@@ -22,7 +21,7 @@ const Header = () => {
         <Button label="Quiero registrarme en Paraffin" />
       </div>
       <div className={`col-12 md:col-6 xl:col-3 ${styles.header__image}`}>
-        <Image src={fin_logo} alt="Logo" id={styles.header__logo} />
+        <Image src={logo} alt="Logo" id={styles.header__logo} />
       </div>
     </section>
   );

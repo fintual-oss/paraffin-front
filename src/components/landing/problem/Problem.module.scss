@@ -7,7 +7,7 @@
   background-size: 300% 300%;
   clip-path: polygon(0 0, 100% 50px, 100% 100%, 0% 95%);
   color: #6366F1;
-  padding: 7rem 0 9.5rem;
+  padding: 8rem 0 11rem;
   position: relative;
   z-index: 0;
 }
@@ -20,18 +20,13 @@
   text-align: center;
   color: darken($color_principal, 30%);
   img {
-    border-radius: 50% 50%;
-    box-shadow: 3px 2px 2px 1px #eee;
     display: block;
     height: 150px;
     margin-left: auto;
     margin-right: auto;
     transition: all 0.5s ease;
-    width: 150px;
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px #ADDDD0, 3px 2px 2px 1px #eee;
-    }
+    width: 200px !important;
+    height: 200px !important;
   }
   h3 {
     color: rgb(29, 29, 29);
@@ -39,7 +34,7 @@
     text-shadow: 1px 1px 1px #eee;
     text-transform: uppercase;
     letter-spacing: -1px;
-    margin: 1rem 0 0;
+    margin: 0;
     padding: 0 0 1.2rem 0;
   }
   p {

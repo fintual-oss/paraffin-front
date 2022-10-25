@@ -1,5 +1,7 @@
 import React from 'react';
+import IMAGES from '@components/images/images';
 import styles from './Problem.module.scss';
+import Image from 'next/image';
 
 const Problem = () => {
   return (
@@ -9,7 +11,7 @@ const Problem = () => {
       </div>
       <div className={`${styles.problem__cards} grid`}>
         <div className={`col-12 md:col-4 ${styles.problem__card}`}>
-          <img src="https://picsum.photos/300" alt="Logo" />
+          <Image src={IMAGES.humaaans_3} alt="Logo" />
           <div class={styles.problem__card_wrap_info}>
             <h3 className={styles.problem__card__title}>Todo está en Internet</h3>
             <p className={styles.problem__card__description}>
@@ -18,7 +20,7 @@ const Problem = () => {
           </div>
         </div>
         <div className={`col-12 md:col-4 ${styles.problem__card}`}>
-          <img src="https://picsum.photos/300" alt="Logo" />
+          <Image src={IMAGES.humaaan_1} alt="Logo" />
           <div class={styles.problem__card_wrap_info}>
             <h3 className={styles.problem__card__title}>Parálisis por análisis</h3>
             <p className={styles.problem__card__description}>
@@ -27,7 +29,7 @@ const Problem = () => {
           </div>
         </div>
         <div className={`col-12 md:col-4 ${styles.problem__card}`}>
-          <img src="https://picsum.photos/300" alt="Logo" />
+          <Image src={IMAGES.humaaans_2} alt="Logo" />
           <div class={styles.problem__card_wrap_info}>
             <h3 className={styles.problem__card__title}>¿Con qué continúo?</h3>
             <p className={styles.problem__card__description}>
