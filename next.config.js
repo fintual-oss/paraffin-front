@@ -34,7 +34,8 @@ const nextConfig = {
       },
       {
         source: '/users/auth/google_oauth2/callback',
-        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/users/auth/google_oauth2/callback`,
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}
+        /users/auth/google_oauth2/callback`,
       },
       {
         source: '/assets/:path*',
