@@ -2,8 +2,15 @@ import { DataScroller } from 'primereact/datascroller';
 import ResourcesListItem from '../resources-list-item/ResourcesListItem';
 import styles from './ResourceScroller.module.scss';
 
-const ResourcesScroller = ({ resources }) => {
-  const itemTemplate = (resource) => <ResourcesListItem resource={resource} />;
+const ResourcesScroller = ({ resources, resourceViewButtonHandler }) => {
+  const itemTemplate = (resource) => (
+    <ResourcesListItem
+      resource={resource}
+      resourceViewButtonHandler={(activeResource) =>
+        resourceViewButtonHandler(activeResource)
+      }
+    />
+  );
 
   return (
     <DataScroller

@@ -1,10 +1,15 @@
 import ResourcesListItem from '@components/resources-section/resources-list-item/ResourcesListItem';
 import { DataView } from 'primereact/dataview';
 
-const ResourcesList = ({ resources }) => {
-  const renderGridItem = (resource) => (
-    <ResourcesListItem resource={resource} />
-  );
+const ResourcesList = ({ resources, resourceViewButtonHandler }) => {
+  const renderGridItem = (resource) => {
+    <ResourcesListItem
+      resource={resource}
+      resourceViewButtonHandler={(activeResource) =>
+        resourceViewButtonHandler(activeResource)
+      }
+    />;
+  };
 
   return (
     <>

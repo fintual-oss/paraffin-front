@@ -7,12 +7,15 @@ import { Button } from 'primereact/button';
 import { Panel } from 'primereact/panel';
 import AddNewResourceModal from '@components/resources-section/add-new-resource-modal/AddNewResourceModal';
 import LearningUnitInformation from '@components/resources-section/learning-unit-information/LearningUnitInformation';
-import styles from './ResourcesSection.module.scss';
 import ResourcesScroller from '../resources-scroller/ResourcesScroller';
+import ResourceSection from '@components/resource-section/resource-section/ResourceSection';
+import styles from './ResourcesSection.module.scss';
 
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();
   const [displayBasic, setDisplayBasic] = useState(false);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [activeResource, setActiveResource] = useState(null);
 
   const {
     data: learningUnit,
@@ -54,6 +57,16 @@ const ResourcesSection = ({ learningUnitId }) => {
     onSave: saveResourceHandler,
   };
 
+  const resourceSidebarOnHideHandler = () => {
+    setSidebarVisible(false);
+    setActiveResource(null);
+  };
+
+  const resourceViewButtonHandler = (resource) => {
+    setActiveResource(resource);
+    setSidebarVisible(true);
+  };
+
   const header = () => {
     return (
       <div className={styles.resourceHeader}>
@@ -80,7 +93,21 @@ const ResourcesSection = ({ learningUnitId }) => {
             learningUnitId={learningUnitId}
           />
         )}
-        <ResourcesScroller resources={resources} />
+        <ResourcesScroller
+          resources={resources}
+          resourceViewButtonHandler={(resource) =>
+            resourceViewButtonHandler(resource)
+          }
+        />
+
+        {activeResource && (
+          <ResourceSection
+            visible={sidebarVisible}
+            onHideHandler={() => resourceSidebarOnHideHandler()}
+            onEvaluationSubmitionHandler={() => mutateResources()}
+            resourceId={activeResource.id}
+          />
+        )}
       </Panel>
     </div>
   );

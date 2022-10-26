@@ -1,10 +1,14 @@
-import ResourcePanel from '../resource-panel/ResourcePanel';
-import EvaluationList from '../evaluation-list/EvaluationList';
+import ResourceSidebar from '@components/resources-section/resource-sidebar/ResourceSidebar';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { useRef } from 'react';
 
-const ResourceSection = ({ resourceId }) => {
+const ResourceSection = ({
+  visible,
+  onHideHandler,
+  resourceId,
+  onEvaluationSubmitionHandler,
+}) => {
   const {
     data: resourceData,
     isLoading: isLoadingResource,
@@ -15,6 +19,7 @@ const ResourceSection = ({ resourceId }) => {
     data,
     isLoading: isLoadingEvaluation,
     isError: isErrorEvaluation,
+    mutate: updateResourceEvaluation,
   } = useGet(endpoints('resourceEvaluation', resourceId));
 
   const {
@@ -25,7 +30,6 @@ const ResourceSection = ({ resourceId }) => {
   } = useGet(endpoints('resourceAverage', resourceId));
 
   const {
-    data: evaluations,
     isLoading: isLoadingEvaluations,
     isError: isErrorEvaluations,
     mutate: updateEvaluations,
@@ -72,6 +76,8 @@ const ResourceSection = ({ resourceId }) => {
     await response.json();
     updateEvaluations();
     updateAverage();
+    updateResourceEvaluation();
+    onEvaluationSubmitionHandler();
     showSuccess();
   }
 
@@ -90,10 +96,12 @@ const ResourceSection = ({ resourceId }) => {
   };
 
   return (
-    <>
-      <ResourcePanel resource={resource} formOptions={formOptions} />
-      <EvaluationList evaluationsData={evaluations} />
-    </>
+    <ResourceSidebar
+      visible={visible}
+      onHideHandler={() => onHideHandler()}
+      activeResource={resource}
+      formOptions={formOptions}
+    />
   );
 };
 

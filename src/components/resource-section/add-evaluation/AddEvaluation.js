@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Rating } from 'primereact/rating';
 import { Card } from 'primereact/card';
@@ -9,17 +9,19 @@ import styles from './AddEvaluation.module.scss';
 const AddEvaluation = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);
   const [comment, setComment] = useState(formOptions.comment);
-  const [evaluated, setEvaluated] = useState(formOptions.evaluated);
+
+  useEffect(() => {
+    setEvaluation(formOptions.evaluation);
+  }, [formOptions]);
 
   const handleErase = () => {
     setComment('');
     setEvaluation('');
   };
-  let title = evaluated ? 'Tu evaluación' : 'Agregar comentario';
+  let title = formOptions.evaluated ? 'Tu evaluación' : 'Agregar comentario';
 
   const handleSubmit = () => {
     formOptions.handleSubmitForm(evaluation, comment);
-    setEvaluated(true);
   };
 
   return (
@@ -28,17 +30,16 @@ const AddEvaluation = ({ formOptions }) => {
         value={evaluation}
         onChange={(e) => setEvaluation(e.value)}
         cancel={false}
-        readOnly={evaluated}
+        readOnly={formOptions.evaluated}
         className={styles.inputRating}
       />
       <InputTextarea
         rows={4}
-        cols={80}
-        value={comment}
+        cols={15}
+        value={comment || ''}
         onChange={(e) => setComment(e.target.value)}
-        disabled={evaluated}
+        disabled={formOptions.evaluated}
         autoResize
-        maxlength="800"
       />
       <div className="dialog-demo">
         <Button
@@ -47,14 +48,14 @@ const AddEvaluation = ({ formOptions }) => {
           icon="pi pi-times"
           className="p-button-text"
           onClick={() => handleErase()}
-          visible={!evaluated}
+          visible={!formOptions.evaluated}
         />
         <Button
           type="submit"
           label="Guardar evaluación"
           icon="pi pi-check"
           onClick={handleSubmit}
-          visible={!evaluated}
+          visible={!formOptions.evaluated}
           disabled={evaluation < 1}
         />
       </div>
