@@ -57,6 +57,11 @@ const ResourcesSection = ({ learningUnitId }) => {
     onSave: saveResourceHandler,
   };
 
+  const resourceSidebarOnHideHandler = () => {
+    setSidebarVisible(false);
+    setActiveResource(null);
+  };
+
   const resourceViewButtonHandler = (resource) => {
     setActiveResource(resource);
     setSidebarVisible(true);
@@ -98,7 +103,7 @@ const ResourcesSection = ({ learningUnitId }) => {
         {activeResource && (
           <ResourceSection
             visible={sidebarVisible}
-            onHideHandler={() => setSidebarVisible(false)}
+            onHideHandler={() => resourceSidebarOnHideHandler()}
             onEvaluationSubmitionHandler={() => mutateResources()}
             resourceId={activeResource.id}
           />
