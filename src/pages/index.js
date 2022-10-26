@@ -8,19 +8,18 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>TEAM CAP</title>
+        <title>SER DEV</title>
         <meta
-          name="Team CAP"
+          name="SER DEV"
           content="Esta es la plataforma desarrollada para la ejecución del FIN"
         />
-        <link rel="shortcut icon" href="/src/public/vercel.svg" />
       </Head>
 
       <main className={styles.page}>
         <section className={styles.sectionOne}>
           <div className={styles.container}>
             <h1 className={styles.title}>
-              BIENVENIDOS A LA FIN{' '}
+              BIENVENIDOS A LA FIN
               <Image
                 src="https://fintualist.com/content/images/2022/05/Fintual-Intensivo-Natales--N.gif"
                 alt=""

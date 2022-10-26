@@ -29,8 +29,16 @@ const nextConfig = {
         destination: `${process.env.NEXT_PUBLIC_BACK_URL}/users/sign_out`,
       },
       {
-        source: '/api-docs/:path*',
-        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/api-docs/:path*`,
+        source: '/users/:path*',
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/users/:path*`,
+      },
+      {
+        source: '/users/auth/google_oauth2/callback',
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/users/auth/google_oauth2/callback`,
+      },
+      {
+        source: '/assets/:path*',
+        destination: `${process.env.NEXT_PUBLIC_BACK_URL}/assets/:path*`,
       },
     ];
   },
