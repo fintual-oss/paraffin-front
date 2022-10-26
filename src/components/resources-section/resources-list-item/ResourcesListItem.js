@@ -21,7 +21,7 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
               />
             </div>
             <div className={styles.resourceUrl}>
-              <i className="pi pi-link"></i>{' '}
+              <i className="pi pi-link"></i>
               <a href={resource.url} target="_blank" rel="noreferrer">
                 Enlace del recurso
               </a>
