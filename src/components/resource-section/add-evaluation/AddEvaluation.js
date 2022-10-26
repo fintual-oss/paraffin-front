@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Rating } from 'primereact/rating';
 import { Card } from 'primereact/card';
@@ -9,6 +9,10 @@ import styles from './AddEvaluation.module.scss';
 const AddEvaluation = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);
   const [comment, setComment] = useState(formOptions.comment);
+
+  useEffect(() => {
+    setEvaluation(formOptions.evaluation);
+  }, [formOptions]);
 
   const handleErase = () => {
     setComment('');
