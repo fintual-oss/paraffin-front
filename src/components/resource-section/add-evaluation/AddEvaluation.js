@@ -32,7 +32,7 @@ const AddEvaluation = ({ formOptions }) => {
       <InputTextarea
         rows={4}
         cols={15}
-        value={comment ? comment : ''}
+        value={comment || ''}
         onChange={(e) => setComment(e.target.value)}
         disabled={formOptions.evaluated}
         autoResize
