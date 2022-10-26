@@ -2,11 +2,34 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repo and cd into your directory
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/fintual-oss/paraffin-front.git && cd paraffin-front
+```
+
+Create a `.env.local` file
+
+```bash
+touch .env.local
+```
+
+Add this env variables (ask someone for the values)
+
+```bash
+NEXT_PUBLIC_BACK_URL=
+NEXT_PUBLIC_FRONT_URL=
+```
+
+Install dependencies
+
+```bash
+yarn install
+```
+
+Run the development server
+
+```bash
 yarn dev
 ```
 
