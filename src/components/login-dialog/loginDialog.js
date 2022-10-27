@@ -7,7 +7,7 @@ import style from './loginDialog.module.scss';
 export const LoginDialog = () => {
   const loginDialog = useLoginDialog();
   const router = useRouter();
-  const renderFoter = () => {
+  const footer = () => {
     return (
       <Button label="Ingresar" onClick={() => router.push('/users/sign_in')} />
     );
@@ -16,10 +16,10 @@ export const LoginDialog = () => {
   return (
     <Dialog
       visible={loginDialog.displayLoginDialog}
-      className={style.dialog_login}
+      className={style.dialogLogin}
       onHide={() => loginDialog.setDisplayLoginDialog(false)}
       header="¡Únete a ser.dev!"
-      footer={renderFoter()}
+      footer={footer()}
     >
       <p> Construyamos juntos una gran comunidad de aprendizaje</p>
       <p>

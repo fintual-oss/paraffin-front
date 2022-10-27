@@ -5,6 +5,7 @@ import LearningUnitsSection from '@components/learning-units-section/learning-un
 import { Skeleton } from 'primereact/skeleton';
 import { TabView, TabPanel } from 'primereact/tabview';
 import { LoginDialog } from '@components/login-dialog/loginDialog';
+import styles from '@styles/CurriculumPage.module.scss';
 import GraphSection from '@components/learning-units-section/graph-section/GraphSection';
 
 function CurriculumPage() {
@@ -26,15 +27,8 @@ function CurriculumPage() {
           <LearningUnitsSection curriculumId={curriculumId} />
         </TabPanel>
         <TabPanel header="Grafo Learning Units">
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <div
-              style={{
-                height: 600,
-                width: 800,
-                margin: 15,
-                position: 'relative',
-              }}
-            >
+          <div className={styles.graphContainer}>
+            <div className={styles.graphDisplay}>
               <GraphSection
               cycleId={1}
               handleNodeClick={(id) => handleLearningUnitClick(id)}
