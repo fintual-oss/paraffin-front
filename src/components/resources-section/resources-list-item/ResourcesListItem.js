@@ -19,7 +19,7 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
               <Average
                 average={parseFloat(resource.average_evaluation).toFixed(1)}
               />
-              <span className={styles.small_number}>
+              <span className={styles.smallNumber}>
                 ({resource.number_of_evaluations})
               </span>
             </div>
