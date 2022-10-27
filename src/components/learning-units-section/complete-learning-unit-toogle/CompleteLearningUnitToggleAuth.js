@@ -4,38 +4,26 @@ import { Skeleton } from 'primereact/skeleton';
 import { CompleteLearningUnitToggleButton } from './CompleteLearningUnitToggleButton';
 
 export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess }) => {
-  const completedLearningUnitEndpoint = endpoints(
-    'isLearningUnitCompleted',
-    unit.id
-  );
-  const {
-    data: isCompleted,
-    isLoading,
-    isError,
-    mutate,
-  } = useGet(completedLearningUnitEndpoint);
-  const changeHandler = (clicked) => {
+  const completedLearningUnitEndpoint = endpoints('isLearningUnitCompleted', unit.id);
+  const { data: isCompleted, isLoading, isError, mutate } = useGet(completedLearningUnitEndpoint);
+  const changeHandler = async (clicked) => {
     const requestOptions = {
       method: clicked.value ? 'POST' : 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     };
-    fetch(completedLearningUnitEndpoint, requestOptions).then((response) => {
-      if (response.ok) {
-        mutate();
-        showSuccess();
-      }
-    });
+    const response = await fetch(completedLearningUnitEndpoint, requestOptions) 
+
+    if (response.ok) {
+      mutate();
+      showSuccess();
+    }
   };
+
   if (isLoading) {
     return <Skeleton shape="rectangle" width="50%" />;
   }
   if (isError) {
     return 'error';
   }
-  return (
-    <CompleteLearningUnitToggleButton
-      completed={isCompleted.completed}
-      onChangeHandler={changeHandler}
-    />
-  );
+  return <CompleteLearningUnitToggleButton completed={isCompleted.completed} onChangeHandler={changeHandler} />;
 };
