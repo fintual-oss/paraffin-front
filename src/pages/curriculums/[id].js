@@ -30,9 +30,9 @@ function CurriculumPage() {
           <div className={styles.graphContainer}>
             <div className={styles.graphDisplay}>
               <GraphSection
-              cycleId={1}
-              handleNodeClick={(id) => handleLearningUnitClick(id)}
-            />
+                cycleId={1}
+                handleNodeClick={(id) => handleLearningUnitClick(id)}
+              />
             </div>
           </div>
         </TabPanel>

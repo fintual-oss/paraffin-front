@@ -8,7 +8,7 @@ export const CompleteLearningUnitToggle = ({ unit, showSuccess }) => {
     return (
       <CompleteLearningUnitToggleAuth unit={unit} showSuccess={showSuccess} />
     );
-  } else {
-    return <CompleteLearningUnitToggleNoAuth />;
   }
+
+  return <CompleteLearningUnitToggleNoAuth />;
 };
