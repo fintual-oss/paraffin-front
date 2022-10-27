@@ -4,8 +4,9 @@ import styles from './CompleteLearningUnitToogle.module.scss';
 export const CompleteLearningUnitToggleButton = ({
   completed,
   onChangeHandler,
-  className,
+  disabled,
 }) => {
+  const buttonClassName = disabled ? "p-disabled" : "p-button"
   return (
     <div className={styles.checkbox}>
       <ToggleButton
@@ -15,7 +16,7 @@ export const CompleteLearningUnitToggleButton = ({
         offIcon="pi pi-times"
         checked={completed}
         onChange={onChangeHandler}
-        className={className}
+        className={buttonClassName}
       />
     </div>
   );

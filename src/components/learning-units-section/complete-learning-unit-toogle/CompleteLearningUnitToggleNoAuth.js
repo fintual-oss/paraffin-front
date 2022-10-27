@@ -9,9 +9,9 @@ export const CompleteLearningUnitToggleNoAuth = () => {
     <div>
       <Button
         className={`p-button-text p-button-plain ${style.button_without_style}`}
-        onMouseEnter={() => loginDialog.setDisplayLoginDialog(true)}
+        onClick={() => loginDialog.setDisplayLoginDialog(true)}
       >
-        <CompleteLearningUnitToggleButton className="p-disabled" />
+        <CompleteLearningUnitToggleButton disabled={true} />
       </Button>
     </div>
   );
