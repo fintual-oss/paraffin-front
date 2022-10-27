@@ -20,7 +20,7 @@ export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess }) => {
       method: clicked.value ? 'POST' : 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     };
-    const response = await fetch(completedLearningUnitEndpoint, requestOptions) 
+    const response = await fetch(completedLearningUnitEndpoint, requestOptions);
 
     if (response.ok) {
       mutate();
