@@ -2,7 +2,7 @@ import { Card } from 'primereact/card';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './LearningUnitListItem.module.scss';
-import { CompleteLearningUnitToggle } from '../complete-learning-unit-toogle/completeLearningUnitToggle';
+import { CompleteLearningUnitToggle } from '@components/learning-units-section/complete-learning-unit-toogle/completeLearningUnitToggle';
 
 function LearningUnitItem({ unit, showSuccess }) {
   return (
