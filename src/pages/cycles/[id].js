@@ -11,15 +11,15 @@ const CyclePage = () => {
 
   const cycleId = query.id;
 
-  if (process.env.NODE_ENV === 'development'){
+  if (process.env.NODE_ENV === 'development') {
     return (
       <>
-        <CycleSection cycleId={cycleId}/>
+        <CycleSection cycleId={cycleId} />
       </>
-      );
-    } else {
-      return <p>WIP</p>
-    }
-}
+    );
+  } else {
+    return <p>WIP</p>;
+  }
+};
 
 export default CyclePage;

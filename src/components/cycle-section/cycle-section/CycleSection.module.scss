@@ -1,3 +1,8 @@
+$black: #000000;
+$white: #f3f3f3;
+$grey: #eff1ff;
+$blue: #37368f;
+
 .panelContainer {
   display: flex;
   flex-direction: column;
@@ -45,12 +50,12 @@
 }
 
 .challengeCard {
-  color: #ffffff;
-  background-color: #eda039;
+  color: $black;
+  background-color: $white;
 }
 
 .scrollPanel .p-scrollpanel-wrapper {
-  border-right: 9px solid #f4f4f4;
+  border-right: 9px solid $white;
 }
 
 .scrollPanel .p-scrollpanel-bar {
@@ -71,18 +76,18 @@
   & > [class~='p-accordion-tab'] {
     & > [class~='p-accordion-header'] {
       & > [class~='p-accordion-header-link'] {
-        background-color: #eac545;
-        color: #000000;
+        background-color: $blue;
+        color: $white;
         &:hover {
-          background-color: #eac545 !important;
-          color: #ffffff !important;
+          background-color: $blue !important;
+          color: $white !important;
         }
       }
     }
 
     & > [class~='p-toggleable-content'] {
       & > [class~='p-accordion-content'] {
-        background-color: #eac545;
+        background-color: $grey;
       }
     }
   }
@@ -90,22 +95,15 @@
   & > [class~='p-accordion-tab-active'] {
     & > [class~='p-highlight'] {
       & > [class~='p-accordion-header-link'] {
-        background-color: #eac545 !important;
+        background-color: $blue !important;
+        color: $white !important;
       }
     }
   }
 }
 
-.cycleCompletitionButton {
-  background-color: #f3c067;
-  color: #000000;
-  &:hover {
-    background-color: #eac545 !important;
-  }
-}
-
 .learningUnitsCard {
   flex: 1;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: $grey;
+  color: $black;
 }

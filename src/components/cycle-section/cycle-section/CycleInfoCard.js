@@ -1,6 +1,5 @@
 import { Card } from 'primereact/card';
 import styles from './CycleSection.module.scss';
- 
 
 const CycleInfoCard = ({ cycle }) => {
   return (
@@ -10,4 +9,4 @@ const CycleInfoCard = ({ cycle }) => {
   );
 };
 
-export default CycleInfoCard
+export default CycleInfoCard;
