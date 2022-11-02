@@ -19,7 +19,7 @@ const Header = () => {
         </Flip>
         <Flip bottom>
           <p className={styles.header__description}>
-          ¿Sabes programar pero te falta algo más para Ser.dev? ¡Con nuestra guía y el apoyo de la comunidad lo lograrás!
+          ¿Sabes programar, pero te falta algo más para Ser.dev? ¡Con nuestra guía y el apoyo de la comunidad lo lograrás!
           </p>
         </Flip>
         <Flip bottom>

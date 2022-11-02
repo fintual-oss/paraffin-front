@@ -21,7 +21,7 @@ export const Footer = () => {
       <div class="card mt-6">
         <div className={`flex flex-column align-items-center`}>
           <div className="col-12 md:col-4 text-center | text-xl font-semibold">
-            Hecho con <span className={`text-red-600 ${styles.heart}`}>❤</span> en Fin
+            Hecho con <span className={`text-red-600 ${styles.heart}`}>❤</span> en la FIN
           </div>
           <div className="col-12 md:col-4 text-center">
             Puerto Natales

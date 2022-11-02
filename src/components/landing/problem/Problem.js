@@ -16,13 +16,13 @@ const Problem = () => {
         imgCard={IMAGES.humaaans_3}
         altImg="Todo está en Internet"
         title="Todo está en Internet"
-        description="Hoy en día puedes encontrar todo lo que necesitas en internet. Si tu intención es convertirte en dev dispones de una gran cantidad de recursos en línea. ¿Pero cómo podrás determinar si la información que encuentres en verdad es valiosa y será útil para tu formación? E incluso, ¿cómo puedes saber por dónde empezar a buscar?"
+        description="Hoy en día puedes encontrar todo lo que necesitas en internet. Si tu intención es convertirte en dev, dispones de una gran cantidad de recursos en línea. ¿Pero cómo puedes determinar si la información que encuentras en verdad es valiosa y será útil para tu formación? E incluso, ¿cómo puedes saber por dónde empezar a buscar?"
       />
       <ProblemCard
         imgCard={IMAGES.humaaan_1}
         altImg="Parálisis por análisis"
         title="Parálisis por análisis"
-        description="¿Alguna vez te ha pasado que pasas horas decidiendo qué película o serie ver, y al final no ves ninguna? En un mundo donde tenemos tanta información al alcance de nuestras manos, llegar a ser difícil decidir con cuál quedarnos. Este exceso de información puede paralizarnos y hasta hacer que dejemos nuestro estudio de lado."
+        description="¿Alguna vez te ha pasado que pasas horas decidiendo qué película o serie ver, y al final no ves ninguna? En un mundo donde tenemos tanta información al alcance de nuestras manos, llega a ser difícil decidir con cuál quedarnos. Este exceso de información puede paralizarnos y hasta hacer que dejemos nuestro estudio de lado."
       />
       <ProblemCard
         imgCard={IMAGES.humaaans_2}

@@ -21,7 +21,7 @@ const solution = () => {
             classCard={styles.column_info_card_right}
             altImg="Logo"
             title="Plataforma colaborativa"
-            description="Es la plataforma colaborativa que te permite seguir un camino concreto para convertirte en un verdadero desarrollador de software. Los usuarios aportan con recursos para aprender sobre distintos temas, pueden evaluar dichos recursos y dejar sus comentarios para guiar mejor tu aprendizaje, ayudándote a elegir los mejores recursos."
+            description="Somos una plataforma colaborativa que te permite seguir un camino concreto para convertirte en un verdadero desarrollador de software. Los usuarios aportan con recursos para aprender sobre distintos temas, pueden evaluarlos y dejar sus comentarios para guiar mejor tu aprendizaje, ayudándote a elegir los mejores recursos."
           />
 
           <SolutionCard
@@ -29,7 +29,7 @@ const solution = () => {
             classCard={styles.column_info_card_left}
             altImg="Logo"
             title="Contenido variado y de calidad garantizada"
-            description="Te entrega contenido variado y de calidad garantizada para poder aprender paso a paso. Nuestros recursos están organizados en Learnings Units para corresponder a un tema específico. A su vez, cada Learning Unit pertenece a un ciclo que definirá el paso a paso de tu formación."
+            description="Te entregamos contenido variado y de calidad garantizada para poder aprender paso a paso. Nuestros recursos están organizados en unidades que corresponden a un tema específico. A su vez, cada unidad pertenece a un ciclo de aprendizaje que marcará el paso a paso de tu formación."
           />
 
           <SolutionCard
@@ -37,7 +37,7 @@ const solution = () => {
             classCard={styles.column_info_card_right}
             altImg="Logo"
             title="Gratuita"
-            description="Es gratuita y está pensada para todas aquellas personas que tienen conocimientos básicos de programación, pero aún necesitan un impulso más para subir de nivel. Ser.dev es la profesión más demandada del mundo y te abrirá un sinnúmero de oportunidades de crecimiento personal y profesional."
+            description="Nuestra plataforma es gratuita y está pensada para todas aquellas personas que tienen conocimientos básicos de programación, pero aún necesitan un impulso más para subir de nivel. Ser.dev es la profesión más demandada del mundo y te abrirá un sinnúmero de oportunidades de crecimiento personal y profesional."
           />
         </div>
       </div>
