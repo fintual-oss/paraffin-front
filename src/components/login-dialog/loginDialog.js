@@ -9,7 +9,12 @@ export const LoginDialog = () => {
   const router = useRouter();
   const footer = () => {
     return (
-      <Button label="Ingresar" onClick={() => router.push('/users/sign_in')} />
+      <Button
+        label="Ingresar"
+        onClick={() =>
+          router.push('/users/sign_in?redirect_to=' + router.asPath)
+        }
+      />
     );
   };
 
