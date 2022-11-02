@@ -2,6 +2,7 @@ import { Panel } from 'primereact/panel';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
+import CyclesSection from '../cycles-list/CyclesSection';
 import CurriculumHeader from './CurriculumHeader';
 
 const CurriculumInfoSection = ({ curriculumId }) => {
@@ -26,6 +27,7 @@ const CurriculumInfoSection = ({ curriculumId }) => {
           Aquí pondría la descripción del curriculum, pero la API no la entrega.
           Lo dejamos harcodeado o ké?
         </p>
+        <CyclesSection curriculumId={curriculumId} />
       </Panel>
     </>
   );
