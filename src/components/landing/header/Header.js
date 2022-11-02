@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import { Button } from 'primereact/button';
+import Link from 'next/link';
+import useCurrentUser from '@hooks/useCurrentUser';
 import Image from 'next/image';
 import Flip from 'react-reveal/Flip';
 import logo from '@utils/images/fin-logo.svg';
 
 const Header = () => {
+  const currentUser = useCurrentUser();
   return (
     <section id={styles.header}>
       <ul className={styles.circles}>
@@ -24,7 +27,9 @@ const Header = () => {
           </p>
         </Flip>
         <Flip bottom>
-          <Button label="Quiero registrarme en Ser.dev" />
+          <Link href="/users/sign_in">
+            <Button label="Quiero registrarme en Ser.dev" disabled={currentUser} />
+          </Link>
         </Flip>
       </div>
       <div className={`col-12 md:col-6 xl:col-3 ${styles.header__image}`}>
