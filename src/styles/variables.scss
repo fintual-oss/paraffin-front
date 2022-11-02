@@ -1,3 +1,4 @@
+@import "@styles/fonts.scss";
 $black: black;
 $dark-grey: #333333;
 $white: white;
@@ -21,3 +22,37 @@ $text-md: 1.6rem;
 $text-lg: 2rem;
 $text-xl: 2.4rem;
 $text-xxl: 4rem;
+
+
+// variable color sass
+$color_principal: rgba(99, 102, 241, 1);
+
+.textCenter {
+  text-align: center;
+}
+
+.full_width {
+  width: 100%;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.fin_font {
+  font-family: fin;
+}
+
+.titleSections {
+  width: 100%;
+  h2 {
+    color: darken($color_principal, 40%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 2rem 0 4rem;
+    text-shadow: 2px 2px 2px #eee;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+}
