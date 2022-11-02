@@ -1,5 +1,6 @@
 import React from 'react';
 import IMAGES from '@components/images/images';
+import Fade from 'react-reveal/Fade';
 import styles from './Problem.module.scss';
 import ProblemCard from './ProblemCard';
 
@@ -7,7 +8,9 @@ const Problem = () => {
   return (
     <section id={`${styles.problem}`} className={`grid`}>
       <div className={`${styles.titleSections}`}>
-        <h2 class={`${styles.textCenter}`}>¿Por dónde comienzo mi estudio para ser.dev?</h2>
+        <Fade bottom>
+          <h2 class={`${styles.textCenter}`}>¿Por dónde comienzo mi estudio para ser.dev?</h2>
+        </Fade>
       </div>
       <ProblemCard
         imgCard={IMAGES.humaaans_3}
@@ -21,7 +24,6 @@ const Problem = () => {
         title="Parálisis por análisis"
         description="¿Alguna vez te ha pasado que pasas horas decidiendo qué película o serie ver, y al final no ves ninguna? En un mundo donde tenemos tanta información al alcance de nuestras manos, llegar a ser difícil decidir con cuál quedarnos. Este exceso de información puede paralizarnos y hasta hacer que dejemos nuestro estudio de lado."
       />
-
       <ProblemCard
         imgCard={IMAGES.humaaans_2}
         altImg="¿Con qué continúo?"

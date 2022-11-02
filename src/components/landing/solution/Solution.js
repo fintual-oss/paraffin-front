@@ -1,5 +1,6 @@
 import React from 'react';
 import SolutionCard from './SolutionCard';
+import Fade from 'react-reveal/Fade';
 import IMAGES from '@components/images/images';
 import styles from './Solution.module.scss';
 
@@ -7,9 +8,11 @@ const solution = () => {
   return (
     <section className={`${styles.solution} grid`}>
       <div className={`${styles.titleSections}`}>
-        <h2 className={`${styles.textCenter} ${styles.fin_font}`}>
-          ser.dev
-        </h2>
+        <Fade>
+          <h2 className={`${styles.textCenter} ${styles.fin_font}`}>
+            ser.dev
+          </h2>
+        </Fade>
       </div>
       <div className={`${styles.c} grid`}>
         <div className={`col-12 ${styles.solution__card_wrap}`}>

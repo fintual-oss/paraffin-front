@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Header.module.scss';
 import { Button } from 'primereact/button';
 import Image from 'next/image';
+import Flip from 'react-reveal/Flip';
 import logo from '@utils/images/fin-logo.svg';
 
 const Header = () => {
@@ -13,11 +14,17 @@ const Header = () => {
         ))}
       </ul>
       <div className={`col-12 md:col-6 ${styles.header__content}`}>
-        <h1 className={styles.header__title}>Tu ruta para ser.dev</h1>
-        <p className={styles.header__description}>
-        ¿Sabes programar pero te falta algo más para Ser.dev? ¡Con nuestra guía y el apoyo de la comunidad lo lograrás!
-        </p>
-        <Button label="Quiero registrarme en Ser.dev" />
+        <Flip bottom>
+          <h1 className={styles.header__title}>Tu ruta para ser.dev</h1>
+        </Flip>
+        <Flip bottom>
+          <p className={styles.header__description}>
+          ¿Sabes programar pero te falta algo más para Ser.dev? ¡Con nuestra guía y el apoyo de la comunidad lo lograrás!
+          </p>
+        </Flip>
+        <Flip bottom>
+          <Button label="Quiero registrarme en Ser.dev" />
+        </Flip>
       </div>
       <div className={`col-12 md:col-6 xl:col-3 ${styles.header__image}`}>
         <Image src={logo} alt="Logo" id={styles.header__logo} />
