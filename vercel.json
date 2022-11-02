@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://paraffin-back.herokuapp.com/api/:path*"
+    },
+    {
+      "source": "/users/sign_in",
+      "destination": "https://paraffin-back.herokuapp.com/users/sign_in"
+    },
+    {
+      "source": "/users/sign_out",
+      "destination": "https://paraffin-back.herokuapp.com/users/sign_out"
+    },
+    {
+      "source": "/users/sign_up",
+      "destination": "https://paraffin-back.herokuapp.com/users/sign_up"
+    },
+    {
+      "source": "/users",
+      "destination": "https://paraffin-back.herokuapp.com/users"
+    }
+  ]
+}
