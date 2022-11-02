@@ -1,0 +1,111 @@
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 96vw;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  align-content: center;
+  width: 96vw;
+  padding: 1vw;
+}
+
+.middleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 4vw;
+  align-content: center;
+  width: 96vw;
+  padding: 1vw;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  width: 96vw;
+  padding: 1vw;
+}
+
+.breadCrumbs {
+  float: left;
+}
+
+.cycleSectionCard {
+  flex: 1;
+}
+
+.challengeCard {
+  color: #ffffff;
+  background-color: #eda039;
+}
+
+.scrollPanel .p-scrollpanel-wrapper {
+  border-right: 9px solid #f4f4f4;
+}
+
+.scrollPanel .p-scrollpanel-bar {
+  background-color: #1976d2;
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+
+.scrollPanel .p-scrollpanel-bar:hover {
+  background-color: #135ba1;
+}
+
+.scrollPanel {
+  height: 30vh;
+}
+
+.accordionHeader {
+  & > [class~='p-accordion-tab'] {
+    & > [class~='p-accordion-header'] {
+      & > [class~='p-accordion-header-link'] {
+        background-color: #eac545;
+        color: #000000;
+        &:hover {
+          background-color: #eac545 !important;
+          color: #ffffff !important;
+        }
+      }
+    }
+
+    & > [class~='p-toggleable-content'] {
+      & > [class~='p-accordion-content'] {
+        background-color: #eac545;
+      }
+    }
+  }
+
+  & > [class~='p-accordion-tab-active'] {
+    & > [class~='p-highlight'] {
+      & > [class~='p-accordion-header-link'] {
+        background-color: #eac545 !important;
+      }
+    }
+  }
+}
+
+.cycleCompletitionButton {
+  background-color: #f3c067;
+  color: #000000;
+  &:hover {
+    background-color: #eac545 !important;
+  }
+}
+
+.learningUnitsCard {
+  flex: 1;
+  background-color: #000000;
+  color: #ffffff;
+}
