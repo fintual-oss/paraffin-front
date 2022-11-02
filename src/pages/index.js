@@ -6,6 +6,7 @@ import Problem from '@components/landing/problem/Problem';
 import Solution from '@components/landing/solution/Solution';
 import DetailSolution from '@components/landing/detail-solution/DetailSolution';
 import Faqs from '@components/landing/faqs/Faqs';
+import Footer from '@components/landing/footer/Footer';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Solution />
         <DetailSolution />
         <Faqs />
+        <Footer />
       </div>
     </>
   );
