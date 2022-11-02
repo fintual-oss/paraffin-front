@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { endpoints } from '@utils/endpoints';
 import { Button } from 'primereact/button';
 import { Panel } from 'primereact/panel';
+import { useRouter } from 'next/router';
 import AddNewResourceModal from '@components/resources-section/add-new-resource-modal/AddNewResourceModal';
 import LearningUnitInformation from '@components/resources-section/learning-unit-information/LearningUnitInformation';
 import ResourcesScroller from '../resources-scroller/ResourcesScroller';
@@ -9,10 +10,14 @@ import ResourceSection from '@components/resource-section/resource-section/Resou
 import styles from './ResourcesSection.module.scss';
 
 const ResourcesSection = ({ learningUnit, resources, isError }) => {
+  const router = useRouter();
   const learningUnitId = learningUnit.id;
   const [displayBasic, setDisplayBasic] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [activeResource, setActiveResource] = useState(null);
+  const mutateResources = () => {
+    router.replace(router.asPath);
+  };
 
   if (isError) {
     return 'error';

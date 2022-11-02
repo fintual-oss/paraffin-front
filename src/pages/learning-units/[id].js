@@ -2,11 +2,14 @@ import ResourcesSection from '@components/resources-section/resources-section/Re
 import { endpoints } from '@utils/endpoints';
 
 const LearningUnitPage = (props) => {
+  const { learningUnit, resources, isError } = props;
+  const resourceList = resources;
+
   return (
     <ResourcesSection
-      learningUnit={props.learningUnit}
-      resources={props.resources}
-      isError={props.isError}
+      learningUnit={learningUnit}
+      resources={resourceList}
+      isError={isError}
     />
   );
 };
