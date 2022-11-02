@@ -7,6 +7,7 @@ $blue-light: #62A4FF;
 $blue-lighter: #cde2ff;
 $red-light: #ff2b3d;
 $green-light: #62ffcb;
+$color_principal: rgba(99, 102, 241, 1);
 
 $spacing-xxsm: .8rem;
 $spacing-xsm: 1.2rem;
@@ -23,9 +24,6 @@ $text-lg: 2rem;
 $text-xl: 2.4rem;
 $text-xxl: 4rem;
 
-
-// variable color sass
-$color_principal: rgba(99, 102, 241, 1);
 
 .textCenter {
   text-align: center;
