@@ -9,9 +9,7 @@ const solution = () => {
     <section className={`${styles.solution} grid`}>
       <div className={`${styles.titleSections}`}>
         <Fade>
-          <h2 className={`${styles.textCenter} ${styles.fin_font}`}>
-            ser.dev
-          </h2>
+          <h2 className={`${styles.textCenter} ${styles.fin_font}`}>ser.dev</h2>
         </Fade>
       </div>
       <div className={`${styles.c} grid`}>
