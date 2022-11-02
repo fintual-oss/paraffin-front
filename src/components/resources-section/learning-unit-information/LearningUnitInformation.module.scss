@@ -1,4 +1,4 @@
-@use '/src/styles/globals';
+@use '/src/styles/mixins/breakpoints';
 
 .cardFull{
   width: 50%;
@@ -70,7 +70,7 @@
   }
 }
 
-@media screen and (max-width: globals.$max_screen_width) {
+@media screen and (max-width: breakpoints.$md-em) {
   .cardFull{
     width: 100%;
   }
