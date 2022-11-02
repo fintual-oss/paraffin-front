@@ -1,7 +1,7 @@
 import { Menubar } from 'primereact/menubar';
 import { Button } from 'primereact/button';
 import Link from 'next/link';
-import styles from '@styles/layout.module.scss';
+import styles from '@styles/Layout.module.scss';
 
 import useCurrentUser from '@hooks/useCurrentUser';
 import useSignOut from '@hooks/useSignOut';
