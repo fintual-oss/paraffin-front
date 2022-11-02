@@ -4,3 +4,10 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.button_without_style {
+  background: none !important;
+  &:hover {
+    background: none !important;
+  }
+}

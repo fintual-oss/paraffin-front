@@ -1,45 +1,10 @@
 import { Card } from 'primereact/card';
 import Image from 'next/image';
-import { CompleteLearningUnitToggle } from '../complete-learning-unit-toogle/CompleteLearningUnitToogle';
-import { endpoints } from '@utils/endpoints';
-import useGet from '@hooks/useGet';
-import { Skeleton } from 'primereact/skeleton';
 import Link from 'next/link';
 import styles from './LearningUnitListItem.module.scss';
+import { CompleteLearningUnitToggle } from '@components/learning-units-section/complete-learning-unit-toogle/completeLearningUnitToggle';
 
 function LearningUnitItem({ unit, showSuccess }) {
-  const completedLearningUnitEndpoint = endpoints(
-    'isLearningUnitCompleted',
-    unit.id
-  );
-
-  const {
-    data: isCompleted,
-    isLoading,
-    isError,
-    mutate,
-  } = useGet(completedLearningUnitEndpoint);
-
-  const changeHandler = (clicked) => {
-    const requestOptions = {
-      method: clicked.value ? 'POST' : 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-    };
-    fetch(completedLearningUnitEndpoint, requestOptions).then((response) => {
-      if (response.ok) {
-        mutate();
-        showSuccess();
-      }
-    });
-  };
-
-  if (isLoading) {
-    return <Skeleton shape="rectangle" width="50%" />;
-  }
-  if (isError) {
-    return 'error';
-  }
-
   return (
     <Card className={styles.cardFull}>
       <div className={styles.productListItem}>
@@ -64,10 +29,7 @@ function LearningUnitItem({ unit, showSuccess }) {
               <Link href={`/learning-units/${unit.id}`}>{unit.name}</Link>
             </div>
           </div>
-          <CompleteLearningUnitToggle
-            completed={isCompleted.completed}
-            onChangeHandler={changeHandler}
-          />
+          <CompleteLearningUnitToggle unit={unit} showSuccess={showSuccess} />
         </div>
       </div>
     </Card>
