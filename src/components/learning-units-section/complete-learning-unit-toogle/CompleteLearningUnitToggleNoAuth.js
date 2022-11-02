@@ -17,6 +17,8 @@ export const CompleteLearningUnitToggleNoAuth = () => {
           onIcon="pi pi-check"
           offIcon="pi pi-times"
           className="p-disabled"
+          tooltip="Necesita ingresar para completar"
+          tooltipOptions={{ showOnDisabled: true }}
         />
       </div>
     </Button>
