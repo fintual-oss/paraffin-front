@@ -28,7 +28,10 @@ const Header = () => {
         </Flip>
         <Flip bottom>
           <Link href="/users/sign_in">
-            <Button label="Quiero registrarme en Ser.dev" disabled={currentUser} />
+            <Button
+              label="Quiero registrarme en Ser.dev"
+              disabled={currentUser}
+            />
           </Link>
         </Flip>
       </div>
