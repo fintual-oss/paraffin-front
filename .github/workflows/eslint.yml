@@ -32,8 +32,8 @@ jobs:
 
       - name: Install ESLint
         run: |
-          yarn eslint@8.23.1 
-          yarn @microsoft/eslint-formatter-sarif@2.1.7
+          yarn install eslint@8.23.1 
+          yarn install @microsoft/eslint-formatter-sarif@2.1.7
 
       - name: Run ESLint
         run: npx eslint .
