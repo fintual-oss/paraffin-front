@@ -5,6 +5,7 @@ import { Skeleton } from 'primereact/skeleton';
 import { Steps } from 'primereact/steps';
 import { Button } from 'primereact/button';
 import Link from 'next/link';
+import style from './CyclesSection.module.scss';
 
 const CyclesSection = ({ curriculumId }) => {
   const {
@@ -45,17 +46,20 @@ const CyclesSection = ({ curriculumId }) => {
 
   return (
     <>
-      <h2>Ciclos de aprendizaje</h2>
+      <h1>Ciclos de desarrollo</h1>
       <Steps
         model={items}
         activeIndex={activeStepIndex}
         onSelect={(e) => setActiveStepIndex(e.index)}
         readOnly={false}
+        className={`${style.stepper}`}
       />
-      <div>
-        <i>Objetivos de aprendizaje</i>
-        <p>{goals}</p>
-        <Link href={`cycles/${activeGoalId}`}>
+      <div className={`${style.flex_container}`}>
+        <div className={`${style.flex_item}`}>
+          <h2>Objetivos de aprendizaje</h2>
+          <p>{goals}</p>
+        </div>
+        <Link href={`/cycles/${activeGoalId}`} className={`${style.flex_item}`}>
           <Button label="Ver ciclo" />
         </Link>
       </div>
