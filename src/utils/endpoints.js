@@ -20,6 +20,7 @@ export const endpoints = (operationId, param) => {
     resourceEvaluations:
       apiBaseUrl + `/resources/${param}/resource_evaluations`,
     resourceAverage: apiBaseUrl + `/resources/${param}/average_evaluation`,
+    isResourceCompleted: apiBaseUrl + `/resources/${param}/completed`,
     currentUser: apiBaseUrl + `/current_user`,
     signOut: baseUrl + `/users/sign_out`,
   };
