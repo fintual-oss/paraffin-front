@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <section id={styles.header}>
       <ul className={styles.circles}>
-        {[...Array(10)].map((i) => (
+        {[...Array(10).keys()].map((i) => (
           <li key={i} />
         ))}
       </ul>
@@ -31,6 +31,7 @@ const Header = () => {
             <Button
               label="Quiero registrarme en Ser.dev"
               disabled={currentUser}
+              className={`${currentUser ? 'hidden' : ''}`}
             />
           </Link>
         </Flip>

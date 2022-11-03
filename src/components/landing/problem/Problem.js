@@ -9,7 +9,7 @@ const Problem = () => {
     <section id={`${styles.problem}`} className={`grid`}>
       <div className={`${styles.titleSections}`}>
         <Fade bottom>
-          <h2 class={`${styles.textCenter}`}>
+          <h2 className={`${styles.textCenter}`}>
             ¿Por dónde comienzo mi estudio para ser.dev?
           </h2>
         </Fade>

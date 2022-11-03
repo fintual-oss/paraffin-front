@@ -9,7 +9,7 @@ const ProblemCard = ({ imgCard, altImg, title, description }) => {
       <Flip top>
         <Image src={imgCard} alt={altImg} />
       </Flip>
-      <div class={styles.problem__card_wrap_info}>
+      <div className={styles.problem__card_wrap_info}>
         <Flip top>
           <h3 className={styles.problem__card__title}>{title}</h3>
         </Flip>

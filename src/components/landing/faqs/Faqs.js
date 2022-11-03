@@ -6,7 +6,7 @@ const Faqs = () => {
   return (
     <section className={`${styles.faqs} grid`}>
       <div className={`${styles.titleSections}`}>
-        <h2 class={`${styles.textCenter} ${styles.fin_font}`}>
+        <h2 className={`${styles.textCenter} ${styles.fin_font}`}>
           Preguntas frecuentes
         </h2>
       </div>
