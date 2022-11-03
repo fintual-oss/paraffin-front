@@ -1,30 +1,42 @@
-@import "fonts";
-// variable color sass
-$principal_color: rgba(99, 102, 241, 1);
+@import "../../../styles/variables.scss";
 
-.landing {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  display: block;
+#header {
+  align-items: center;
+  display: inline-flex;
+  font-weight: 300;
+  justify-content: space-around;
+  width: 100vw;
+  padding: 6rem 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
 }
 
-
-// Description of problem
-.problem__card__title {
-  text-shadow: 1px 2px 2px #eee;
-  font-weight: bold;
-  color: darken($principal_color, 40%);
+.header__description {
+  font-size: 1.5rem;
+  padding-right: 1rem;
 }
 
-
-// Description of solution
-.column_info_card {
+.header__content {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
+.header__image {
+  img {
+    filter: invert(100%) opacity(0.7);
+    object-fit: fill;
+  }
+}
 
-// Header animation
 .circles {
   position: absolute;
   top: 0;
@@ -120,6 +132,10 @@ $principal_color: rgba(99, 102, 241, 1);
       animation-duration: 11s;
     }
   }
+}
+
+.hidden {
+  display: none;
 }
 
 // Animations

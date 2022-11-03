@@ -1,0 +1,73 @@
+@import "../../../styles/variables.scss";
+
+.solution {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 2rem;
+  z-index: 1;
+  background-color: white;
+}
+
+@mixin solution__card {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 10rem;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    filter: drop-shadow(-1px 1px 1px rgba(50, 50, 0, 0.5));
+    width: 20rem !important;
+    height: 15rem !important;
+  }
+}
+
+.column_info_card_right {
+  @include solution__card;
+}
+
+.column_info_card_left {
+  @include solution__card;
+  flex-direction: row-reverse;
+
+  h3,
+  p {
+    text-align: right;
+  }
+}
+
+.solution__card_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleSections {
+  position: relative;
+  background-color: white;
+
+  h2 {
+    margin-top: -6rem;
+    font-size: 11rem;
+    letter-spacing: 6rem;
+    color: black;
+    text-shadow: 1.5rem 1rem 0.4rem rgba(61, 55, 55, 0.4),
+      1px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+      1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+}
+
+.solution__cards {
+  display: flex;
+}
+
+.solution__card__title {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.solution__card__description {
+  width: 100%;
+}

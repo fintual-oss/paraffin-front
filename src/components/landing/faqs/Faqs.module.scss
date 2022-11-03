@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+.faqs {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  align-items: center;
+}
+
+.faqs__accordion_wrap {
+  display: flex;
+  gap: 2rem;
+  padding: 0 10rem;
+  align-items: center;
+}
+
+.faqsAccordion {
+  & > [class~="p-accordion-tab"] {
+    & > [class~="p-accordion-header"] {
+      & > [class~="p-accordion-header-link"] {
+        background-color: rgb(219, 219, 219);
+        color: black;
+      }
+    }
+  }
+}
