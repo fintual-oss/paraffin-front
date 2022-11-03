@@ -35,13 +35,36 @@ const ResourceSection = ({
     mutate: updateEvaluations,
   } = useGet(endpoints('resourceEvaluations', resourceId));
 
+  const {
+    data: isCompleted,
+    isLoading: isLoadingCompleted,
+    isError: isErrorCompleted,
+    mutate: updateCompleted,
+  } = useGet(endpoints('isResourceCompleted', resourceId));
+
+  const checkboxChangeHandler = (clicked) => {
+    const requestOptions = {
+      method: clicked.value ? 'POST' : 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    };
+    fetch(endpoints('isResourceCompleted', resourceId), requestOptions).then(
+      (response) => {
+        if (response.ok) {
+          updateCompleted();
+          showSuccess();
+        }
+      }
+    );
+  };
+
   const toast = useRef(null);
 
   if (
     isLoadingResource ||
     isLoadingAverage ||
     isLoadingEvaluations ||
-    isLoadingEvaluation
+    isLoadingEvaluation ||
+    isLoadingCompleted
   )
     return 'loading';
 
@@ -49,7 +72,8 @@ const ResourceSection = ({
     isErrorResource ||
     isErrorAverage ||
     isErrorEvaluations ||
-    isErrorEvaluation
+    isErrorEvaluation ||
+    isErrorCompleted
   )
     return 'error';
 
@@ -85,6 +109,7 @@ const ResourceSection = ({
     name: resourceData.name,
     url: resourceData.url,
     average_evaluation: average_evaluation.average_evaluation,
+    completed: isCompleted.completed,
   };
 
   const formOptions = {
@@ -101,6 +126,7 @@ const ResourceSection = ({
       activeResource={resource}
       formOptions={formOptions}
       evaluations={evaluations}
+      checkboxChangeHandler={checkboxChangeHandler}
     />
   );
 };
