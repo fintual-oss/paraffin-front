@@ -4,13 +4,21 @@ import styles from './ResourcesListItem.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import profilePic from '@utils/images/resource.jpg';
+import { Tag } from 'primereact/tag';
 
 const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
+  const displayTags = () => {
+    if (resource.resource_labels.length > 0) return '';
+    console.log(resource);
+    return <Tag icon={'pi ' + resource.resource_labels.icon}></Tag>;
+  };
+
   return (
     <div>
       <div className={styles.resourceGridItem}>
         <div className={styles.resourceListItem}>
           <Image className={styles.img} src={profilePic} alt={resource.name} />
+          <div>{displayTags()}</div>
           <div>
             <div className={styles.resourceName}>
               <Link href={`/resources/${resource.id}`}>{resource.name}</Link>
