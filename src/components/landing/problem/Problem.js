@@ -1,6 +1,6 @@
 import React from 'react';
 import IMAGES from '@components/images/images';
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 import styles from './Problem.module.scss';
 import ProblemCard from './ProblemCard';
 

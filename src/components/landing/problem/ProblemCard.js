@@ -1,21 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
-import Flip from 'react-reveal/Flip';
+import { Fade } from 'react-awesome-reveal';
 import styles from './Problem.module.scss';
 
 const ProblemCard = ({ imgCard, altImg, title, description }) => {
   return (
     <div className={`col-12 md:col-4 ${styles.problem__card}`}>
-      <Flip top>
+      <Fade top>
         <Image src={imgCard} alt={altImg} />
-      </Flip>
+      </Fade>
       <div className={styles.problem__card_wrap_info}>
-        <Flip top>
+        <Fade top>
           <h3 className={styles.problem__card__title}>{title}</h3>
-        </Flip>
-        <Flip top>
+        </Fade>
+        <Fade top>
           <p className={styles.problem__card__description}>{description}</p>
-        </Flip>
+        </Fade>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { Button } from 'primereact/button';
 import Link from 'next/link';
 import useCurrentUser from '@hooks/useCurrentUser';
 import Image from 'next/image';
-import Flip from 'react-reveal/Flip';
+import { Fade } from 'react-awesome-reveal';
 import logo from '@utils/images/fin-logo.svg';
 
 const Header = () => {
@@ -17,16 +17,16 @@ const Header = () => {
         ))}
       </ul>
       <div className={`col-12 md:col-6 ${styles.header__content}`}>
-        <Flip bottom>
+        <Fade bottom>
           <h1 className={styles.header__title}>Tu ruta para ser.dev</h1>
-        </Flip>
-        <Flip bottom>
+        </Fade>
+        <Fade bottom>
           <p className={styles.header__description}>
             ¿Sabes programar, pero te falta algo más para Ser.dev? ¡Con nuestra
             guía y el apoyo de la comunidad lo lograrás!
           </p>
-        </Flip>
-        <Flip bottom>
+        </Fade>
+        <Fade bottom>
           <Link href="/users/sign_in">
             <Button
               label="Quiero registrarme en Ser.dev"
@@ -34,7 +34,7 @@ const Header = () => {
               className={`${currentUser ? 'hidden' : ''}`}
             />
           </Link>
-        </Flip>
+        </Fade>
       </div>
       <div className={`col-12 md:col-6 xl:col-3 ${styles.header__image}`}>
         <Image src={logo} alt="Logo" id={styles.header__logo} />

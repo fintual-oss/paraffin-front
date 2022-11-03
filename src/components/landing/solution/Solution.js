@@ -1,6 +1,6 @@
 import React from 'react';
 import SolutionCard from './SolutionCard';
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 import IMAGES from '@components/images/images';
 import styles from './Solution.module.scss';
 
