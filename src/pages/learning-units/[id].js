@@ -1,5 +1,6 @@
 import ResourcesSection from '@components/resources-section/resources-section/ResourcesSection';
 import { endpoints } from '@utils/endpoints';
+import axios from 'axios';
 
 const LearningUnitPage = (props) => {
   const { learningUnit, resources, isError } = props;
@@ -19,13 +20,13 @@ export default LearningUnitPage;
 export async function getServerSideProps(context) {
   const learningUnitId = context.query.id;
 
-  const resUnit = await fetch(endpoints('learningUnit', learningUnitId));
-  const learningUnit = await resUnit.json();
+  const resUnit = await axios.get(endpoints('learningUnit', learningUnitId));
+  const learningUnit = await resUnit.data;
 
-  const resResource = await fetch(
+  const resResource = await axios.get(
     endpoints('learningUnitResources', learningUnitId)
   );
-  const resources = await resResource.json();
+  const resources = await resResource.data;
   const isErrorUnit = learningUnit ? false : true;
   const isErrorResources = resources ? false : true;
   const isError = isErrorUnit || isErrorResources;
