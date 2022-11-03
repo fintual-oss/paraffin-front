@@ -26,8 +26,8 @@ export async function getServerSideProps(context) {
     endpoints('learningUnitResources', learningUnitId)
   );
   const resources = await resResource.json();
-  const isErrorUnit = learningUnit ? null : true;
-  const isErrorResources = resources ? null : true;
+  const isErrorUnit = learningUnit ? false : true;
+  const isErrorResources = resources ? false : true;
   const isError = isErrorUnit || isErrorResources;
 
   return {
