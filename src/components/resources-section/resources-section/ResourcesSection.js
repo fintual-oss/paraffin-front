@@ -10,17 +10,14 @@ import LearningUnitInformation from '@components/resources-section/learning-unit
 import ResourcesScroller from '../resources-scroller/ResourcesScroller';
 import ResourceSection from '@components/resource-section/resource-section/ResourceSection';
 import styles from './ResourcesSection.module.scss';
-import useLoginDialog from '@hooks/useLoginDialog';
-import useCurrentUser from '@hooks/useCurrentUser';
 import { LoginDialog } from '@components/login-dialog/loginDialog';
+import AddNewResourceButton from '../add-new-resource-button/addNewResourceButton';
 
 const ResourcesSection = ({ learningUnitId }) => {
   const router = useRouter();
   const [displayBasic, setDisplayBasic] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [activeResource, setActiveResource] = useState(null);
-  const currentUser = useCurrentUser();
-  const loginDialog = useLoginDialog();
 
   const {
     data: learningUnit,
@@ -72,28 +69,6 @@ const ResourcesSection = ({ learningUnitId }) => {
     setSidebarVisible(true);
   };
 
-  const addNewResourceButton = () => {
-    if (currentUser) {
-      return <Button icon="pi pi-plus" onClick={() => setDisplayBasic(true)} />;
-    }
-
-    return (
-      <div
-        onClick={() => loginDialog.setDisplayLoginDialog(true)}
-        onKeyPress={null}
-        role="button"
-        tabIndex="0"
-      >
-        <Button
-          icon="pi pi-plus"
-          disabled
-          tooltip="Ingresa para agregar un recurso"
-          tooltipOptions={{ showOnDisabled: true, position: 'left' }}
-        />
-      </div>
-    );
-  };
-
   const header = () => {
     return (
       <div className={styles.resourceHeader}>
@@ -104,7 +79,7 @@ const ResourcesSection = ({ learningUnitId }) => {
             icon="pi pi-arrow-left"
             onClick={() => router.back()}
           />
-          {addNewResourceButton()}
+          <AddNewResourceButton setDisplayBasic={setDisplayBasic} />
         </div>
       </div>
     );
