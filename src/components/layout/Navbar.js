@@ -46,7 +46,7 @@ function Navbar() {
       );
     } else {
       return (
-        <Link href="/users/sign_in">
+        <Link href={'/users/sign_in?redirect_to=' + router.asPath}>
           <Button label="Sign In" icon="pi pi-power-on" />
         </Link>
       );
