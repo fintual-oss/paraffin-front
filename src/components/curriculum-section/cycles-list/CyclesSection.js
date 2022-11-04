@@ -43,6 +43,7 @@ const CyclesSection = ({ curriculumId }) => {
   if (activeGoalId == '') {
     setActiveGoalId(ordered_cycles[0].id);
   }
+  const goalsArray = goals?.split('\\n');
 
   return (
     <>
@@ -57,7 +58,11 @@ const CyclesSection = ({ curriculumId }) => {
       <div className={`${style.flex_container}`}>
         <div className={`${style.flex_item}`}>
           <h2>Objetivos de aprendizaje</h2>
-          <p>{goals}</p>
+          <ul>
+            {goalsArray.map((str) => (
+              <li key={`goal-${goalsArray.indexOf(str)}`}>{str}</li>
+            )) ?? null}
+          </ul>
         </div>
         <Link href={`/cycles/${activeGoalId}`} className={`${style.flex_item}`}>
           <Button label="Ver ciclo" />
