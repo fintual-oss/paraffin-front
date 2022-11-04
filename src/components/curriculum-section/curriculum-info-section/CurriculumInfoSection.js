@@ -21,6 +21,7 @@ const CurriculumInfoSection = ({ curriculumId }) => {
   if (isErrorCurriculum) {
     return 'error';
   }
+  const paragraphsArray = curriculum?.description?.split('\\n');
   return (
     <>
       <Panel
@@ -33,8 +34,16 @@ const CurriculumInfoSection = ({ curriculumId }) => {
             alt="drawed person looking curriculum"
           />
           <p className={`${style.flex_item}`}>
-            Aquí pondría la descripción del curriculum, pero la API no la
-            entrega. Lo dejamos harcodeado o ké?
+            {paragraphsArray?.map((paragraph) => (
+              <p key={`paragraph-${paragraphsArray.indexOf(paragraph)}`}>
+                {paragraph}
+              </p>
+            )) ?? null}
+            {'\n'}
+            <i>
+              Explora los ciclos de desarrollo y sus objetivos de aprendizaje
+              más abajo.
+            </i>
           </p>
         </div>
         <CyclesSection curriculumId={curriculumId} />
