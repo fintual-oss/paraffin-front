@@ -15,12 +15,9 @@ const DisplayLabel = ({ label }) => (
 );
 
 const ResourceLabels = ({ resourceLabels }) => {
-  console.log(resourceLabels);
-  const hasLabels = resourceLabels.length === 0;
+  const hasNoLabels = resourceLabels.length === 0;
 
-  if (hasLabels) {
-    return;
-  }
+  if (hasNoLabels) return;
 
   return (
     <div className={styles.resourceLabels}>
