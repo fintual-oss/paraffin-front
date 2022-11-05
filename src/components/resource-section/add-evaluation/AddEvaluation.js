@@ -7,6 +7,7 @@ import { Toast } from 'primereact/toast';
 import styles from './AddEvaluation.module.scss';
 import useCurrentUser from '@hooks/useCurrentUser';
 import useLoginDialog from '@hooks/useLoginDialog';
+import { Tooltip } from 'primereact/tooltip';
 
 const AddEvaluation = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);
@@ -35,10 +36,18 @@ const AddEvaluation = ({ formOptions }) => {
     }
   };
 
-  const tooltipEvaluate = 'Ingresa para poder evaluar';
-
   return (
-    <div onClick={handleOnClick} onKeyPress={null} role="button" tabIndex="0">
+    <div
+      className="cardEvaluation"
+      onClick={handleOnClick}
+      onKeyPress={null}
+      role="button"
+      tabIndex="0"
+      disabled={currentUser}
+      data-pr-tooltip="Ingresa para poder evaluar un recurso"
+      data-pr-position="left"
+    >
+      <Tooltip target=".cardEvaluation" mouseTrack mouseTrackLeft={10} />
       <Card title={title}>
         <Rating
           value={evaluation}
@@ -47,8 +56,6 @@ const AddEvaluation = ({ formOptions }) => {
           readOnly={formOptions.evaluated}
           className={styles.inputRating}
           disabled={!currentUser}
-          tooltip={!currentUser && tooltipEvaluate}
-          tooltipOptions={{ showOnDisabled: true, position: 'left' }}
         />
         <InputTextarea
           rows={4}
@@ -57,8 +64,6 @@ const AddEvaluation = ({ formOptions }) => {
           onChange={(e) => setComment(e.target.value)}
           disabled={formOptions.evaluated || !currentUser}
           autoResize
-          tooltip={!currentUser && tooltipEvaluate}
-          tooltipOptions={{ showOnDisabled: true, position: 'left' }}
         />
         <div className="dialog-demo">
           <Button
@@ -69,8 +74,6 @@ const AddEvaluation = ({ formOptions }) => {
             onClick={() => handleErase()}
             visible={!formOptions.evaluated}
             disabled={!currentUser}
-            tooltip={!currentUser && tooltipEvaluate}
-            tooltipOptions={{ showOnDisabled: true, position: 'left' }}
           />
           <Button
             type="submit"
@@ -79,8 +82,6 @@ const AddEvaluation = ({ formOptions }) => {
             onClick={handleSubmit}
             visible={!formOptions.evaluated}
             disabled={evaluation < 1 || !currentUser}
-            tooltip={!currentUser && tooltipEvaluate}
-            tooltipOptions={{ showOnDisabled: true, position: 'left' }}
           />
         </div>
         <Toast ref={formOptions.toast} position="bottom-center" />
