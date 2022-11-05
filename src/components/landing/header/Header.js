@@ -26,15 +26,25 @@ const Header = () => {
             guía y el apoyo de la comunidad lo lograrás!
           </p>
         </Fade>
-        <Fade bottom>
-          <Link href="/users/sign_in">
-            <Button
-              label="Quiero registrarme en Ser.dev"
-              disabled={currentUser}
-              className={`${currentUser ? 'hidden' : ''}`}
-            />
-          </Link>
-        </Fade>
+        <div className="flex gap-4">
+          <Fade bottom>
+            <Link href="/curriculums/1">
+              <Button
+                label={`${currentUser ? 'Quiero seguir estudiando' : 'Quiero entrar sin registrarme'}`}
+                className={`p-button p-component p-button-text`}
+              />
+            </Link>
+          </Fade>
+          <Fade bottom>
+            <Link href="/users/sign_in">
+              <Button
+                label="Quiero registrarme en Ser.dev"
+                disabled={currentUser}
+                className={`${currentUser ? 'hidden' : ''}`}
+              />
+            </Link>
+          </Fade>
+        </div>
       </div>
       <div className={`col-12 md:col-6 xl:col-3 ${styles.header__image}`}>
         <Image src={logo} alt="Logo" id={styles.header__logo} />
