@@ -8,6 +8,8 @@ import LearningUnitInformation from '@components/resources-section/learning-unit
 import ResourcesScroller from '../resources-scroller/ResourcesScroller';
 import ResourceSection from '@components/resource-section/resource-section/ResourceSection';
 import styles from './ResourcesSection.module.scss';
+import { LoginDialog } from '@components/login-dialog/loginDialog';
+import AddNewResourceButton from '../add-new-resource-button/addNewResourceButton';
 
 const ResourcesSection = ({ learningUnit, resources, isError }) => {
   const router = useRouter();
@@ -63,7 +65,7 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
             icon="pi pi-arrow-left"
             onClick={() => router.back()}
           />
-          <Button icon="pi pi-plus" onClick={() => setDisplayBasic(true)} />
+          <AddNewResourceButton setDisplayBasic={setDisplayBasic} />
         </div>
       </div>
     );
@@ -73,6 +75,7 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
     <div className={styles.container}>
       <Panel header={header}>
         <LearningUnitInformation learningUnit={learningUnit} />
+        <LoginDialog />
         {displayBasic && (
           <AddNewResourceModal
             handlers={modalHandlers}
