@@ -9,7 +9,7 @@ import EvaluationList from '@components/resource-section/evaluation-list/Evaluat
 const ResourceSidebar = ({
   onHideHandler,
   activeResource,
-  updates,
+  updatesAddEvaluation,
   resourceId,
   evaluations,
   checkboxChangeHandler,
@@ -34,7 +34,10 @@ const ResourceSidebar = ({
         />
         <LinkButton url={activeResource.url} />
       </Card>
-      <AddEvaluation resourceId={resourceId} updates={updates} />
+      <AddEvaluation
+        updatesAddEvaluation={updatesAddEvaluation}
+        resourceId={resourceId}
+      />
       <EvaluationList evaluationsData={evaluations} />
     </Sidebar>
   );

@@ -1,7 +1,6 @@
 import ResourceSidebar from '@components/resources-section/resource-sidebar/ResourceSidebar';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
-import { useRef } from 'react';
 
 const ResourceSection = ({
   onHideHandler,
@@ -49,8 +48,6 @@ const ResourceSection = ({
     );
   };
 
-  const toast = useRef(null);
-
   if (
     isLoadingResource ||
     isLoadingAverage ||
@@ -74,18 +71,17 @@ const ResourceSection = ({
     completed: isCompleted.completed,
   };
 
-  const updates = {
+  const updatesAddEvaluation = {
     onEvaluationSubmitionHandler,
     updateAverage,
     updateEvaluations,
-    toast,
   };
   return (
     <ResourceSidebar
       onHideHandler={() => onHideHandler()}
       resourceId={resourceId}
       activeResource={resource}
-      updates={updates}
+      updatesAddEvaluation={updatesAddEvaluation}
       evaluations={evaluations}
       checkboxChangeHandler={checkboxChangeHandler}
     />
