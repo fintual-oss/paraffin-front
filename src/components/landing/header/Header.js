@@ -35,16 +35,20 @@ const Header = () => {
                     ? 'Quiero seguir estudiando'
                     : 'Quiero entrar sin registrarme'
                 }`}
-                className={`p-button p-component p-button-text`}
+                className={`${
+                  currentUser
+                    ? 'p-button p-component'
+                    : 'p-button p-component p-button-text'
+                }`}
               />
             </Link>
           </Fade>
           <Fade bottom>
-            <Link href="/users/sign_in">
+            <Link href="/users/sign_up">
               <Button
                 label="Quiero registrarme en Ser.dev"
                 disabled={currentUser}
-                className={`${currentUser ? 'hidden' : ''}`}
+                className={`${currentUser ? 'hidden' : 'p-button p-component'}`}
               />
             </Link>
           </Fade>
