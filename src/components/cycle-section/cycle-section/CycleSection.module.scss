@@ -1,0 +1,109 @@
+$black: #000000;
+$white: #f3f3f3;
+$grey: #eff1ff;
+$blue: #37368f;
+
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 96vw;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  align-content: center;
+  width: 96vw;
+  padding: 1vw;
+}
+
+.middleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 4vw;
+  align-content: center;
+  width: 96vw;
+  padding: 1vw;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  width: 96vw;
+  padding: 1vw;
+}
+
+.breadCrumbs {
+  float: left;
+}
+
+.cycleSectionCard {
+  flex: 1;
+}
+
+.challengeCard {
+  color: $black;
+  background-color: $white;
+}
+
+.scrollPanel .p-scrollpanel-wrapper {
+  border-right: 9px solid $white;
+}
+
+.scrollPanel .p-scrollpanel-bar {
+  background-color: #1976d2;
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+
+.scrollPanel .p-scrollpanel-bar:hover {
+  background-color: #135ba1;
+}
+
+.scrollPanel {
+  height: 30vh;
+}
+
+.accordionHeader {
+  & > [class~='p-accordion-tab'] {
+    & > [class~='p-accordion-header'] {
+      & > [class~='p-accordion-header-link'] {
+        background-color: $blue;
+        color: $white;
+        &:hover {
+          background-color: $blue !important;
+          color: $white !important;
+        }
+      }
+    }
+
+    & > [class~='p-toggleable-content'] {
+      & > [class~='p-accordion-content'] {
+        background-color: $grey;
+      }
+    }
+  }
+
+  & > [class~='p-accordion-tab-active'] {
+    & > [class~='p-highlight'] {
+      & > [class~='p-accordion-header-link'] {
+        background-color: $blue !important;
+        color: $white !important;
+      }
+    }
+  }
+}
+
+.learningUnitsCard {
+  flex: 1;
+  background-color: $grey;
+  color: $black;
+}
