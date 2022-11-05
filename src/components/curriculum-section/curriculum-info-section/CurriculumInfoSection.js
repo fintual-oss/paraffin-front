@@ -15,13 +15,36 @@ const CurriculumInfoSection = ({ curriculumId }) => {
     isError: isErrorCurriculum,
   } = useGet(endpoints('curriculum', curriculumId));
 
-  if (isLoadingCurriculum) {
+  const {
+    data: cycles,
+    isLoading: isLoadingCurriculumCycles,
+    isError: isErrorCurriculumCycles,
+  } = useGet(endpoints('cyclesOfCurriculum', curriculumId));
+
+  if (isLoadingCurriculum || isLoadingCurriculumCycles) {
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
   }
-  if (isErrorCurriculum) {
+  if (isErrorCurriculum || isErrorCurriculumCycles) {
     return 'error';
   }
   const paragraphsArray = curriculum?.description?.split('\\n');
+  const CurriculumDescription = () => {
+    return (
+      <div className={`${style.flex_item}`}>
+        {paragraphsArray?.map((paragraph) => (
+          <p key={`paragraph-${paragraphsArray.indexOf(paragraph)}`}>
+            {paragraph}
+          </p>
+        )) ?? null}
+        {'\n'}
+        <i>
+          Explora los ciclos de desarrollo y sus objetivos de aprendizaje más
+          abajo.
+        </i>
+      </div>
+    );
+  };
+
   return (
     <>
       <Panel
@@ -33,20 +56,9 @@ const CurriculumInfoSection = ({ curriculumId }) => {
             src={person_looking_curriculum}
             alt="drawed person looking curriculum"
           />
-          <p className={`${style.flex_item}`}>
-            {paragraphsArray?.map((paragraph) => (
-              <p key={`paragraph-${paragraphsArray.indexOf(paragraph)}`}>
-                {paragraph}
-              </p>
-            )) ?? null}
-            {'\n'}
-            <i>
-              Explora los ciclos de desarrollo y sus objetivos de aprendizaje
-              más abajo.
-            </i>
-          </p>
+          <CurriculumDescription />
         </div>
-        <CyclesSection curriculumId={curriculumId} />
+        <CyclesSection cycles={cycles} />
       </Panel>
     </>
   );
