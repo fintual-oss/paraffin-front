@@ -8,17 +8,70 @@ import styles from './AddEvaluation.module.scss';
 import useCurrentUser from '@hooks/useCurrentUser';
 import useLoginDialog from '@hooks/useLoginDialog';
 import { Tooltip } from 'primereact/tooltip';
+import useGet from '@hooks/useGet';
+import { endpoints } from '@utils/endpoints';
 
-const AddEvaluation = ({ formOptions }) => {
-  const [evaluation, setEvaluation] = useState(formOptions.evaluation);
-  const [comment, setComment] = useState(formOptions.comment);
+const AddEvaluation = ({ resourceId, updates }) => {
+  const {
+    data,
+    isLoading: isLoadingEvaluation,
+    isError: isErrorEvaluation,
+    mutate: updateResourceEvaluation,
+  } = useGet(endpoints('resourceEvaluation', resourceId));
+
+  const [evaluation, setEvaluation] = useState();
+  const [comment, setComment] = useState();
   const currentUser = useCurrentUser();
   const loginDialog = useLoginDialog();
 
   useEffect(() => {
-    setEvaluation(formOptions.evaluation);
-    setComment(formOptions.comment);
-  }, [formOptions]);
+    if (data) {
+      setEvaluation(data.evaluation);
+      setComment(data.comment);
+    }
+  }, [data]);
+
+  if (isLoadingEvaluation) {
+    return 'loading';
+  }
+
+  if (isErrorEvaluation) return 'error';
+
+  const showSuccess = () =>
+    updates.toast.current.show({
+      severity: 'success',
+      summary: 'Tu evaluación quedó registrada',
+      detail: 'Gracias por contribuir!',
+    });
+
+  async function handleSubmitForm(evaluation, comment) {
+    if (evaluation < 1) {
+      return;
+    }
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ evaluation: evaluation, comment: comment }),
+    };
+    const response = await fetch(
+      endpoints('resourceEvaluation', resourceId),
+      requestOptions
+    );
+    await response.json();
+    updates.updateEvaluations();
+    updates.updateAverage();
+    updateResourceEvaluation();
+    updates.onEvaluationSubmitionHandler();
+    showSuccess();
+  }
+
+  const formOptions = {
+    evaluation: data.evaluation,
+    comment: data.comment,
+    evaluated: data.evaluation ? true : false,
+    handleSubmitForm: handleSubmitForm,
+    toast: updates.toast,
+  };
 
   const handleErase = () => {
     setComment('');
