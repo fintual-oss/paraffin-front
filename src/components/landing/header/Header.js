@@ -30,7 +30,11 @@ const Header = () => {
           <Fade bottom>
             <Link href="/curriculums/1">
               <Button
-                label={`${currentUser ? 'Quiero seguir estudiando' : 'Quiero entrar sin registrarme'}`}
+                label={`${
+                  currentUser
+                    ? 'Quiero seguir estudiando'
+                    : 'Quiero entrar sin registrarme'
+                }`}
                 className={`p-button p-component p-button-text`}
               />
             </Link>
