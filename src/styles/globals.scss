@@ -14,7 +14,7 @@ html {
   }
 
   @include respond(laptop) {
-    font-size: 70%;
+    font-size: 90%;
   }
 
   @include respond(desktop) {
