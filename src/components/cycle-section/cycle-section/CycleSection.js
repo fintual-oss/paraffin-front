@@ -3,6 +3,7 @@ import styles from './CycleSection.module.scss';
 import CycleInfoCard from '@components/cycle-section/cycle-section/CycleInfoCard';
 import ChallengeCard from './ChallengeCard';
 import LearningUnitsCard from './LearningUnitsCard';
+import Error from './error';
 import { CycleTopContainer } from './CycleTopContainer';
 import { CycleBreadCrumb } from '@components/common/BreadCrumb';
 import useGet from '@hooks/useGet';
@@ -14,20 +15,21 @@ const CycleSection = ({ cycleId }) => {
   const {
     data: learningUnits,
     isLoading: isLoadingUnits,
-    isError: isErrorUnit,
+    isError: isErrorUnits,
+    mutate: mutateUnits,
   } = useGet(endpoints('cycleLearningUnits', cycleId));
   const {
     data: cycle,
     isLoading: isLoadingCurriculum,
     isError: isErrorCurriculum,
+    mutate: mutateCurriculum,
   } = useGet(endpoints('cycle', cycleId));
 
   if (isLoadingUnits || isLoadingCurriculum) {
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
   }
-  if (isErrorUnit || isErrorCurriculum) {
-    return 'error';
-  }
+  if (isErrorUnits) return <Error reset={mutateUnits} />;
+  if (isErrorCurriculum) return <Error reset={mutateCurriculum} />;
 
   return (
     <>
