@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import LearningUnitListItem from '@components/learning-units-section/learning-unit-list-item/LearningUnitListItem';
+import LearningUnitListItem from '@components/cycle-section/learning-units-section/learning-unit-list-item/LearningUnitListItem';
 import { Toast } from 'primereact/toast';
 import { DataView } from 'primereact/dataview';
 
