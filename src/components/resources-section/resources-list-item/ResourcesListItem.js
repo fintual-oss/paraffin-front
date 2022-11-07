@@ -4,6 +4,7 @@ import styles from './ResourcesListItem.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import profilePic from '@utils/images/resource.jpg';
+import ResourceLabels from '../resource-labels/ResourceLabels';
 
 const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
   return (
@@ -15,6 +16,7 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
             <div className={styles.resourceName}>
               <Link href={`/resources/${resource.id}`}>{resource.name}</Link>
             </div>
+            <ResourceLabels resourceLabels={resource.resource_labels} />
             <div className={styles.resourceValidation}>
               <Average
                 average={parseFloat(resource.average_evaluation).toFixed(1)}
