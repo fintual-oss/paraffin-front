@@ -4,8 +4,14 @@ import CycleSection from '@components/cycle-section/cycle-section/CycleSection';
 import { Skeleton } from 'primereact/skeleton';
 
 const CyclePage = () => {
-  const { query, isReady } = useRouter();
+  const router = useRouter();
+  const { query, isReady } = router;
 
+  const handleLearningUnitRedirection = (learningUnitId, isCompleted) => {
+    router.push(
+      `/learning-units/${learningUnitId}${isCompleted ? '' : '?not-completed'}`
+    );
+  };
   if (!isReady)
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
 
@@ -14,7 +20,12 @@ const CyclePage = () => {
   if (process.env.NODE_ENV === 'development') {
     return (
       <>
-        <CycleSection cycleId={cycleId} />
+        <CycleSection
+          cycleId={cycleId}
+          handleLearningUnitRedirection={(learningUnitId, isCompleted) =>
+            handleLearningUnitRedirection(learningUnitId, isCompleted)
+          }
+        />
       </>
     );
   } else {
