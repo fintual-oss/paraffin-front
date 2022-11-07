@@ -2,7 +2,6 @@ import Head from 'next/head';
 import styles from './CycleSection.module.scss';
 import CycleInfoCard from '@components/cycle-section/cycle-section/CycleInfoCard';
 import ChallengeCard from './ChallengeCard';
-import LearningUnitsCard from './LearningUnitsCard';
 import Error from './error';
 import { CycleTopContainer } from './CycleTopContainer';
 import { CycleBreadCrumb } from '@components/common/BreadCrumb';
@@ -11,20 +10,27 @@ import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import { useRef } from 'react';
 import { Panel } from 'primereact/panel';
+import LearningUnitsSection from './LearningUnitsSection';
 
-const CycleSection = ({ cycleId }) => {
+const CycleSection = ({ cycleId, handleLearningUnitRedirection }) => {
   const {
     data: learningUnits,
-    isLoading: isLoadingUnits,
-    isError: isErrorUnits,
-    mutate: mutateUnits,
+    isLoading: isLoadingLearningUnits,
+    isError: isErrorLearningUnits,
+    mutate: mutateLearningUnits,
   } = useGet(endpoints('cycleLearningUnits', cycleId));
   const {
     data: cycle,
-    isLoading: isLoadingCurriculum,
-    isError: isErrorCurriculum,
-    mutate: mutateCurriculum,
+    isLoading: isLoadingCycle,
+    isError: isErrorCycle,
+    mutate: mutateCycle,
   } = useGet(endpoints('cycle', cycleId));
+  const {
+    data: successions,
+    isLoading: isLoadingSuccessions,
+    isError: isErrorSuccessions,
+    mutate: mutateSuccessions,
+  } = useGet(endpoints('learningUnitSuccessions', cycleId));
 
   const completedCycleEndpoint = endpoints('completeCycle', cycleId);
   const completeCycle = async () => {
@@ -35,7 +41,7 @@ const CycleSection = ({ cycleId }) => {
     const response = await fetch(completedCycleEndpoint, requestOptions);
 
     if (response.ok) {
-      mutateCurriculum();
+      mutateCycle();
       showSuccess();
     } else {
       showError();
@@ -57,11 +63,12 @@ const CycleSection = ({ cycleId }) => {
     });
   };
 
-  if (isLoadingUnits || isLoadingCurriculum) {
+  if (isLoadingLearningUnits || isLoadingCycle || isLoadingSuccessions) {
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
   }
-  if (isErrorUnits) return <Error reset={mutateUnits} />;
-  if (isErrorCurriculum) return <Error reset={mutateCurriculum} />;
+  if (isErrorLearningUnits) return <Error reset={mutateLearningUnits} />;
+  if (isErrorCycle) return <Error reset={mutateCycle} />;
+  if (isErrorSuccessions) return <Error reset={mutateSuccessions} />;
 
   return (
     <>
@@ -82,7 +89,13 @@ const CycleSection = ({ cycleId }) => {
             <ChallengeCard cycle={cycle} />
           </div>
           <div className={styles.bottomContainer}>
-            <LearningUnitsCard cycle={cycle} learningUnits={learningUnits} />
+            <LearningUnitsSection
+              learningUnits={learningUnits}
+              successions={successions}
+              handleLearningUnitClick={(learningUnitId, isCompleted) =>
+                handleLearningUnitRedirection(learningUnitId, isCompleted)
+              }
+            />
           </div>
         </div>
       </Panel>
