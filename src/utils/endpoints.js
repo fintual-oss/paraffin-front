@@ -22,6 +22,7 @@ export const endpoints = (operationId, param) => {
     resourceAverage: apiBaseUrl + `/resources/${param}/average_evaluation`,
     currentUser: apiBaseUrl + `/current_user`,
     signOut: baseUrl + `/users/sign_out`,
+    completeCycle: apiBaseUrl + `/cycles/${param}/complete`,
   };
 
   return endpointsList[operationId];
