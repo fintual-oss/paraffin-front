@@ -1,23 +1,44 @@
 import React, { useState, useRef } from 'react';
-import { GraphCanvas} from 'reagraph';
+import { GraphCanvas } from 'reagraph';
 import { Button } from 'primereact/button';
 import styles from './Graph.module.scss';
 
 const Graph = ({ nodes, edges, theme, nodePredecessors, handleNodeClick }) => {
   const [selections, setSelections] = useState([]);
-  const ref = useRef()
+  const ref = useRef();
 
   const handleNodePointOver = (event) => {
     setSelections(nodePredecessors[event.id]);
   };
 
-
   return (
     <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}>
-      <div style={{ zIndex: 9, position: 'absolute', top: 15, right: 15, padding: 1, flexDirection: "column" }}>
-        <Button label="-" className={styles.cameraButtonSymbol} onClick={() => ref.current?.zoomOut()}/>
-        <Button style={{margin:"0px 5px 0px 5px"}} label="Centrar Grafo" className={styles.cameraButton} onClick={() => ref.current?.centerGraph()}/>
-        <Button label="+" className={styles.cameraButtonSymbol} onClick={() => ref.current?.zoomIn()}/>
+      <div
+        style={{
+          zIndex: 9,
+          position: 'absolute',
+          top: 15,
+          right: 15,
+          padding: 1,
+          flexDirection: 'column',
+        }}
+      >
+        <Button
+          label="-"
+          className={styles.cameraButtonSymbol}
+          onClick={() => ref.current?.zoomOut()}
+        />
+        <Button
+          style={{ margin: '0px 5px 0px 5px' }}
+          label="Centrar Grafo"
+          className={styles.cameraButton}
+          onClick={() => ref.current?.centerGraph()}
+        />
+        <Button
+          label="+"
+          className={styles.cameraButtonSymbol}
+          onClick={() => ref.current?.zoomIn()}
+        />
       </div>
 
       <GraphCanvas
