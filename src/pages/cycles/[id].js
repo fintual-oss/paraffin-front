@@ -21,9 +21,7 @@ const CyclePage = () => {
     return (
       <CycleSection
         cycleId={cycleId}
-        handleLearningUnitRedirection={(learningUnitId, isCompleted) =>
-          handleLearningUnitRedirection(learningUnitId, isCompleted)
-        }
+        handleLearningUnitRedirection={handleLearningUnitRedirection}
       />
     );
   } else {
