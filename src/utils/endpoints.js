@@ -8,7 +8,6 @@ export const endpoints = (operationId, param) => {
     learningUnit: apiBaseUrl + `/learning_units/${param}`,
     learningUnitSuccessions:
       apiBaseUrl + `/cycles/${param}/learning_unit_successions`,
-    learningUnitsOfCycle: apiBaseUrl + `/cycles/${param}/learning_units`,
     cyclesOfCurriculum: apiBaseUrl + `/curriculums/${param}/cycles`,
     resource: apiBaseUrl + `/resources/${param}`,
     curriculumLearningUnits:
