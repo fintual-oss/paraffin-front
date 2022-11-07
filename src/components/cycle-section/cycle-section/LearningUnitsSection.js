@@ -13,9 +13,9 @@ const LearningUnitsSection = ({
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           <div
             style={{
-              height: 600,
-              width: '89.6vw',
-              margin: 15,
+              width: '90vw',
+              height: "75vh",
+              margin: 3,
               position: 'relative',
             }}
           >
