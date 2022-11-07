@@ -51,7 +51,6 @@ const ResourceSection = ({
       (response) => {
         if (response.ok) {
           updateCompleted();
-          showSuccess();
         }
       }
     );
