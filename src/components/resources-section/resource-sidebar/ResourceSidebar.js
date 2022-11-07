@@ -28,7 +28,9 @@ const ResourceSidebar = ({
       />
       <h1>{activeResource.name}</h1>
       <Card title="Evaluación promedio">
-        <Average average={activeResource.average_evaluation} />
+        <Average
+          average={parseFloat(activeResource.average_evaluation).toFixed(1)}
+        />
         <LinkButton url={activeResource.url} />
       </Card>
       <AddEvaluation formOptions={formOptions} />
