@@ -73,11 +73,12 @@ $blue: #37368f;
 }
 
 .accordionHeader {
-  & > [class~='p-accordion-tab'] {
-    & > [class~='p-accordion-header'] {
-      & > [class~='p-accordion-header-link'] {
+  &>[class~='p-accordion-tab'] {
+    &>[class~='p-accordion-header'] {
+      &>[class~='p-accordion-header-link'] {
         background-color: $blue;
         color: $white;
+
         &:hover {
           background-color: $blue !important;
           color: $white !important;
@@ -85,16 +86,16 @@ $blue: #37368f;
       }
     }
 
-    & > [class~='p-toggleable-content'] {
-      & > [class~='p-accordion-content'] {
+    &>[class~='p-toggleable-content'] {
+      &>[class~='p-accordion-content'] {
         background-color: $grey;
       }
     }
   }
 
-  & > [class~='p-accordion-tab-active'] {
-    & > [class~='p-highlight'] {
-      & > [class~='p-accordion-header-link'] {
+  &>[class~='p-accordion-tab-active'] {
+    &>[class~='p-highlight'] {
+      &>[class~='p-accordion-header-link'] {
         background-color: $blue !important;
         color: $white !important;
       }
