@@ -30,6 +30,7 @@ const ResourceSection = ({
   } = useGet(endpoints('resourceAverage', resourceId));
 
   const {
+    data: evaluations,
     isLoading: isLoadingEvaluations,
     isError: isErrorEvaluations,
     mutate: updateEvaluations,
@@ -101,6 +102,7 @@ const ResourceSection = ({
       onHideHandler={() => onHideHandler()}
       activeResource={resource}
       formOptions={formOptions}
+      evaluations={evaluations}
     />
   );
 };

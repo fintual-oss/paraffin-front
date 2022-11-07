@@ -3,22 +3,23 @@ import { Card } from 'primereact/card';
 import LinkButton from '@components/resource-section/link-button/LinkButton';
 import AddEvaluation from '@components/resource-section/add-evaluation/AddEvaluation';
 import Average from '@components/resources-section/average/Average';
-import styles from './ResourceSidebar.module.scss';
+import EvaluationList from '@components/resource-section/evaluation-list/EvaluationList';
 
 const ResourceSidebar = ({
   visible,
   onHideHandler,
   activeResource,
   formOptions,
+  evaluations,
 }) => {
   return (
     <Sidebar
       visible={visible}
       position="right"
       onHide={() => onHideHandler()}
-      className={styles.resourceSidebar}
       modal={false}
       dismissable={false}
+      style={{ width: '25%' }}
     >
       <h1>{activeResource.name}</h1>
       <Card title="Evaluación promedio">
@@ -26,6 +27,7 @@ const ResourceSidebar = ({
         <LinkButton url={activeResource.url} />
       </Card>
       <AddEvaluation formOptions={formOptions} />
+      <EvaluationList evaluationsData={evaluations} />
     </Sidebar>
   );
 };
