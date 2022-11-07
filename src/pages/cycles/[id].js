@@ -19,14 +19,12 @@ const CyclePage = () => {
 
   if (process.env.NODE_ENV === 'development') {
     return (
-      <>
-        <CycleSection
-          cycleId={cycleId}
-          handleLearningUnitRedirection={(learningUnitId, isCompleted) =>
-            handleLearningUnitRedirection(learningUnitId, isCompleted)
-          }
-        />
-      </>
+      <CycleSection
+        cycleId={cycleId}
+        handleLearningUnitRedirection={(learningUnitId, isCompleted) =>
+          handleLearningUnitRedirection(learningUnitId, isCompleted)
+        }
+      />
     );
   } else {
     return <p>WIP</p>;
