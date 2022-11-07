@@ -35,7 +35,7 @@ const AddEvaluation = ({ formOptions }) => {
       />
       <InputTextarea
         rows={4}
-        cols={45}
+        cols={35}
         value={comment || ''}
         onChange={(e) => setComment(e.target.value)}
         disabled={formOptions.evaluated}

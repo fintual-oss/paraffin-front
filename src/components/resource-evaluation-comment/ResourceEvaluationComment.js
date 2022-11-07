@@ -23,8 +23,8 @@ const ResourceEvaluationComment = ({ evaluation }) => {
           value={evaluation.comment}
           disabled={true}
           rows={4}
-          cols={25}
-        ></InputTextarea>
+          cols={20}
+        />
       </div>
     </div>
   );

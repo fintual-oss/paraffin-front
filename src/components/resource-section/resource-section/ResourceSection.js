@@ -4,7 +4,6 @@ import { endpoints } from '@utils/endpoints';
 import { useRef } from 'react';
 
 const ResourceSection = ({
-  visible,
   onHideHandler,
   resourceId,
   onEvaluationSubmitionHandler,
@@ -98,7 +97,6 @@ const ResourceSection = ({
 
   return (
     <ResourceSidebar
-      visible={visible}
       onHideHandler={() => onHideHandler()}
       activeResource={resource}
       formOptions={formOptions}

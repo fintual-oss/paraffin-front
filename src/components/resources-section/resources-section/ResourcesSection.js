@@ -15,7 +15,6 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
   const router = useRouter();
   const learningUnitId = learningUnit.id;
   const [displayBasic, setDisplayBasic] = useState(false);
-  const [sidebarVisible, setSidebarVisible] = useState(false);
   const [activeResource, setActiveResource] = useState(null);
 
   if (isError) {
@@ -47,13 +46,11 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
   };
 
   const resourceSidebarOnHideHandler = () => {
-    setSidebarVisible(false);
     setActiveResource(null);
   };
 
   const resourceViewButtonHandler = (resource) => {
     setActiveResource(resource);
-    setSidebarVisible(true);
   };
 
   const header = () => {
@@ -87,10 +84,8 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
           resources={resources}
           resourceViewButtonHandler={resourceViewButtonHandler}
         />
-
         {activeResource && (
           <ResourceSection
-            visible={sidebarVisible}
             onHideHandler={resourceSidebarOnHideHandler}
             resourceId={activeResource.id}
             onEvaluationSubmitionHandler={refreshResources}

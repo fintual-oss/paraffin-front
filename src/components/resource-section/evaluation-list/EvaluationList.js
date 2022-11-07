@@ -10,7 +10,6 @@ const EvaluationList = ({ evaluationsData }) => {
     <VirtualScroller
       items={evaluationsData}
       itemTemplate={renderComments}
-      inline
       header="Comentarios"
     />
   );

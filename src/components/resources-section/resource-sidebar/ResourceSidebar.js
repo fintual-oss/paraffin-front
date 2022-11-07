@@ -6,7 +6,6 @@ import Average from '@components/resources-section/average/Average';
 import EvaluationList from '@components/resource-section/evaluation-list/EvaluationList';
 
 const ResourceSidebar = ({
-  visible,
   onHideHandler,
   activeResource,
   formOptions,
@@ -14,7 +13,7 @@ const ResourceSidebar = ({
 }) => {
   return (
     <Sidebar
-      visible={visible}
+      visible={true}
       position="right"
       onHide={() => onHideHandler()}
       modal={false}
