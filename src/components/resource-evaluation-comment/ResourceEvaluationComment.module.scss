@@ -1,7 +1,9 @@
 .commentCard {
   display: grid;
   align-items: center;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 40% 60%;
+  justify-content: start;
+  justify-items: start;
 }
 
 .commentUserInfo {

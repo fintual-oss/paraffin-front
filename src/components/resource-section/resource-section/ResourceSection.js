@@ -4,7 +4,6 @@ import { endpoints } from '@utils/endpoints';
 import { useRef } from 'react';
 
 const ResourceSection = ({
-  visible,
   onHideHandler,
   resourceId,
   onEvaluationSubmitionHandler,
@@ -30,6 +29,7 @@ const ResourceSection = ({
   } = useGet(endpoints('resourceAverage', resourceId));
 
   const {
+    data: evaluations,
     isLoading: isLoadingEvaluations,
     isError: isErrorEvaluations,
     mutate: updateEvaluations,
@@ -97,10 +97,10 @@ const ResourceSection = ({
 
   return (
     <ResourceSidebar
-      visible={visible}
       onHideHandler={() => onHideHandler()}
       activeResource={resource}
       formOptions={formOptions}
+      evaluations={evaluations}
     />
   );
 };

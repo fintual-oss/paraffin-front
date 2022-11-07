@@ -1,45 +1,17 @@
-import { OrderList } from 'primereact/orderlist';
-import { Avatar } from 'primereact/avatar';
-import { Rating } from 'primereact/rating';
-import styles from './EvaluationList.module.scss';
-import { Card } from 'primereact/card';
-import { InputTextarea } from 'primereact/inputtextarea';
+import { VirtualScroller } from 'primereact/virtualscroller';
+import ResourceEvaluationComment from '../../resource-evaluation-comment/ResourceEvaluationComment';
 
 const EvaluationList = ({ evaluationsData }) => {
-  const itemTemplate = (evaluation) => {
-    return (
-      <Card className={styles.cardFull}>
-        <div className={styles.commentCard}>
-          <div className={styles.commentUserInfo}>
-            <Avatar label={evaluation.user_name.charAt(0)} size="large" />
-            <Rating
-              value={evaluation.evaluation}
-              stars={5}
-              cancel={false}
-              readOnly="true"
-            />
-          </div>
-          <div className={styles.rating}>
-            <h5 className="mb-2">
-              {evaluation.user_name + ' escribió el ' + evaluation.created_at}
-            </h5>
-            <InputTextarea
-              value={evaluation.comment}
-              disabled={true}
-              rows={4}
-              cols={50}
-            ></InputTextarea>
-          </div>
-        </div>
-      </Card>
-    );
-  };
+  const renderComments = (evaluation) => (
+    <ResourceEvaluationComment evaluation={evaluation} />
+  );
+
   return (
-    <OrderList
-      value={evaluationsData}
-      itemTemplate={itemTemplate}
+    <VirtualScroller
+      items={evaluationsData}
+      itemTemplate={renderComments}
       header="Comentarios"
-    ></OrderList>
+    />
   );
 };
 
