@@ -30,7 +30,7 @@ const LearningUnitsGraph = ({
       if (!element.includes('-')) {
         isCompleted = learningUnits.find(
           (learningUnit) => learningUnit.id.toString() === element
-        )['is_completed'];
+        )['completed'];
         if (!isCompleted) {
           handleNodeClick(id, isCompleted);
           return isCompleted;
