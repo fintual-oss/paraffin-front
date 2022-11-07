@@ -6,9 +6,7 @@ const ResourcesScroller = ({ resources, resourceViewButtonHandler }) => {
   const itemTemplate = (resource) => (
     <ResourcesListItem
       resource={resource}
-      resourceViewButtonHandler={(activeResource) =>
-        resourceViewButtonHandler(activeResource)
-      }
+      resourceViewButtonHandler={resourceViewButtonHandler}
     />
   );
 

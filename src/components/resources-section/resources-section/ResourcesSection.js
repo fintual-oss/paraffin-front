@@ -17,13 +17,14 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
   const [displayBasic, setDisplayBasic] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [activeResource, setActiveResource] = useState(null);
-  const mutateResources = () => {
-    router.replace(router.asPath);
-  };
 
   if (isError) {
     return 'error';
   }
+
+  const refreshResources = () => {
+    router.replace(router.asPath);
+  };
 
   const saveResourceHandler = (bodyValues) => {
     const requestOptions = {
@@ -35,7 +36,7 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
       endpoints('learningUnitResources', learningUnitId),
       requestOptions
     ).then(() => {
-      mutateResources();
+      refreshResources();
       setDisplayBasic(false);
     });
   };
@@ -84,17 +85,15 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
         )}
         <ResourcesScroller
           resources={resources}
-          resourceViewButtonHandler={(resource) =>
-            resourceViewButtonHandler(resource)
-          }
+          resourceViewButtonHandler={resourceViewButtonHandler}
         />
 
         {activeResource && (
           <ResourceSection
             visible={sidebarVisible}
-            onHideHandler={() => resourceSidebarOnHideHandler()}
-            onEvaluationSubmitionHandler={() => mutateResources()}
+            onHideHandler={resourceSidebarOnHideHandler}
             resourceId={activeResource.id}
+            onEvaluationSubmitionHandler={refreshResources}
           />
         )}
       </Panel>
