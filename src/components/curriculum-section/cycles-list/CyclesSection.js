@@ -14,11 +14,15 @@ const CyclesSection = ({ cycles }) => {
     command: () => {
       setGoals(c.learning_goals_description);
       setActiveGoalId(c.id);
+      setActiveCycleStatus(c.completed);
     },
   }));
 
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [activeGoalId, setActiveGoalId] = useState(ordered_cycles[0].id);
+  const [activeCycleStatus, setActiveCycleStatus] = useState(
+    ordered_cycles[0].completed
+  );
   const [goals, setGoals] = useState(
     ordered_cycles[0].learning_goals_description
   );
@@ -28,6 +32,7 @@ const CyclesSection = ({ cycles }) => {
     return (
       <>
         <h2>Objetivos de aprendizaje</h2>
+        <p>{activeCycleStatus ? 'Completado' : 'No completado'}</p>
         <ul>
           {goalsArray.map((str) => (
             <li key={`goal-${goalsArray.indexOf(str)}`}>{str}</li>
