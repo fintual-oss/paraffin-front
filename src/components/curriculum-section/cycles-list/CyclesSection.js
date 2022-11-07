@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Steps } from 'primereact/steps';
 import { Button } from 'primereact/button';
+import { Card } from 'primereact/card';
 import Link from 'next/link';
 import style from './CyclesSection.module.scss';
 
@@ -32,7 +33,6 @@ const CyclesSection = ({ cycles }) => {
     return (
       <>
         <h2>Objetivos de aprendizaje</h2>
-        <p>{activeCycleStatus ? 'Completado' : 'No completado'}</p>
         <ul>
           {goalsArray.map((str) => (
             <li key={`goal-${goalsArray.indexOf(str)}`}>{str}</li>
@@ -44,22 +44,42 @@ const CyclesSection = ({ cycles }) => {
 
   return (
     <>
-      <h1>Ciclos de desarrollo</h1>
-      <Steps
-        model={items}
-        activeIndex={activeStepIndex}
-        onSelect={(e) => setActiveStepIndex(e.index)}
-        readOnly={false}
-        className={`${style.stepper}`}
-      />
-      <div className={`${style.flex_container}`}>
-        <div className={`${style.flex_item}`}>
-          <GoalsDescription />
+      <Card>
+        <h1>Ciclos de desarrollo</h1>
+        <Steps
+          model={items}
+          activeIndex={activeStepIndex}
+          onSelect={(e) => setActiveStepIndex(e.index)}
+          readOnly={false}
+          className={`${style.stepper}`}
+        />
+        <div className={`${style.main_flex_container}`}>
+          <div className={`${style.flex_item}`}>
+            <GoalsDescription />
+          </div>
+          <div className={`${style.right_flex_container}`}>
+            <p className={`${style.flex_item}`}>
+              {activeCycleStatus ? (
+                <i className={`pi pi-verified ${style.completed}`}>
+                  {' '}
+                  Completado
+                </i>
+              ) : (
+                <i className={`pi pi-minus-circle ${style.uncompleted}`}>
+                  {' '}
+                  No completado
+                </i>
+              )}
+            </p>
+            <Link
+              href={`/cycles/${activeGoalId}`}
+              className={`${style.flex_item}`}
+            >
+              <Button label="Ver ciclo" />
+            </Link>
+          </div>
         </div>
-        <Link href={`/cycles/${activeGoalId}`} className={`${style.flex_item}`}>
-          <Button label="Ver ciclo" />
-        </Link>
-      </div>
+      </Card>
     </>
   );
 };

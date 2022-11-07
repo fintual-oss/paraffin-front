@@ -2,7 +2,7 @@
   padding: 2rem;
 }
 
-.flex_container {
+.main_flex_container {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -33,4 +33,25 @@
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
+}
+
+.right_flex_container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-start;
+  width: 40%;
+  gap: 3rem;
+  overflow: auto;
+  flex-direction: column;
+}
+
+.uncompleted {
+  color: red;
+  font-size: 1.2rem;
+}
+.completed {
+  color: green;
+  font-size: 1.2rem;
 }
