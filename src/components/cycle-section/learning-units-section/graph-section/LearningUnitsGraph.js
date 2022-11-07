@@ -1,37 +1,18 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import useGet from '@hooks/useGet';
-import { endpoints } from '@utils/endpoints';
-import { Skeleton } from 'primereact/skeleton';
 
 const Graph = dynamic(
-  () => import('@components/learning-units-section/graph/Graph'),
+  () => import('@components/cycle-section/learning-units-section/graph/Graph'),
   {
     ssr: false,
   }
 );
 
-const GraphSection = ({ cycleId, handleNodeClick }) => {
-  const {
-    data: successions,
-    isLoading: isLoadingSuccessions,
-    isError: isErrorSuccessions,
-  } = useGet(endpoints('learningUnitSuccessions', cycleId));
-
-  const {
-    data: learningUnits,
-    isLoading: isLoadingLearningUnits,
-    isError: isErrorLearningUnits,
-  } = useGet(endpoints('learningUnitsOfCycle', cycleId));
-
-  if (isLoadingSuccessions || isLoadingLearningUnits) {
-    return <Skeleton shape="rectangle" width="100%" height="100%" />;
-  }
-
-  if (isErrorSuccessions || isErrorLearningUnits) {
-    return 'error';
-  }
-
+const LearningUnitsGraph = ({
+  handleNodeClick,
+  learningUnits,
+  successions,
+}) => {
   const edges = successions.map((succession) => ({
     source: succession['predecessor_id'].toString(),
     target: succession['successor_id'].toString(),
@@ -42,6 +23,21 @@ const GraphSection = ({ cycleId, handleNodeClick }) => {
     id: learningUnit.id.toString(),
     label: learningUnit.name,
   }));
+
+  const handleClick = (id) => {
+    let isCompleted = true;
+    nodePredecessors[id].every((element) => {
+      if (!element.includes('-')) {
+        isCompleted = learningUnits.find(
+          (learningUnit) => learningUnit.id.toString() === element
+        )['is_completed'];
+        if (!isCompleted) {
+          handleNodeClick(id, isCompleted);
+          return isCompleted;
+        }
+      }
+    });
+  };
 
   let nodePredecessors = {};
   nodes.forEach((node) => {
@@ -70,9 +66,9 @@ const GraphSection = ({ cycleId, handleNodeClick }) => {
       nodes={nodes}
       edges={edges}
       nodePredecessors={nodePredecessors}
-      handleNodeClick={handleNodeClick}
+      handleNodeClick={(id) => handleClick(id)}
     />
   );
 };
 
-export default GraphSection;
+export default LearningUnitsGraph;
