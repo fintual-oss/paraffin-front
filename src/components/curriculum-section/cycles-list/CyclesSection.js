@@ -75,7 +75,11 @@ const CyclesSection = ({ cycles }) => {
               href={`/cycles/${activeGoalId}`}
               className={`${style.flex_item}`}
             >
-              <Button label="Ver ciclo" />
+              <Button
+                label="Ver ciclo"
+                icon="pi pi-angle-right"
+                iconPos="right"
+              />
             </Link>
           </div>
         </div>
