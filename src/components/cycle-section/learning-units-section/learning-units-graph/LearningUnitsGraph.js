@@ -9,6 +9,7 @@ const Graph = dynamic(
   }
 );
 
+const maxLabelNameLength = 12;
 const LearningUnitsGraph = ({
   handleNodeClick,
   learningUnits,
@@ -22,7 +23,7 @@ const LearningUnitsGraph = ({
 
   const nodes = learningUnits.map((learningUnit) => ({
     id: learningUnit.id.toString(),
-    label: learningUnit.name.length < 12 ? learningUnit.name : `${learningUnit.name.substring(0,12)}...`,
+    label: `${learningUnit.name.substring(0, maxLabelNameLength)}...`,
   }));
 
   const handleClick = (id) => {
