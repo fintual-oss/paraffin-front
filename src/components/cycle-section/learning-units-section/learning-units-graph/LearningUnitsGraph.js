@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { finTheme } from './finTheme';
 
 const Graph = dynamic(
   () => import('@components/cycle-section/learning-units-section/graph/Graph'),
@@ -65,6 +66,7 @@ const LearningUnitsGraph = ({
     <Graph
       nodes={nodes}
       edges={edges}
+      theme={finTheme}
       nodePredecessors={nodePredecessors}
       handleNodeClick={(id) => handleClick(id)}
     />
