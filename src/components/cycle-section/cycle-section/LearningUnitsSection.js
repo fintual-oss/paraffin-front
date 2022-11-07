@@ -1,6 +1,6 @@
 import { TabView, TabPanel } from 'primereact/tabview';
 import LearningUnitsListTab from '@components/cycle-section/learning-units-section/learning-units-section/LearningUnitsListTab';
-import LearningUnitsGraph from '@components/cycle-section/learning-units-section/graph-section/LearningUnitsGraph';
+import LearningUnitsGraph from '@components/cycle-section/learning-units-section/learning-units-graph/LearningUnitsGraph';
 
 const LearningUnitsSection = ({
   learningUnits,
