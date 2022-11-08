@@ -1,7 +1,11 @@
 import styles from './CycleSection.module.scss';
 import { CompleteCycle } from './CompleteCycle';
 
-export const CycleTopContainer = ({ cycle }) => {
+export const CycleTopContainer = ({
+  cycle,
+  completeCycle,
+  toastCompletition,
+}) => {
   return (
     <div className={styles.topContainer}>
       <div>
@@ -9,7 +13,11 @@ export const CycleTopContainer = ({ cycle }) => {
         <h1>{cycle.name}</h1>
       </div>
       <div>
-        <CompleteCycle cycle={cycle} />
+        <CompleteCycle
+          cycle={cycle}
+          changeHandler={completeCycle}
+          toast={toastCompletition}
+        />
       </div>
     </div>
   );
