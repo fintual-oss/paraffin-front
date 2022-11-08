@@ -11,6 +11,7 @@ const EvaluationList = ({ evaluationsData }) => {
       items={evaluationsData}
       itemTemplate={renderComments}
       header="Comentarios"
+      orientation="vertical"
     />
   );
 };
