@@ -9,7 +9,7 @@ const Graph = dynamic(
 );
 
 const LearningUnitsGraph = ({
-  handleNodeClick,
+  handleLearningUnitClick,
   learningUnits,
   successions,
 }) => {
@@ -24,28 +24,32 @@ const LearningUnitsGraph = ({
     label: learningUnit.name,
   }));
 
-  const handleClick = (id) => {
+  function isAGraphEdge(graphElement) {
+    return graphElement.includes('-');
+  }
+
+  const handleNodeClick = (id) => {
     let isCompleted = true;
     nodePredecessors[id].every((element) => {
-      if (!element.includes('-')) {
+      if (!isAGraphEdge(element)) {
         isCompleted = learningUnits.find(
           (learningUnit) => learningUnit.id.toString() === element
         )['completed'];
         if (!isCompleted) {
-          handleNodeClick(id, isCompleted);
           return isCompleted;
         }
       }
     });
+    handleLearningUnitClick(id, isCompleted);
   };
 
   let nodePredecessors = {};
   nodes.forEach((node) => {
     let nodesToSelect = [node.id];
     let edgesToSelect = [];
-    let count = 1;
-    while (count > 0) {
-      count = 0;
+    let newChanges = true;
+    while (newChanges) {
+      newChanges = false;
       nodesToSelect.forEach((node_id) => {
         edges.forEach((edge) => {
           if (edge.target === node_id && !edgesToSelect.includes(edge.id)) {
@@ -53,7 +57,7 @@ const LearningUnitsGraph = ({
             if (!nodesToSelect.includes(edge.source)) {
               nodesToSelect.push(edge.source);
             }
-            count += 1;
+            newChanges = true;
           }
         });
       });
@@ -66,7 +70,7 @@ const LearningUnitsGraph = ({
       nodes={nodes}
       edges={edges}
       nodePredecessors={nodePredecessors}
-      handleNodeClick={(id) => handleClick(id)}
+      handleNodeClick={(id) => handleNodeClick(id)}
     />
   );
 };
