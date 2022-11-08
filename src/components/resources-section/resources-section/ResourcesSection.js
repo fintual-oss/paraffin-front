@@ -56,13 +56,13 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
   const header = () => {
     return (
       <div className={styles.resourceHeader}>
-        {learningUnit?.name}
+        <Button
+          label="Volver"
+          icon="pi pi-arrow-left"
+          onClick={() => router.back()}
+        />
+        <h2> {learningUnit?.name}</h2>
         <div className={styles.navButtons}>
-          <Button
-            label="Volver"
-            icon="pi pi-arrow-left"
-            onClick={() => router.back()}
-          />
           <AddNewResourceButton setDisplayBasic={setDisplayBasic} />
         </div>
       </div>
