@@ -9,6 +9,11 @@ const LearningUnitsSection = ({
 }) => {
   return (
     <TabView>
+      <TabPanel header="Lista de unidades">
+        <div style={style}>
+          <LearningUnitsListTab learningUnits={learningUnits} />
+        </div>
+      </TabPanel>
       <TabPanel header="Mapa de pre requisitos">
         <div style={style}>
           <LearningUnitsGraph
@@ -16,11 +21,6 @@ const LearningUnitsSection = ({
             learningUnits={learningUnits}
             successions={successions}
           />
-        </div>
-      </TabPanel>
-      <TabPanel header="Lista de unidades">
-        <div style={style}>
-          <LearningUnitsListTab learningUnits={learningUnits} />
         </div>
       </TabPanel>
     </TabView>
