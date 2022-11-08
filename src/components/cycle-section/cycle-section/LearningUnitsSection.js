@@ -11,11 +11,11 @@ const LearningUnitsSection = ({
     <TabView>
       <TabPanel header="Mapa de pre requisitos">
         <div style={style}>
-            <LearningUnitsGraph
-              handleLearningUnitClick={handleLearningUnitClick}
-              learningUnits={learningUnits}
-              successions={successions}
-            />
+          <LearningUnitsGraph
+            handleLearningUnitClick={handleLearningUnitClick}
+            learningUnits={learningUnits}
+            successions={successions}
+          />
         </div>
       </TabPanel>
       <TabPanel header="Lista de unidades">
