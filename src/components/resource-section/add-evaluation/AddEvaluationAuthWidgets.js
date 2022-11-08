@@ -5,13 +5,11 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
 import styles from './AddEvaluation.module.scss';
-import useLoginDialog from '@hooks/useLoginDialog';
 import { Tooltip } from 'primereact/tooltip';
 
 const AddEvaluationAuthWidgets = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);
   const [comment, setComment] = useState(formOptions.comment);
-
 
   useEffect(() => {
     setEvaluation(formOptions.evaluation);
