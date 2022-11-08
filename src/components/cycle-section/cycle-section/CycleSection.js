@@ -93,6 +93,7 @@ const CycleSection = ({ cycleId, learningUnitRedirection }) => {
               learningUnits={learningUnits}
               successions={successions}
               handleLearningUnitClick={learningUnitRedirection}
+              mutate={mutateLearningUnits}
             />
           </div>
         </div>
