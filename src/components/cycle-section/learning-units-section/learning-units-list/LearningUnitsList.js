@@ -13,10 +13,10 @@ const LearningUnitsList = ({ learningUnits, mutate }) => {
     });
   };
 
-  const renderListItem = (unit) => {
+  const renderListItem = (learningUnit) => {
     return (
       <LearningUnitListItem
-        unit={unit}
+        learningUnit={learningUnit}
         showSuccess={showSuccess}
         mutate={mutate}
       />

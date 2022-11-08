@@ -3,13 +3,13 @@ import style from './CompleteLearningUnitToogle.module.scss';
 import { ToggleButton } from 'primereact/togglebutton';
 
 export const CompleteLearningUnitToggleAuth = ({
-  unit,
+  learningUnit,
   showSuccess,
   mutate,
 }) => {
   const completeLearningUnitEndpoint = endpoints(
     'completeLearningUnit',
-    unit.id
+    learningUnit.id
   );
 
   const changeHandler = async (clicked) => {
@@ -33,7 +33,7 @@ export const CompleteLearningUnitToggleAuth = ({
         offLabel="No Completado"
         onIcon="pi pi-check"
         offIcon="pi pi-times"
-        checked={unit.completed}
+        checked={learningUnit.completed}
         onChange={changeHandler}
       />
     </div>
