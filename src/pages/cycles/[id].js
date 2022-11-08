@@ -17,16 +17,12 @@ const CyclePage = () => {
 
   const cycleId = query.id;
 
-  if (process.env.NODE_ENV === 'development') {
-    return (
-      <CycleSection
-        cycleId={cycleId}
-        learningUnitRedirection={learningUnitRedirection}
-      />
-    );
-  } else {
-    return <p>WIP</p>;
-  }
+  return (
+    <CycleSection
+      cycleId={cycleId}
+      learningUnitRedirection={learningUnitRedirection}
+    />
+  );
 };
 
 export default CyclePage;
