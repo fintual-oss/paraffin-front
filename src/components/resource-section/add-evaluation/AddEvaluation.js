@@ -1,6 +1,6 @@
 import useCurrentUser from '@hooks/useCurrentUser';
 import AddEvaluationAuth from './AddEvaluationAuth';
-import AddEvaluationNoAuth from './AddEvaluationNoAuth';
+import AddEvaluationAuthWidgets from './AddEvaluationAuthWidgets';
 
 const AddEvaluation = ({ resourceId, updatesAddEvaluation }) => {
   const currentUser = useCurrentUser();
@@ -12,8 +12,16 @@ const AddEvaluation = ({ resourceId, updatesAddEvaluation }) => {
       />
     );
   }
+  const formOptions = {
+    evaluation: null,
+    comment: null,
+    evaluated: true,
+    handleSubmitForm: null,
+    toast: null,
+    enabled: false,
+  };
 
-  return <AddEvaluationNoAuth />;
+  return <AddEvaluationAuthWidgets formOptions={formOptions} />;
 };
 
 export default AddEvaluation;
