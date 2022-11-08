@@ -29,7 +29,11 @@ function LearningUnitItem({ unit, showSuccess, mutate }) {
               <Link href={`/learning-units/${unit.id}`}>{unit.name}</Link>
             </div>
           </div>
-          <CompleteLearningUnitToggle unit={unit} showSuccess={showSuccess} mutate={mutate} />
+          <CompleteLearningUnitToggle
+            unit={unit}
+            showSuccess={showSuccess}
+            mutate={mutate}
+          />
         </div>
       </div>
     </Card>

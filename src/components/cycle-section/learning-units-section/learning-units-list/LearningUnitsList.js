@@ -14,7 +14,13 @@ const LearningUnitsList = ({ learningUnits, mutate }) => {
   };
 
   const renderListItem = (unit) => {
-    return <LearningUnitListItem unit={unit} showSuccess={showSuccess} mutate={mutate} />;
+    return (
+      <LearningUnitListItem
+        unit={unit}
+        showSuccess={showSuccess}
+        mutate={mutate}
+      />
+    );
   };
 
   return (

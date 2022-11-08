@@ -2,8 +2,11 @@ import { endpoints } from '@utils/endpoints';
 import style from './CompleteLearningUnitToogle.module.scss';
 import { ToggleButton } from 'primereact/togglebutton';
 
-export const CompleteLearningUnitToggleAuth = ({ unit, showSuccess, mutate }) => {
-
+export const CompleteLearningUnitToggleAuth = ({
+  unit,
+  showSuccess,
+  mutate,
+}) => {
   const completeLearningUnitEndpoint = endpoints(
     'completeLearningUnit',
     unit.id
