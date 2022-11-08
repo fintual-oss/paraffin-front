@@ -4,6 +4,7 @@ import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import Link from 'next/link';
 import style from './CyclesSection.module.scss';
+import { Message } from 'primereact/message';
 
 const CyclesSection = ({ cycles }) => {
   const ordered_cycles = cycles.sort(function (a, b) {
@@ -51,30 +52,25 @@ const CyclesSection = ({ cycles }) => {
           activeIndex={activeStepIndex}
           onSelect={(e) => setActiveStepIndex(e.index)}
           readOnly={false}
-          className={`${style.stepper}`}
+          className={style.stepper}
         />
-        <div className={`${style.main_flex_container}`}>
-          <div className={`${style.flex_item}`}>
+        <div className={style.mainFlexContainer}>
+          <div className={style.flexItem}>
             <GoalsDescription />
           </div>
-          <div className={`${style.right_flex_container}`}>
-            <p className={`${style.flex_item}`}>
+          <div className={style.rightFlexContainer}>
+            <div className={style.flexItem}>
               {activeCycleStatus ? (
-                <i className={`pi pi-verified ${style.completed}`}>
-                  {' '}
-                  Completado
-                </i>
+                <Message
+                  severity="success"
+                  text="Completado"
+                  icon="pi pi-verified"
+                ></Message>
               ) : (
-                <i className={`pi pi-minus-circle ${style.uncompleted}`}>
-                  {' '}
-                  No completado
-                </i>
+                <Message severity="warn" text="No completado"></Message>
               )}
-            </p>
-            <Link
-              href={`/cycles/${activeGoalId}`}
-              className={`${style.flex_item}`}
-            >
+            </div>
+            <Link href={`/cycles/${activeGoalId}`} className={style.flexItem}>
               <Button
                 label="Ver ciclo"
                 icon="pi pi-angle-right"

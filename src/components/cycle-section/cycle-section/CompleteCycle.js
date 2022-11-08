@@ -27,9 +27,8 @@ export const CompleteCycle = ({ cycle }) => {
   };
 
   const currentUser = useCurrentUser();
-  const tooltip = !currentUser
-    ? 'Debes iniciar sesión para registrar tu avance'
-    : '';
+  const tooltip =
+    !currentUser && 'Debes iniciar sesión para registrar tu avance';
 
   const {
     data: cycleData,

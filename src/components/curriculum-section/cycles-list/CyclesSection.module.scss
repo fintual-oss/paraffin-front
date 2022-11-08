@@ -2,7 +2,7 @@
   padding: 2rem;
 }
 
-.main_flex_container {
+.mainFlexContainer {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.flex_item {
+.flexItem {
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -35,7 +35,7 @@
   align-self: auto;
 }
 
-.right_flex_container {
+.rightFlexContainer {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -45,13 +45,4 @@
   gap: 3rem;
   overflow: auto;
   flex-direction: column;
-}
-
-.uncompleted {
-  color: red;
-  font-size: 1.2rem;
-}
-.completed {
-  color: green;
-  font-size: 1.2rem;
 }
