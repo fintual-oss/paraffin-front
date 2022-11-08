@@ -58,14 +58,16 @@ const CurriculumInfoSection = ({ curriculumId }) => {
         header=<CurriculumHeader curriculumName={curriculum?.name ?? null} />
       >
         <div className={style.flex_container}>
-          <Image
-            className={`${style.curriculum_image} ${style.flex_item}`}
-            src={person_looking_curriculum}
-            alt="drawed person looking curriculum"
-          />
-          <CurriculumDescription />
+          <div className={style.flex_container}>
+            <CurriculumDescription />
+            <Image
+              className={`${style.curriculum_image} ${style.flex_item}`}
+              src={person_looking_curriculum}
+              alt="drawed person looking curriculum"
+            />
+          </div>
+          <CyclesSection cycles={cycles} />
         </div>
-        <CyclesSection cycles={cycles} />
       </Panel>
     </>
   );
