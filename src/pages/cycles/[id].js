@@ -7,7 +7,7 @@ const CyclePage = () => {
   const router = useRouter();
   const { query, isReady } = router;
 
-  const handleLearningUnitRedirection = (learningUnitId, isCompleted) => {
+  const learningUnitRedirection = (learningUnitId, isCompleted) => {
     router.push(
       `/learning-units/${learningUnitId}${isCompleted ? '' : '?not-completed'}`
     );
@@ -21,7 +21,7 @@ const CyclePage = () => {
     return (
       <CycleSection
         cycleId={cycleId}
-        handleLearningUnitRedirection={handleLearningUnitRedirection}
+        learningUnitRedirection={learningUnitRedirection}
       />
     );
   } else {

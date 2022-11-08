@@ -12,7 +12,7 @@ import { useRef } from 'react';
 import { Panel } from 'primereact/panel';
 import LearningUnitsSection from './LearningUnitsSection';
 
-const CycleSection = ({ cycleId, handleLearningUnitRedirection }) => {
+const CycleSection = ({ cycleId, learningUnitRedirection }) => {
   const {
     data: learningUnits,
     isLoading: isLoadingLearningUnits,
@@ -92,7 +92,7 @@ const CycleSection = ({ cycleId, handleLearningUnitRedirection }) => {
             <LearningUnitsSection
               learningUnits={learningUnits}
               successions={successions}
-              handleLearningUnitClick={handleLearningUnitRedirection}
+              handleLearningUnitClick={learningUnitRedirection}
             />
           </div>
         </div>
