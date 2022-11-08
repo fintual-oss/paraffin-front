@@ -1,6 +1,8 @@
 import ResourceSidebar from '@components/resources-section/resource-sidebar/ResourceSidebar';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
+import { Skeleton } from 'primereact/skeleton';
+import Error from '@components/common/Error';
 
 const ResourceSection = ({
   onHideHandler,
@@ -11,6 +13,7 @@ const ResourceSection = ({
     data: resourceData,
     isLoading: isLoadingResource,
     isError: isErrorResource,
+    mutate: updateResource,
   } = useGet(endpoints('resource', resourceId));
 
   const {
@@ -54,15 +57,12 @@ const ResourceSection = ({
     isLoadingEvaluations ||
     isLoadingCompleted
   )
-    return 'loading';
+    return <Skeleton shape="rectangle" width="100%" height="100%" />;
 
-  if (
-    isErrorResource ||
-    isErrorAverage ||
-    isErrorEvaluations ||
-    isErrorCompleted
-  )
-    return 'error';
+  if (isErrorResource) return <Error reset={updateResource} />;
+  if (isErrorAverage) return <Error reset={updateAverage} />;
+  if (isErrorEvaluations) return <Error reset={updateEvaluations} />;
+  if (isErrorCompleted) return <Error reset={updateCompleted} />;
 
   const resource = {
     name: resourceData.name,
