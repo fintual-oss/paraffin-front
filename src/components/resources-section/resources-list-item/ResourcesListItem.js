@@ -14,6 +14,8 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
           <Image
             onClick={() => resourceViewButtonHandler(resource)}
             className={styles.img}
+            width="200"
+            height="200"
             src={profilePic}
             alt={resource.name}
           />
