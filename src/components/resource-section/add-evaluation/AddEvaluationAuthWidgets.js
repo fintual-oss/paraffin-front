@@ -48,6 +48,7 @@ const AddEvaluationAuthWidgets = ({ formOptions }) => {
           value={comment || ''}
           onChange={(e) => setComment(e.target.value)}
           disabled={formOptions.evaluated || !formOptions.enabled}
+          style={{ width: '100%' }}
           autoResize
         />
         <div className="dialog-demo">
