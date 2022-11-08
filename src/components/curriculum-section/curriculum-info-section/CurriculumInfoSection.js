@@ -3,11 +3,9 @@ import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import CyclesSection from '../cycles-list/CyclesSection';
-import CurriculumHeader from './CurriculumHeader';
-import person_looking_curriculum from '@utils/images/person_looking_curriculum.png';
-import Image from 'next/future/image';
+import { Image } from 'primereact/image';
 import style from './CurriculumInfoSection.module.scss';
-import Head from 'next/head';
+import laptopImage from "../../../utils/images/person-laptop.png"
 
 const CurriculumInfoSection = ({ curriculumId }) => {
   const {
@@ -28,48 +26,26 @@ const CurriculumInfoSection = ({ curriculumId }) => {
   if (isErrorCurriculum || isErrorCurriculumCycles) {
     return 'error';
   }
-  const paragraphsArray = curriculum?.description?.split('\\n');
-  const CurriculumDescription = () => {
-    return (
-      <>
-        <Head>
-          <title>{curriculum.name}</title>
-          <meta property="og:title" content={curriculum.name} key="title" />
-        </Head>
-        <div className={style.flex_item}>
-          {paragraphsArray?.map((paragraph) => (
-            <p key={`paragraph-${paragraphsArray.indexOf(paragraph)}`}>
-              {paragraph}
-            </p>
-          )) ?? null}
-          {'\n'}
-          <i>
-            Explora los ciclos de desarrollo y sus objetivos de aprendizaje más
-            abajo.
-          </i>
-        </div>
-      </>
-    );
-  };
+
 
   return (
-    <>
-      <Panel
-        header=<CurriculumHeader curriculumName={curriculum?.name ?? null} />
-      >
-        <div className={style.flex_container}>
-          <div className={style.flex_container}>
-            <CurriculumDescription />
-            <Image
-              className={`${style.curriculum_image} ${style.flex_item}`}
-              src={person_looking_curriculum}
-              alt="drawed person looking curriculum"
-            />
+      <Panel header={curriculum.name}>
+          <div className={style.row}>
+            <div className={style.column}>
+              <CyclesSection cycles={cycles} />  
+            </div>
+            <div className={style.column}>
+              <div className={style.row}>
+                <Image src={laptopImage.src} alt="img_curriculum"  className={style.image} /> 
+          
+                <p className={style.paragrapText}>
+                  {curriculum.description}
+                </p>
+
+              </div> 
+            </div>
           </div>
-          <CyclesSection cycles={cycles} />
-        </div>
       </Panel>
-    </>
   );
 };
 

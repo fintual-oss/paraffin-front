@@ -30,21 +30,11 @@ const CyclesSection = ({ cycles }) => {
   );
 
   const goalsArray = goals?.split('\\n');
-  const GoalsDescription = () => {
-    return (
-      <>
-        <h2>Objetivos de aprendizaje</h2>
-        <ul>
-          {goalsArray.map((str) => (
-            <li key={`goal-${goalsArray.indexOf(str)}`}>{str}</li>
-          )) ?? null}
-        </ul>
-      </>
-    );
-  };
+  
+
 
   return (
-    <>
+ 
       <Card>
         <h1>Ciclos de desarrollo</h1>
         <Steps
@@ -56,7 +46,14 @@ const CyclesSection = ({ cycles }) => {
         />
         <div className={style.mainFlexContainer}>
           <div className={style.flexItem}>
-            <GoalsDescription />
+          <div>
+        <h2>Objetivos de aprendizaje</h2>
+        <ul>
+          {goalsArray.map((str) => (
+            <li key={`goal-${goalsArray.indexOf(str)}`}>{str}</li>
+          ))}
+        </ul>
+      </div>
           </div>
           <div className={style.rightFlexContainer}>
             <div className={style.flexItem}>
@@ -72,7 +69,7 @@ const CyclesSection = ({ cycles }) => {
             </div>
             <Link href={`/cycles/${activeGoalId}`} className={style.flexItem}>
               <Button
-                label="Ver ciclo"
+                label="Comenzar!"
                 icon="pi pi-angle-right"
                 iconPos="right"
               />
@@ -80,7 +77,7 @@ const CyclesSection = ({ cycles }) => {
           </div>
         </div>
       </Card>
-    </>
+
   );
 };
 
