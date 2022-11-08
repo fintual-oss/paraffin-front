@@ -9,6 +9,9 @@ const LearningUnitsSection = ({
 }) => {
   return (
     <TabView>
+      <TabPanel header="Lista de unidades">
+        <LearningUnitsListTab learningUnits={learningUnits} />
+      </TabPanel>
       <TabPanel header="Mapa de pre requisitos">
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           <div
@@ -26,9 +29,6 @@ const LearningUnitsSection = ({
             />
           </div>
         </div>
-      </TabPanel>
-      <TabPanel header="Lista de unidades">
-        <LearningUnitsListTab learningUnits={learningUnits} />
       </TabPanel>
     </TabView>
   );
