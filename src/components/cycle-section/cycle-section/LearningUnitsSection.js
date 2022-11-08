@@ -9,29 +9,31 @@ const LearningUnitsSection = ({
 }) => {
   return (
     <TabView>
-      <TabPanel header="Lista de unidades">
-        <LearningUnitsListTab learningUnits={learningUnits} />
-      </TabPanel>
       <TabPanel header="Mapa de pre requisitos">
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          <div
-            style={{
-              height: 600,
-              width: '89.6vw',
-              margin: 15,
-              position: 'relative',
-            }}
-          >
+        <div style={style}>
             <LearningUnitsGraph
               handleLearningUnitClick={handleLearningUnitClick}
               learningUnits={learningUnits}
               successions={successions}
             />
-          </div>
+        </div>
+      </TabPanel>
+      <TabPanel header="Lista de unidades">
+        <div style={style}>
+          <LearningUnitsListTab learningUnits={learningUnits} />
         </div>
       </TabPanel>
     </TabView>
   );
+};
+
+const style = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  width: '91vw',
+  height: '75vh',
+  margin: 3,
+  position: 'relative',
 };
 
 export default LearningUnitsSection;
