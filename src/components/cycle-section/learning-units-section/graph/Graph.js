@@ -12,17 +12,8 @@ const Graph = ({ nodes, edges, theme, nodePredecessors, handleNodeClick }) => {
   };
 
   return (
-    <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}>
-      <div
-        style={{
-          zIndex: 9,
-          position: 'absolute',
-          top: 15,
-          right: 15,
-          padding: 1,
-          flexDirection: 'column',
-        }}
-      >
+    <div style={graphContainerlStyle}>
+      <div style={graphControlStyle} >
         <Button
           label="-"
           className={styles.cameraButtonSymbol}
@@ -54,6 +45,23 @@ const Graph = ({ nodes, edges, theme, nodePredecessors, handleNodeClick }) => {
       />
     </div>
   );
+};
+
+const graphContainerlStyle = {
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0
+};
+
+const graphControlStyle = {
+  zIndex: 9,
+  position: 'absolute',
+  top: 15,
+  right: 15,
+  padding: 1,
+  flexDirection: 'column',
 };
 
 export default Graph;
