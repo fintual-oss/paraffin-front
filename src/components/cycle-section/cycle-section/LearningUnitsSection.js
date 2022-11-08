@@ -6,12 +6,13 @@ const LearningUnitsSection = ({
   learningUnits,
   successions,
   handleLearningUnitClick,
+  mutate,
 }) => {
   return (
     <TabView>
       <TabPanel header="Lista de unidades">
         <div style={style}>
-          <LearningUnitsListTab learningUnits={learningUnits} />
+          <LearningUnitsListTab learningUnits={learningUnits} mutate={mutate} />
         </div>
       </TabPanel>
       <TabPanel header="Mapa de pre requisitos">

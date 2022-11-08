@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './LearningUnitListItem.module.scss';
 import { CompleteLearningUnitToggle } from '@components/cycle-section/learning-units-section/complete-learning-unit-toogle/completeLearningUnitToggle';
 
-function LearningUnitItem({ unit, showSuccess }) {
+function LearningUnitItem({ unit, showSuccess, mutate }) {
   return (
     <Card className={styles.cardFull}>
       <div className={styles.productListItem}>
@@ -29,7 +29,7 @@ function LearningUnitItem({ unit, showSuccess }) {
               <Link href={`/learning-units/${unit.id}`}>{unit.name}</Link>
             </div>
           </div>
-          <CompleteLearningUnitToggle unit={unit} showSuccess={showSuccess} />
+          <CompleteLearningUnitToggle unit={unit} showSuccess={showSuccess} mutate={mutate} />
         </div>
       </div>
     </Card>

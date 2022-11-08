@@ -1,11 +1,11 @@
 import { Panel } from 'primereact/panel';
 import LearningUnitsList from '../learning-units-list/LearningUnitsList';
 
-const LearningUnitsListTab = ({ learningUnits }) => {
+const LearningUnitsListTab = ({ learningUnits, mutate }) => {
   return (
     <>
       <Panel>
-        <LearningUnitsList learningUnits={learningUnits} />
+        <LearningUnitsList learningUnits={learningUnits} mutate={mutate} />
       </Panel>
     </>
   );

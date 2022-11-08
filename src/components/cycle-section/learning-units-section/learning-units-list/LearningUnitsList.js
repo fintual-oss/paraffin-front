@@ -3,7 +3,7 @@ import LearningUnitListItem from '@components/cycle-section/learning-units-secti
 import { Toast } from 'primereact/toast';
 import { DataView } from 'primereact/dataview';
 
-const LearningUnitsList = ({ learningUnits }) => {
+const LearningUnitsList = ({ learningUnits, mutate }) => {
   const toast = useRef(null);
   const showSuccess = () => {
     toast.current.show({
@@ -14,7 +14,7 @@ const LearningUnitsList = ({ learningUnits }) => {
   };
 
   const renderListItem = (unit) => {
-    return <LearningUnitListItem unit={unit} showSuccess={showSuccess} />;
+    return <LearningUnitListItem unit={unit} showSuccess={showSuccess} mutate={mutate} />;
   };
 
   return (
