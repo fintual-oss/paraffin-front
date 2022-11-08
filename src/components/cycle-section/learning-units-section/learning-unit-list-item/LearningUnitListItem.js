@@ -2,7 +2,7 @@ import { Card } from 'primereact/card';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './LearningUnitListItem.module.scss';
-import mujeres_felices_aprendiendo from '@utils/images/mujeres-felices-aprendiendo.png'
+import mujeres_felices_aprendiendo from '@utils/images/mujeres-felices-aprendiendo.png';
 import { CompleteLearningUnitToggle } from '@components/cycle-section/learning-units-section/complete-learning-unit-toogle/completeLearningUnitToggle';
 
 function LearningUnitItem({ learningUnit, showSuccess, mutate }) {
