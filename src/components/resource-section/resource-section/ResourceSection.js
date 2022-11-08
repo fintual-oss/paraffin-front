@@ -1,7 +1,6 @@
 import ResourceSidebar from '@components/resources-section/resource-sidebar/ResourceSidebar';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
-import { useRef } from 'react';
 
 const ResourceSection = ({
   onHideHandler,
@@ -13,13 +12,6 @@ const ResourceSection = ({
     isLoading: isLoadingResource,
     isError: isErrorResource,
   } = useGet(endpoints('resource', resourceId));
-
-  const {
-    data,
-    isLoading: isLoadingEvaluation,
-    isError: isErrorEvaluation,
-    mutate: updateResourceEvaluation,
-  } = useGet(endpoints('resourceEvaluation', resourceId));
 
   const {
     data: average_evaluation,
@@ -56,13 +48,10 @@ const ResourceSection = ({
     );
   };
 
-  const toast = useRef(null);
-
   if (
     isLoadingResource ||
     isLoadingAverage ||
     isLoadingEvaluations ||
-    isLoadingEvaluation ||
     isLoadingCompleted
   )
     return 'loading';
@@ -71,38 +60,9 @@ const ResourceSection = ({
     isErrorResource ||
     isErrorAverage ||
     isErrorEvaluations ||
-    isErrorEvaluation ||
     isErrorCompleted
   )
     return 'error';
-
-  const showSuccess = () =>
-    toast.current.show({
-      severity: 'success',
-      summary: 'Tu evaluación quedó registrada',
-      detail: 'Gracias por contribuir!',
-    });
-
-  async function handleSubmitForm(evaluation, comment) {
-    if (evaluation < 1) {
-      return;
-    }
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ evaluation: evaluation, comment: comment }),
-    };
-    const response = await fetch(
-      endpoints('resourceEvaluation', resourceId),
-      requestOptions
-    );
-    await response.json();
-    updateEvaluations();
-    updateAverage();
-    updateResourceEvaluation();
-    onEvaluationSubmitionHandler();
-    showSuccess();
-  }
 
   const resource = {
     name: resourceData.name,
@@ -111,19 +71,17 @@ const ResourceSection = ({
     completed: isCompleted.completed,
   };
 
-  const formOptions = {
-    evaluation: data.evaluation,
-    comment: data.comment,
-    evaluated: data.evaluation ? true : false,
-    handleSubmitForm: handleSubmitForm,
-    toast: toast,
+  const updatesAddEvaluation = {
+    onEvaluationSubmitionHandler,
+    updateAverage,
+    updateEvaluations,
   };
-
   return (
     <ResourceSidebar
       onHideHandler={() => onHideHandler()}
+      resourceId={resourceId}
       activeResource={resource}
-      formOptions={formOptions}
+      updatesAddEvaluation={updatesAddEvaluation}
       evaluations={evaluations}
       checkboxChangeHandler={checkboxChangeHandler}
     />

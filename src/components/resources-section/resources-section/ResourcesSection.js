@@ -73,7 +73,6 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
     <div className={styles.container}>
       <Panel header={header}>
         <LearningUnitInformation learningUnit={learningUnit} />
-        <LoginDialog />
         {displayBasic && (
           <AddNewResourceModal
             handlers={modalHandlers}
@@ -92,6 +91,7 @@ const ResourcesSection = ({ learningUnit, resources, isError }) => {
           />
         )}
       </Panel>
+      <LoginDialog />
     </div>
   );
 };
