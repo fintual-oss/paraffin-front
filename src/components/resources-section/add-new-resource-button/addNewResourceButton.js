@@ -7,7 +7,13 @@ const AddNewResourceButton = ({ setDisplayBasic }) => {
   const loginDialog = useLoginDialog();
 
   if (currentUser) {
-    return <Button icon="pi pi-plus" onClick={() => setDisplayBasic(true)} />;
+    return (
+      <Button
+        icon="pi pi-plus"
+        onClick={() => setDisplayBasic(true)}
+        label="Agrega un recurso"
+      />
+    );
   }
 
   return (
