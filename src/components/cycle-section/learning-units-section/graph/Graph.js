@@ -13,7 +13,7 @@ const Graph = ({ nodes, edges, theme, nodePredecessors, handleNodeClick }) => {
 
   return (
     <div style={graphContainerlStyle}>
-      <div style={graphControlStyle} >
+      <div style={graphControlStyle}>
         <Button
           label="-"
           className={styles.cameraButtonSymbol}
@@ -52,7 +52,7 @@ const graphContainerlStyle = {
   top: 0,
   bottom: 0,
   left: 0,
-  right: 0
+  right: 0,
 };
 
 const graphControlStyle = {
