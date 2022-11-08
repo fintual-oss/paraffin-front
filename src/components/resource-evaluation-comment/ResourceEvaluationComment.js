@@ -13,6 +13,7 @@ const ResourceEvaluationComment = ({ evaluation }) => {
           stars={5}
           cancel={false}
           readOnly="true"
+          style={{ width: '100%' }}
         />
       </div>
       <div className={styles.rating}>
@@ -24,6 +25,8 @@ const ResourceEvaluationComment = ({ evaluation }) => {
           disabled={true}
           rows={4}
           cols={20}
+          style={{ width: '100%' }}
+          autoResize
         />
       </div>
     </div>
