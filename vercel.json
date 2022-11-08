@@ -5,20 +5,20 @@
       "destination": "https://paraffin-back.herokuapp.com/api/:path*"
     },
     {
-      "source": "/users/sign_in",
-      "destination": "https://paraffin-back.herokuapp.com/users/sign_in"
+      "source": "/users/:path*",
+      "destination": "https://paraffin-back.herokuapp.com/users/:path*"
     },
     {
-      "source": "/users/sign_out",
-      "destination": "https://paraffin-back.herokuapp.com/users/sign_out"
+      "source": "/users/auth/google_oauth2/callback",
+      "destination": "https://paraffin-back.herokuapp.com/users/auth/google_oauth2/callback"
     },
     {
-      "source": "/users/sign_up",
-      "destination": "https://paraffin-back.herokuapp.com/users/sign_up"
+      "source": "/users/auth/github/callback",
+      "destination": "https://paraffin-back.herokuapp.com/users/auth/github/callback"
     },
     {
-      "source": "/users",
-      "destination": "https://paraffin-back.herokuapp.com/users"
+      "source": "/assets/:path*",
+      "destination": "https://paraffin-back.herokuapp.com/assets/:path*"
     }
   ]
 }
