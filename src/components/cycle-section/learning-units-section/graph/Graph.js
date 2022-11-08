@@ -1,61 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { GraphCanvas } from 'reagraph';
+import { Button } from 'primereact/button';
+import styles from './Graph.module.scss';
 
-const Graph = ({ nodes, edges, nodePredecessors, handleNodeClick }) => {
+const Graph = ({ nodes, edges, theme, nodePredecessors, handleNodeClick }) => {
   const [selections, setSelections] = useState([]);
+  const ref = useRef();
 
   const handleNodePointOver = (event) => {
     setSelections(nodePredecessors[event.id]);
   };
-  const theme = {
-    canvas: {
-      background: '#fff',
-      fog: '#fff',
-    },
-    node: {
-      fill: '#7CA0AB',
-      activeFill: '#005AD6',
-      opacity: 1,
-      selectedOpacity: 1,
-      inactiveOpacity: 0.2,
-      label: {
-        color: '#2A6475',
-        stroke: '#fff',
-        activeColor: '#62A4FF',
-      },
-    },
-    lasso: {
-      border: '1px solid #55aaff',
-      background: 'rgba(75, 160, 255, 0.1)',
-    },
-    ring: {
-      fill: false,
-      activeFill: false,
-    },
-    edge: {
-      fill: '#D8E6EA',
-      activeFill: '#62A4FF',
-      opacity: 1,
-      selectedOpacity: 1,
-      inactiveOpacity: 0.2,
-      label: {
-        stroke: '#fff',
-        color: '#2A6475',
-        activeColor: '#1DE9AC',
-      },
-    },
-    arrow: {
-      fill: '#D8E6EA',
-      activeFill: '#62A4FF',
-    },
-  };
 
   return (
-    <div>
+    <div style={graphContainerlStyle}>
+      <div style={graphControlStyle}>
+        <Button
+          label="-"
+          className={styles.cameraButtonSymbol}
+          onClick={() => ref.current?.zoomOut()}
+        />
+        <Button
+          style={{ margin: '0px 5px 0px 5px' }}
+          label="Centrar Grafo"
+          className={styles.cameraButton}
+          onClick={() => ref.current?.centerGraph()}
+        />
+        <Button
+          label="+"
+          className={styles.cameraButtonSymbol}
+          onClick={() => ref.current?.zoomIn()}
+        />
+      </div>
+
       <GraphCanvas
         theme={theme}
         nodes={nodes}
         edges={edges}
+        ref={ref}
         layoutType="treeLr2d"
         selections={selections}
         onNodeClick={(event) => handleNodeClick(event.id)}
@@ -64,6 +45,23 @@ const Graph = ({ nodes, edges, nodePredecessors, handleNodeClick }) => {
       />
     </div>
   );
+};
+
+const graphContainerlStyle = {
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
+};
+
+const graphControlStyle = {
+  zIndex: 9,
+  position: 'absolute',
+  top: 15,
+  right: 15,
+  padding: 1,
+  flexDirection: 'column',
 };
 
 export default Graph;

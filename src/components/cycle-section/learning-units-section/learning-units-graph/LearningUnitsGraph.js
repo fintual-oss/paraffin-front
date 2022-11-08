@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { finTheme } from './finTheme';
 
 const Graph = dynamic(
   () => import('@components/cycle-section/learning-units-section/graph/Graph'),
@@ -19,9 +20,11 @@ const LearningUnitsGraph = ({
     id: `${succession['predecessor_id']}-${succession['successor_id']}`,
   }));
 
+  const maxLabelNameLength = 12;
+
   const nodes = learningUnits.map((learningUnit) => ({
     id: learningUnit.id.toString(),
-    label: learningUnit.name,
+    label: `${learningUnit.name.substring(0, maxLabelNameLength)}...`,
   }));
 
   function isAGraphEdge(graphElement) {
@@ -42,7 +45,7 @@ const LearningUnitsGraph = ({
     return nodePredecessors;
   }
 
-  function setPredecessorsOfASingleNode(node, nodes, edges) {
+  function setPredecessorsOfASingleNode(node, edges) {
     let nodesToSelect = [node.id];
     let edgesToSelect = [];
     let newChanges = true;
@@ -96,6 +99,7 @@ const LearningUnitsGraph = ({
     <Graph
       nodes={nodes}
       edges={edges}
+      theme={finTheme}
       nodePredecessors={nodePredecessors}
       handleNodeClick={handleNodeClick}
     />
