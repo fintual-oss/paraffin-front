@@ -76,7 +76,10 @@ const LearningUnitsGraph = ({
 
   const handleNodeClick = (id) => {
     let isCompleted = true;
-    nodePredecessors[id].every((element) => {
+    const previousPath = nodePredecessors[id].filter(function (value) {
+      return value !== id;
+    });
+    previousPath.every((element) => {
       if (!isAGraphEdge(element)) {
         isCompleted = learningUnits.find(
           (learningUnit) => learningUnit.id.toString() === element
