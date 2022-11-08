@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from './CycleSection.module.scss';
 import CycleInfoCard from '@components/cycle-section/cycle-section/CycleInfoCard';
 import ChallengeCard from './ChallengeCard';
-import Error from './error';
+import Error from '@components/common/Error';
 import { CycleTopContainer } from './CycleTopContainer';
 import { CycleBreadCrumb } from '@components/common/BreadCrumb';
 import useGet from '@hooks/useGet';
