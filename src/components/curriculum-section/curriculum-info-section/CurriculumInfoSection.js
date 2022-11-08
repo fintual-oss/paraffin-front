@@ -36,7 +36,7 @@ const CurriculumInfoSection = ({ curriculumId }) => {
           <title>{curriculum.name}</title>
           <meta property="og:title" content={curriculum.name} key="title" />
         </Head>
-        <div className={`${style.flex_item}`}>
+        <div className={style.flex_item}>
           {paragraphsArray?.map((paragraph) => (
             <p key={`paragraph-${paragraphsArray.indexOf(paragraph)}`}>
               {paragraph}
@@ -57,7 +57,7 @@ const CurriculumInfoSection = ({ curriculumId }) => {
       <Panel
         header=<CurriculumHeader curriculumName={curriculum?.name ?? null} />
       >
-        <div className={`${style.flex_container}`}>
+        <div className={style.flex_container}>
           <Image
             className={`${style.curriculum_image} ${style.flex_item}`}
             src={person_looking_curriculum}

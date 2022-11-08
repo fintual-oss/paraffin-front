@@ -9,6 +9,7 @@ import { CycleBreadCrumb } from '@components/common/BreadCrumb';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
+import { useRef } from 'react';
 import { Panel } from 'primereact/panel';
 
 const CycleSection = ({ cycleId }) => {
@@ -25,6 +26,37 @@ const CycleSection = ({ cycleId }) => {
     mutate: mutateCurriculum,
   } = useGet(endpoints('cycle', cycleId));
 
+  const completedCycleEndpoint = endpoints('completeCycle', cycleId);
+  const completeCycle = async () => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    };
+    const response = await fetch(completedCycleEndpoint, requestOptions);
+
+    if (response.ok) {
+      mutateCurriculum();
+      showSuccess();
+    } else {
+      showError();
+    }
+  };
+  const toastCompletition = useRef(null);
+  const showSuccess = () => {
+    toastCompletition.current.show({
+      severity: 'success',
+      summary: 'Hurra! Se ha marcado el ciclo como completado',
+      life: 2000,
+    });
+  };
+  const showError = () => {
+    toastCompletition.current.show({
+      severity: 'error',
+      summary: 'Primero debes completar todos los learning units',
+      life: 2000,
+    });
+  };
+
   if (isLoadingUnits || isLoadingCurriculum) {
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
   }
@@ -40,7 +72,11 @@ const CycleSection = ({ cycleId }) => {
       <CycleBreadCrumb cycle={cycle} />
       <Panel>
         <div className={styles.panelContainer}>
-          <CycleTopContainer cycle={cycle} />
+          <CycleTopContainer
+            cycle={cycle}
+            completeCycle={completeCycle}
+            toastCompletition={toastCompletition}
+          />
           <div className={styles.middleContainer}>
             <CycleInfoCard cycle={cycle} />
             <ChallengeCard cycle={cycle} />

@@ -2,7 +2,7 @@
   padding: 2rem;
 }
 
-.flex_container {
+.mainFlexContainer {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.flex_item {
+.flexItem {
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
@@ -33,4 +33,16 @@
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   align-self: auto;
+}
+
+.rightFlexContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-start;
+  width: 40%;
+  gap: 3rem;
+  overflow: auto;
+  flex-direction: column;
 }
