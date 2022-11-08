@@ -18,7 +18,6 @@ const LearningUnitPage = (props) => {
   };
   const { query, isReady } = useRouter();
   let isPathCompleted = false;
-  console.log(query);
   if (isReady) {
     isPathCompleted = !('not-completed' in query);
   }
