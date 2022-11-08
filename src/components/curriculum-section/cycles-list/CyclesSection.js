@@ -67,7 +67,7 @@ const CyclesSection = ({ cycles }) => {
                   icon="pi pi-verified"
                 ></Message>
               ) : (
-                <Message severity="warn" text="No completado"></Message>
+                <Message severity="info" text="No completado"></Message>
               )}
             </div>
             <Link href={`/cycles/${activeGoalId}`} className={style.flexItem}>
