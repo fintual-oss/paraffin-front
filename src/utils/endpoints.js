@@ -13,9 +13,9 @@ export const endpoints = (operationId, param) => {
     curriculumLearningUnits:
       apiBaseUrl + `/curriculums/${param}/learning_units`,
     cycleLearningUnits: apiBaseUrl + `/cycles/${param}/learning_units`,
-    isLearningUnitCompleted: apiBaseUrl + `/learning_units/${param}/completed`,
     learningUnitResources: apiBaseUrl + `/learning_units/${param}/resources`,
     resourceEvaluation: apiBaseUrl + `/resources/${param}/evaluation`,
+    completeLearningUnit: apiBaseUrl + `/learning_units/${param}/completed`,
     resourceEvaluations:
       apiBaseUrl + `/resources/${param}/resource_evaluations`,
     resourceAverage: apiBaseUrl + `/resources/${param}/average_evaluation`,
