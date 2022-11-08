@@ -12,6 +12,7 @@ const AddEvaluation = ({ formOptions }) => {
 
   useEffect(() => {
     setEvaluation(formOptions.evaluation);
+    setComment(formOptions.comment);
   }, [formOptions]);
 
   const handleErase = () => {
