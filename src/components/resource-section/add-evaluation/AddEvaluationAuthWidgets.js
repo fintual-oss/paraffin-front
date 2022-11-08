@@ -11,7 +11,7 @@ import { Tooltip } from 'primereact/tooltip';
 const AddEvaluationAuthWidgets = ({ formOptions }) => {
   const [evaluation, setEvaluation] = useState(formOptions.evaluation);
   const [comment, setComment] = useState(formOptions.comment);
-  const loginDialog = useLoginDialog();
+
 
   useEffect(() => {
     setEvaluation(formOptions.evaluation);
@@ -28,17 +28,7 @@ const AddEvaluationAuthWidgets = ({ formOptions }) => {
   };
 
   return (
-    <div
-      className="cardEvaluation"
-      onClick={() => {
-        !formOptions.enabled && loginDialog.setDisplayLoginDialog(true);
-      }}
-      onKeyPress={null}
-      role="button"
-      tabIndex="0"
-      data-pr-tooltip="Ingresa para poder evaluar un recurso"
-      data-pr-position="left"
-    >
+    <>
       <Tooltip
         target=".cardEvaluation"
         mouseTrack
@@ -83,7 +73,7 @@ const AddEvaluationAuthWidgets = ({ formOptions }) => {
         </div>
         <Toast ref={formOptions.toast} position="bottom-center" />
       </Card>
-    </div>
+    </>
   );
 };
 
