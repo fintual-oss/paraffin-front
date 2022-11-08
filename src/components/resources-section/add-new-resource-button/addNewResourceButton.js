@@ -7,7 +7,13 @@ const AddNewResourceButton = ({ setDisplayBasic }) => {
   const loginDialog = useLoginDialog();
 
   if (currentUser) {
-    return <Button icon="pi pi-plus" onClick={() => setDisplayBasic(true)} />;
+    return (
+      <Button
+        icon="pi pi-plus"
+        onClick={() => setDisplayBasic(true)}
+        label="Agrega un recurso"
+      />
+    );
   }
 
   return (
@@ -19,6 +25,7 @@ const AddNewResourceButton = ({ setDisplayBasic }) => {
     >
       <Button
         icon="pi pi-plus"
+        label="Agrega un recurso"
         disabled
         tooltip="Ingresa para agregar un recurso"
         tooltipOptions={{ showOnDisabled: true, position: 'left' }}
