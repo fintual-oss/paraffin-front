@@ -11,6 +11,7 @@ function Navbar() {
   const currentUser = useCurrentUser();
   const signOut = useSignOut();
   const router = useRouter();
+  const curriculum_path = '/curriculums/1';
 
   function items() {
     let response = [
@@ -27,7 +28,7 @@ function Navbar() {
         label: 'Curriculum',
         icon: 'pi pi-book',
         command: () => {
-          router.push('/curriculums/1');
+          router.push(curriculum_path);
         },
       });
       response.push({
@@ -49,7 +50,7 @@ function Navbar() {
         <Link
           href={
             '/users/sign_in?redirect_to=' +
-            (router.asPath == '/' ? '/curriculums/1' : router.asPath)
+            (router.asPath == '/' ? curriculum_path : router.asPath)
           }
         >
           <Button label="Sign In" icon="pi pi-power-on" />
