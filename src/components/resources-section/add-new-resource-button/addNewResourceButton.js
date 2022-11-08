@@ -25,6 +25,7 @@ const AddNewResourceButton = ({ setDisplayBasic }) => {
     >
       <Button
         icon="pi pi-plus"
+        label="Agrega un recurso"
         disabled
         tooltip="Ingresa para agregar un recurso"
         tooltipOptions={{ showOnDisabled: true, position: 'left' }}
