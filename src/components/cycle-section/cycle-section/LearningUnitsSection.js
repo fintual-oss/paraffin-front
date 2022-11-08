@@ -20,9 +20,7 @@ const LearningUnitsSection = ({
             }}
           >
             <LearningUnitsGraph
-              handleNodeClick={(id, isCompleted) =>
-                handleLearningUnitClick(id, isCompleted)
-              }
+              handleLearningUnitClick={handleLearningUnitClick}
               learningUnits={learningUnits}
               successions={successions}
             />
