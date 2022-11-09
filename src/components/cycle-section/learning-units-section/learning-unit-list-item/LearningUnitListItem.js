@@ -22,7 +22,7 @@ function LearningUnitItem({ learningUnit, showSuccess, mutate }) {
         </Link>
         <div className={styles.productListDetail}>
           <div className={styles.productName}>
-            <span>Learning unit</span>
+            <span>Unidad</span>
             <div>
               <i className="pi pi-link">&nbsp;</i>
               <Link href={`/learning-units/${learningUnit.id}`}>

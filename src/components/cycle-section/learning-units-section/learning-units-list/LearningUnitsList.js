@@ -8,7 +8,7 @@ const LearningUnitsList = ({ learningUnits, mutate }) => {
   const showSuccess = () => {
     toast.current.show({
       severity: 'success',
-      summary: 'Learning unit actualizado',
+      summary: 'Unidad actualizada',
       life: 2000,
     });
   };

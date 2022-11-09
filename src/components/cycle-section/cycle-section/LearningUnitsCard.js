@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const LearningUnitsCard = ({ learningUnits }) => {
   return (
-    <Card className={styles.learningUnitsCard} title="Learning units">
+    <Card className={styles.learningUnitsCard} title="Unidades">
       <ul>
         {learningUnits.map((lu) => (
           <li key={lu.id}>

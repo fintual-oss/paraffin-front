@@ -1,7 +1,7 @@
 const CurriculumHeader = ({ curriculumName }) => {
   return (
     <>
-      <i>Curriculum</i>
+      <i>Ruta de aprendizaje</i>
       <h1>{curriculumName}</h1>
     </>
   );
