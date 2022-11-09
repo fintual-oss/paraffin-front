@@ -36,11 +36,7 @@ const LearningUnitsGraph = ({
   function setNodePredecessors(nodes, edges) {
     let nodePredecessors = {};
     nodes.forEach((node) => {
-      nodePredecessors[node.id] = setPredecessorsOfASingleNode(
-        node,
-        nodes,
-        edges
-      );
+      nodePredecessors[node.id] = setPredecessorsOfASingleNode(node, edges);
     });
     return nodePredecessors;
   }
