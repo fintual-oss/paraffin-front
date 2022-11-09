@@ -12,7 +12,7 @@ export const CycleTopContainer = ({
         <h2>Ciclo {cycle.order_number}</h2>
         <h1>{cycle.name}</h1>
       </div>
-      <div>
+      <div className={styles.checkButtonContainer}>
         <CompleteCycle
           cycle={cycle}
           changeHandler={completeCycle}

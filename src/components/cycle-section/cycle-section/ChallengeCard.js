@@ -1,23 +1,34 @@
 import Link from 'next/link';
 import { Card } from 'primereact/card';
-import { ScrollPanel } from 'primereact/scrollpanel';
+import { Fieldset } from 'primereact/fieldset';
 import styles from './CycleSection.module.scss';
-import { Accordion, AccordionTab } from 'primereact/accordion';
 
 const ChallengeCard = ({ cycle }) => {
   return (
     <Card
       className={`${styles.cycleSectionCard} ${styles.challengeCard}`}
-      title="Desafío"
+      title="Tienes un desafío esperando por ti 😎"
     >
-      <ScrollPanel className={styles.scrollPanel}>
-        {cycle.challenge_description}
-      </ScrollPanel>
-      <Accordion className={styles.accordionHeader}>
-        <AccordionTab header="Repositorio base">
-          <Link href={cycle.boilerplate_url}>Repositorio en GitHub</Link>
-        </AccordionTab>
-      </Accordion>
+      <p>
+        En esta sección podrás encontrar un proyecto con un repositorio base
+        para que puedas aplicar lo aprendido en este ciclo:
+      </p>
+
+      <div className={styles.challengeField}>
+        <Fieldset legend="Descripción del proyecto">
+          <p>{cycle.challenge_description}</p>
+        </Fieldset>
+      </div>
+      <div className={styles.challengeField}>
+        <Fieldset legend="Repositorio GitHub">
+          <p>
+            <Link href={cycle.boilerplate_url}>
+              Aquí podras encontrar un repositorio base para construir tu
+              proyecto
+            </Link>
+          </p>
+        </Fieldset>
+      </div>
     </Card>
   );
 };
