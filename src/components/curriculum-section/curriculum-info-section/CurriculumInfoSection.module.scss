@@ -1,26 +1,29 @@
 .row {
+  width: 100%;
+  height: 60vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  justify-content: center;
 }
 
-.column {
+.rightColumn {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
+  flex: 2;
+  margin: 0px 0px 0px 6px
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  
 }
 
 .paragrapText {
   text-align: center;
   font-size: 16px;
   margin: 15px 20px 15px 20px;
-
 }
 
-.image {
-  width: 100%;
-  align-self: flex-end;
-}
+

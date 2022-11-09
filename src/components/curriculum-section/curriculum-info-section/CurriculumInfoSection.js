@@ -3,9 +3,10 @@ import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import CyclesSection from '../cycles-list/CyclesSection';
-import { Image } from 'primereact/image';
+import Image from 'next/image';
+import { Card } from 'primereact/card';
 import style from './CurriculumInfoSection.module.scss';
-import laptopImage from "../../../utils/images/person-laptop.png"
+import laptopImage from '../../../utils/images/person-laptop.png';
 
 const CurriculumInfoSection = ({ curriculumId }) => {
   const {
@@ -27,25 +28,25 @@ const CurriculumInfoSection = ({ curriculumId }) => {
     return 'error';
   }
 
-
   return (
-      <Panel header={curriculum.name}>
+    <Panel header={curriculum.name}>
+      <div className={style.row}>
+        <Card className={style.leftColumn}>
           <div className={style.row}>
-            <div className={style.column}>
-              <CyclesSection cycles={cycles} />  
-            </div>
-            <div className={style.column}>
-              <div className={style.row}>
-                <Image src={laptopImage.src} alt="img_curriculum"  className={style.image} /> 
-          
-                <p className={style.paragrapText}>
-                  {curriculum.description}
-                </p>
-
-              </div> 
-            </div>
+            <Image
+              src={laptopImage}
+              alt="img_curriculum"
+              width="330"
+              height="150"
+            />
+            <p className={style.paragrapText}>{curriculum.description}</p>
           </div>
-      </Panel>
+        </Card>
+        <Card className={style.rightColumn}>
+          <CyclesSection cycles={cycles} />
+        </Card>
+      </div>
+    </Panel>
   );
 };
 
