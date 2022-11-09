@@ -7,7 +7,7 @@ const ChallengeCard = ({ cycle }) => {
   return (
     <Card
       className={`${styles.cycleSectionCard} ${styles.challengeCard}`}
-      title="Tienes un desafío esperando para ti 😎"
+      title="Tienes un desafío esperando por ti 😎"
     >
       <p>
         En esta sección podrás encontrar un proyecto con un repositorio base
