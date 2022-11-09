@@ -37,7 +37,7 @@ const CurriculumInfoSection = ({ curriculumId }) => {
               src={laptopImage}
               alt="img_curriculum"
               width="330"
-              height="150"
+              height="220"
             />
             <p className={style.paragrapText}>{curriculum.description}</p>
           </div>
