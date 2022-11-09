@@ -35,7 +35,7 @@ const solution = () => {
             classCard={styles.column_info_card_right}
             altImg="Logo"
             title="Gratuita"
-            description="Nuestra plataforma es gratuita y está pensada para todas aquellas personas que tienen conocimientos básicos de programación, pero aún necesitan un impulso más para subir de nivel. Ser.dev es la profesión más demandada del mundo y te abrirá un sinnúmero de oportunidades de crecimiento personal y profesional."
+            description="Nuestra plataforma es gratuita y está pensada para todas aquellas personas que tienen conocimientos básicos de programación, pero aún necesitan un impulso más para subir de nivel. ser.dev es la profesión más demandada del mundo y te abrirá un sinnúmero de oportunidades de crecimiento personal y profesional."
           />
         </div>
       </div>
