@@ -46,15 +46,20 @@ $blue: #37368f;
   float: left;
 }
 
+.mainContainer {
+  padding: 10px 20px 10px 20px;
+}
+
 .cycleSectionCard {
   flex: 1;
   height: 100%;
+  padding: 10px 30px 10px 30px;
+ 
 }
 
 .challengeCard {
-  color: $black;
-  background-color: $white;
-  height: 100%
+  font-size: 15px;
+
 }
 
 .scrollPanel .p-scrollpanel-wrapper {
@@ -106,3 +111,18 @@ $blue: #37368f;
   background-color: $grey;
   color: $black;
 }
+
+.checkButtonContainer {
+  margin-top: 50px;
+  margin-right: 40px;
+}
+
+.checkButton {
+  font-size: 18px;
+}
+
+.challengeField {
+  margin-top: 30px;
+}
+
+
