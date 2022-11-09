@@ -53,7 +53,8 @@ const LearningUnitsGraph = ({
             edge,
             node_id,
             nodesToSelect,
-            edgesToSelect
+            edgesToSelect,
+            newChanges
           );
         });
       });
@@ -61,8 +62,13 @@ const LearningUnitsGraph = ({
     return nodesToSelect.concat(edgesToSelect);
   }
 
-  function pushPredecessorsIfNew(edge, node_id, nodesToSelect, edgesToSelect) {
-    let newChanges = false;
+  function pushPredecessorsIfNew(
+    edge,
+    node_id,
+    nodesToSelect,
+    edgesToSelect,
+    newChanges
+  ) {
     if (edge.target === node_id && !edgesToSelect.includes(edge.id)) {
       edgesToSelect.push(edge.id);
       if (!nodesToSelect.includes(edge.source)) {
