@@ -22,7 +22,10 @@ const ChallengeCard = ({ cycle }) => {
       <div className={styles.challengeField}>
         <Fieldset legend="Repositorio GitHub">
           <p>
-            <Link href={cycle.boilerplate_url}>Aquí podras encontrar un repositorio base para construir tu proyecto</Link>
+            <Link href={cycle.boilerplate_url}>
+              Aquí podras encontrar un repositorio base para construir tu
+              proyecto
+            </Link>
           </p>
         </Fieldset>
       </div>

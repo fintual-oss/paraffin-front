@@ -5,7 +5,7 @@ import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import { useRef } from 'react';
 import LearningUnitsSection from './LearningUnitsSection';
-import style from "./CycleSection.module.scss"
+import style from './CycleSection.module.scss';
 
 const CycleSection = ({ cycleId, learningUnitRedirection }) => {
   const {

@@ -15,7 +15,8 @@ export const CompleteCycle = ({ cycle, changeHandler, toast }) => {
       <Tooltip target=".CompleteCycleToggleButton" />
       <span>
         <ToggleButton
-          className={`CompleteCycleToggleButton ${toggleDisabled} ${style.checkButton}`}
+          className={`CompleteCycleToggleButton 
+          ${toggleDisabled} ${style.checkButton}`}
           onLabel="Ciclo completado"
           offLabel="Marcar ciclo como completado"
           onIcon="pi pi-verified"
