@@ -1,48 +1,44 @@
-.stepper {
-  padding: 2rem;
+.cycleStepsContainer {
+  font-size: 20px;
+  margin: 50px 0px 100px 0px;
 }
 
-.mainFlexContainer {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
+.cycleSteps {
+  font-size: 18px;
+  border-left-width: 0px;
+  & > ul {
+    & > [class~='p-steps-item'] {
+      & > [class~='p-menuitem-link'] {
+        &:not(.p-disabled) {
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.textTitle {
+  font-size: 30px;
+  text-align: center;
+  color: #6366f1
+}
+
+.textList {
+  font-size: 16px;
+}
+
+.goalsContainer {
+  margin: 20px 0px 50px 20px;
+  height: 12vh;
+}
+
+
+.buttonContainer {
+  width: 96%;
   justify-content: space-between;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.flexItem {
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
-}
-
-.rightFlexContainer {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  align-content: flex-start;
-  width: 40%;
-  gap: 3rem;
-  overflow: auto;
-  flex-direction: column;
+  margin-left: 20px;
 }
+

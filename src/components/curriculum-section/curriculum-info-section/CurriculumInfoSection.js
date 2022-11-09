@@ -3,11 +3,10 @@ import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import CyclesSection from '../cycles-list/CyclesSection';
-import CurriculumHeader from './CurriculumHeader';
-import person_looking_curriculum from '@utils/images/person_looking_curriculum.png';
-import Image from 'next/future/image';
+import Image from 'next/image';
+import { Card } from 'primereact/card';
 import style from './CurriculumInfoSection.module.scss';
-import Head from 'next/head';
+import laptopImage from '@utils/images/person-laptop.png';
 
 const CurriculumInfoSection = ({ curriculumId }) => {
   const {
@@ -28,46 +27,26 @@ const CurriculumInfoSection = ({ curriculumId }) => {
   if (isErrorCurriculum || isErrorCurriculumCycles) {
     return 'error';
   }
-  const paragraphsArray = curriculum?.description?.split('\\n');
-  const CurriculumDescription = () => {
-    return (
-      <>
-        <Head>
-          <title>{curriculum.name}</title>
-          <meta property="og:title" content={curriculum.name} key="title" />
-        </Head>
-        <div className={style.flex_item}>
-          {paragraphsArray?.map((paragraph) => (
-            <p key={`paragraph-${paragraphsArray.indexOf(paragraph)}`}>
-              {paragraph}
-            </p>
-          )) ?? null}
-          {'\n'}
-          <i>
-            Explora los ciclos de desarrollo y sus objetivos de aprendizaje más
-            abajo.
-          </i>
-        </div>
-      </>
-    );
-  };
 
   return (
-    <>
-      <Panel
-        header=<CurriculumHeader curriculumName={curriculum?.name ?? null} />
-      >
-        <div className={style.flex_container}>
-          <Image
-            className={`${style.curriculum_image} ${style.flex_item}`}
-            src={person_looking_curriculum}
-            alt="drawed person looking curriculum"
-          />
-          <CurriculumDescription />
-        </div>
-        <CyclesSection cycles={cycles} />
-      </Panel>
-    </>
+    <Panel header={curriculum.name}>
+      <div className={style.row}>
+        <Card className={style.leftColumn}>
+          <div className={style.row}>
+            <Image
+              src={laptopImage}
+              alt="img_curriculum"
+              width="330"
+              height="220"
+            />
+            <p className={style.paragrapText}>{curriculum.description}</p>
+          </div>
+        </Card>
+        <Card className={style.rightColumn}>
+          <CyclesSection cycles={cycles} />
+        </Card>
+      </div>
+    </Panel>
   );
 };
 

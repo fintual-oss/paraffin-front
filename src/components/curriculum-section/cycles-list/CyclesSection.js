@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Steps } from 'primereact/steps';
 import { Button } from 'primereact/button';
-import { Card } from 'primereact/card';
 import Link from 'next/link';
 import style from './CyclesSection.module.scss';
 import { Message } from 'primereact/message';
@@ -30,57 +29,41 @@ const CyclesSection = ({ cycles }) => {
   );
 
   const goalsArray = goals?.split('\\n');
-  const GoalsDescription = () => {
-    return (
-      <>
-        <h2>Objetivos de aprendizaje</h2>
-        <ul>
-          {goalsArray.map((str) => (
-            <li key={`goal-${goalsArray.indexOf(str)}`}>{str}</li>
-          )) ?? null}
-        </ul>
-      </>
-    );
-  };
 
   return (
-    <>
-      <Card>
-        <h1>Ciclos de desarrollo</h1>
+    <div>
+      <h1 className={style.textTitle}>Ciclos de desarrollo</h1>
+      <div className={style.cycleStepsContainer}>
         <Steps
           model={items}
           activeIndex={activeStepIndex}
           onSelect={(e) => setActiveStepIndex(e.index)}
           readOnly={false}
-          className={style.stepper}
+          className={style.cycleSteps}
         />
-        <div className={style.mainFlexContainer}>
-          <div className={style.flexItem}>
-            <GoalsDescription />
-          </div>
-          <div className={style.rightFlexContainer}>
-            <div className={style.flexItem}>
-              {activeCycleStatus ? (
-                <Message
-                  severity="success"
-                  text="Completado"
-                  icon="pi pi-verified"
-                ></Message>
-              ) : (
-                <Message severity="warn" text="No completado"></Message>
-              )}
-            </div>
-            <Link href={`/cycles/${activeGoalId}`} className={style.flexItem}>
-              <Button
-                label="Ver ciclo"
-                icon="pi pi-angle-right"
-                iconPos="right"
-              />
-            </Link>
-          </div>
-        </div>
-      </Card>
-    </>
+      </div>
+      <div className={style.goalsContainer}>
+        <h2>Objetivos de aprendizaje</h2>
+        <ul>
+          {goalsArray.map((str, index) => (
+            <li className={style.textList} key={index}>
+              {str}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className={style.buttonContainer}>
+        {activeCycleStatus ? (
+          <Message severity="success" text="Completado" icon="pi pi-verified" />
+        ) : (
+          <Message severity="info" text="No completado" />
+        )}
+
+        <Link href={`/cycles/${activeGoalId}`} className={style.flexItem}>
+          <Button label="Comenzar!" icon="pi pi-angle-right" iconPos="right" />
+        </Link>
+      </div>
+    </div>
   );
 };
 
