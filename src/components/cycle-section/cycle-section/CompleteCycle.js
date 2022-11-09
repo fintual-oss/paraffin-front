@@ -14,14 +14,15 @@ export const CompleteCycle = ({ cycle, changeHandler, toast }) => {
       <Tooltip target=".thisButton" />
       <span>
         <ToggleButton
-          className="thisButton"
+          className={`thisButton ${
+            cycle.completed || !currentUser ? 'p-disabled' : ''
+          }`}
           onLabel="Completado"
           offLabel="Marcar como completado"
           onIcon="pi pi-verified"
           offIcon="pi pi-verified"
           checked={cycle.completed}
           onChange={changeHandler}
-          disabled={cycle.completed || !currentUser}
           tooltip={tooltip}
           tooltipOptions={{ showOnDisabled: true, position: 'bottom' }}
         />
