@@ -7,21 +7,20 @@ export const CompleteCycle = ({ cycle, changeHandler, toast }) => {
   const currentUser = useCurrentUser();
   const tooltip =
     !currentUser && 'Debes iniciar sesión para registrar tu avance';
-
+  const toggleDisabled = cycle.completed || !currentUser ? 'p-disabled' : '';
   return (
     <div>
       <Toast ref={toast} position="bottom-center" />
-      <Tooltip target=".thisButton" />
+      <Tooltip target=".CompleteCycleToggleButton" />
       <span>
         <ToggleButton
-          className="thisButton"
+          className={`CompleteCycleToggleButton ${toggleDisabled}`}
           onLabel="Completado"
           offLabel="Marcar como completado"
           onIcon="pi pi-verified"
           offIcon="pi pi-verified"
           checked={cycle.completed}
           onChange={changeHandler}
-          disabled={cycle.completed || !currentUser}
           tooltip={tooltip}
           tooltipOptions={{ showOnDisabled: true, position: 'bottom' }}
         />
