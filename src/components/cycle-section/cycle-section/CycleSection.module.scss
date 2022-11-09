@@ -25,10 +25,11 @@ $blue: #37368f;
 .middleContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   gap: 4vw;
   align-content: center;
-  width: 96vw;
+  width: 80vw;
+  height: 20rem;
   padding: 1vw;
 }
 
@@ -47,11 +48,13 @@ $blue: #37368f;
 
 .cycleSectionCard {
   flex: 1;
+  height: 100%;
 }
 
 .challengeCard {
   color: $black;
   background-color: $white;
+  height: 100%
 }
 
 .scrollPanel .p-scrollpanel-wrapper {
@@ -66,10 +69,6 @@ $blue: #37368f;
 
 .scrollPanel .p-scrollpanel-bar:hover {
   background-color: #135ba1;
-}
-
-.scrollPanel {
-  height: 30vh;
 }
 
 .accordionHeader {
