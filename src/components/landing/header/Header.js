@@ -9,6 +9,7 @@ import logo from '@utils/images/fin-logo.svg';
 
 const Header = () => {
   const currentUser = useCurrentUser();
+  const curriculum_path = '/curriculums/1';
   return (
     <section id={styles.header}>
       <ul className={styles.circles}>
@@ -28,7 +29,7 @@ const Header = () => {
         </Fade>
         <div className="flex gap-4">
           <Fade bottom>
-            <Link href="/curriculums/1">
+            <Link href={curriculum_path}>
               <Button
                 label={`${
                   currentUser
@@ -44,7 +45,7 @@ const Header = () => {
             </Link>
           </Fade>
           <Fade bottom>
-            <Link href="/users/sign_up">
+            <Link href={`/users/sign_up?redirect_to=${curriculum_path}`}>
               <Button
                 label="Quiero registrarme en Ser.dev"
                 disabled={currentUser}
