@@ -42,7 +42,6 @@ const Graph = ({ nodes, edges, theme, nodePredecessors, handleNodeClick }) => {
         onNodeClick={(event) => handleNodeClick(event.id)}
         onNodePointerOver={(event) => handleNodePointOver(event)}
         onNodePointerOut={() => setSelections([])}
-        labelFontUrl="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap"
       />
     </div>
   );
