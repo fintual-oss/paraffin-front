@@ -42,7 +42,7 @@ const Graph = ({ nodes, edges, theme, nodePredecessors, handleNodeClick }) => {
         onNodeClick={(event) => handleNodeClick(event.id)}
         onNodePointerOver={(event) => handleNodePointOver(event)}
         onNodePointerOut={() => setSelections([])}
-        labelFontUrl="https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxM.woff"
+        labelFontUrl="https://ey2pz3.csb.app/NotoSansSC-Regular.ttf"
       />
     </div>
   );
