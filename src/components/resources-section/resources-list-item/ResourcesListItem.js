@@ -1,7 +1,6 @@
 import { Button } from 'primereact/button';
 import Average from '../average/Average';
 import styles from './ResourcesListItem.module.scss';
-import Link from 'next/link';
 import Image from 'next/image';
 import profilePic from '@utils/images/resource.jpg';
 import ResourceLabels from '../resource-labels/ResourceLabels';
@@ -20,9 +19,7 @@ const ResourcesListItem = ({ resource, resourceViewButtonHandler }) => {
             alt={resource.name}
           />
           <div>
-            <div className={styles.resourceName}>
-              <Link href={`/resources/${resource.id}`}>{resource.name}</Link>
-            </div>
+            <div className={styles.resourceName}>{resource.name}</div>
             <ResourceLabels resourceLabels={resource.resource_labels} />
             <div className={styles.resourceValidation}>
               <Average
