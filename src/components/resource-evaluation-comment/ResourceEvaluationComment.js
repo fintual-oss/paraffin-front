@@ -21,7 +21,7 @@ const ResourceEvaluationComment = ({ evaluation }) => {
           {evaluation.user_name + ' escribió el ' + evaluation.created_at}
         </h5>
         <InputTextarea
-          value={evaluation.comment}
+          value={evaluation.comment || ''}
           disabled={true}
           rows={4}
           cols={20}
