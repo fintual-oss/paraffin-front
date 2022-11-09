@@ -23,7 +23,7 @@ const Header = () => {
         </Fade>
         <Fade bottom>
           <p className={styles.header__description}>
-            ¿Sabes programar, pero te falta algo más para Ser.dev? ¡Con nuestra
+            ¿Sabes programar, pero te falta algo más para ser.dev? ¡Con nuestra
             guía y el apoyo de la comunidad lo lograrás!
           </p>
         </Fade>
@@ -47,7 +47,7 @@ const Header = () => {
           <Fade bottom>
             <Link href={`/users/sign_up?redirect_to=${curriculum_path}`}>
               <Button
-                label="Quiero registrarme en Ser.dev"
+                label="Quiero registrarme en ser.dev"
                 disabled={currentUser}
                 className={`${currentUser ? 'hidden' : 'p-button p-component'}`}
               />

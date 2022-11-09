@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SER.DEV</title>
+        <title>ser.dev</title>
         <meta name="ser.dev" content="Plataforma educativa de FIN." />
         <link rel="shortcut icon" href="/src/public/vercel.svg" />
       </Head>
