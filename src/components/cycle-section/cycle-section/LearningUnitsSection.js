@@ -1,10 +1,12 @@
 import { TabView, TabPanel } from 'primereact/tabview';
 import LearningUnitsListTab from '@components/cycle-section/learning-units-section/learning-units-section/LearningUnitsListTab';
 import LearningUnitsGraph from '@components/cycle-section/learning-units-section/learning-units-graph/LearningUnitsGraph';
+import ChallengeCard from '@components/cycle-section/cycle-section/ChallengeCard';
 
 const LearningUnitsSection = ({
   learningUnits,
   successions,
+  cycle,
   handleLearningUnitClick,
   mutate,
 }) => {
@@ -22,6 +24,11 @@ const LearningUnitsSection = ({
             learningUnits={learningUnits}
             successions={successions}
           />
+        </div>
+      </TabPanel>
+      <TabPanel header="Quiero saber más">
+        <div style={style}>
+          <ChallengeCard cycle={cycle} />
         </div>
       </TabPanel>
     </TabView>
