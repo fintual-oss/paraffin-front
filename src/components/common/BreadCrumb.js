@@ -3,7 +3,7 @@ import styles from './BreadCrumb.module.scss';
 
 export const CycleBreadCrumb = ({ cycle }) => {
   const items = [
-    { label: 'Curriculum', url: '/curriculums/1' },
+    { label: 'Ruta de aprendizaje', url: '/curriculums/1' },
     { label: cycle.name },
   ];
 

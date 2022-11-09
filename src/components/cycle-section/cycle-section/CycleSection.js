@@ -58,7 +58,7 @@ const CycleSection = ({ cycleId, learningUnitRedirection }) => {
   const showError = () => {
     toastCompletition.current.show({
       severity: 'error',
-      summary: 'Primero debes completar todos los learning units',
+      summary: 'Primero debes completar todas las unidades del ciclo',
       life: 2000,
     });
   };

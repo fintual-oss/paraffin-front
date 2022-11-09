@@ -16,7 +16,7 @@ const LearningUnitInformation = ({ learningUnit }) => {
         />
         <div className={styles.productListDetail}>
           <div className={styles.productName}>
-            <span>Learning unit</span>
+            <span>Unidad</span>
             <h3>{learningUnit.name}</h3>
             <p className={styles.productDescription}>
               {learningUnit.description}

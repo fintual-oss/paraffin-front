@@ -25,7 +25,7 @@ function Navbar() {
     ];
     if (currentUser) {
       response.push({
-        label: 'Curriculum',
+        label: 'Ruta de aprendizaje',
         icon: 'pi pi-book',
         command: () => {
           router.push(curriculum_path);
