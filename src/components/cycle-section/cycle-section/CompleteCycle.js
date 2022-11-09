@@ -17,7 +17,7 @@ export const CompleteCycle = ({ cycle, changeHandler, toast }) => {
         <ToggleButton
           className={`CompleteCycleToggleButton ${toggleDisabled} ${style.checkButton}`}
           onLabel="Ciclo completado"
-          offLabel="Marcar como ciclo completado"
+          offLabel="Marcar ciclo como completado"
           onIcon="pi pi-verified"
           offIcon="pi pi-verified"
           checked={cycle.completed}
