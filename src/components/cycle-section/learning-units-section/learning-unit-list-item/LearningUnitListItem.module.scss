@@ -4,6 +4,12 @@
   &:hover {
     transform: scale(1.05);
     background-color: #f5f5f5;
+
+    img {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
 
