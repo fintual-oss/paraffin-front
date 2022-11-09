@@ -1,16 +1,11 @@
-import Head from 'next/head';
-import styles from './CycleSection.module.scss';
-import CycleInfoCard from '@components/cycle-section/cycle-section/CycleInfoCard';
-import ChallengeCard from './ChallengeCard';
 import Error from '@components/common/Error';
 import { CycleTopContainer } from './CycleTopContainer';
-import { CycleBreadCrumb } from '@components/common/BreadCrumb';
 import useGet from '@hooks/useGet';
 import { endpoints } from '@utils/endpoints';
 import { Skeleton } from 'primereact/skeleton';
 import { useRef } from 'react';
-import { Panel } from 'primereact/panel';
 import LearningUnitsSection from './LearningUnitsSection';
+import style from "./CycleSection.module.scss"
 
 const CycleSection = ({ cycleId, learningUnitRedirection }) => {
   const {
@@ -71,34 +66,21 @@ const CycleSection = ({ cycleId, learningUnitRedirection }) => {
   if (isErrorSuccessions) return <Error reset={mutateSuccessions} />;
 
   return (
-    <>
-      <Head>
-        <title>{cycle.name}</title>
-        <meta property="og:title" content={cycle.name} key="title" />
-      </Head>
-      <CycleBreadCrumb cycle={cycle} />
-      <Panel>
-        <div className={styles.panelContainer}>
-          <CycleTopContainer
-            cycle={cycle}
-            completeCycle={completeCycle}
-            toastCompletition={toastCompletition}
-          />
-          <div className={styles.middleContainer}>
-            <CycleInfoCard cycle={cycle} />
-            <ChallengeCard cycle={cycle} />
-          </div>
-          <div className={styles.bottomContainer}>
-            <LearningUnitsSection
-              learningUnits={learningUnits}
-              successions={successions}
-              handleLearningUnitClick={learningUnitRedirection}
-              mutate={mutateLearningUnits}
-            />
-          </div>
-        </div>
-      </Panel>
-    </>
+    <div className={style.mainContainer}>
+      <CycleTopContainer
+        cycle={cycle}
+        completeCycle={completeCycle}
+        toastCompletition={toastCompletition}
+      />
+
+      <LearningUnitsSection
+        learningUnits={learningUnits}
+        successions={successions}
+        handleLearningUnitClick={learningUnitRedirection}
+        mutate={mutateLearningUnits}
+        cycle={cycle}
+      />
+    </div>
   );
 };
 
