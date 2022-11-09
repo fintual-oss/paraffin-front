@@ -31,7 +31,7 @@ const LearningUnitsList = ({ learningUnits, mutate }) => {
         layout="list"
         itemTemplate={renderListItem}
         paginator
-        rows={10}
+        rows={8}
       />
     </div>
   );
