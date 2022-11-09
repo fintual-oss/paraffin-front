@@ -1,7 +1,7 @@
 import { Sidebar } from 'primereact/sidebar';
 import { Card } from 'primereact/card';
 import { CompleteToggle } from '@components/common/complete-toggle/CompleteToggle';
-import LinkButton from '@components/resource-section/link-button/LinkButton';
+import LinkButton from '@components/common/link-button/LinkButton';
 import AddEvaluation from '@components/resource-section/add-evaluation/AddEvaluation';
 import Average from '@components/resources-section/average/Average';
 import EvaluationList from '@components/resource-section/evaluation-list/EvaluationList';
@@ -32,7 +32,7 @@ const ResourceSidebar = ({
         <Average
           average={parseFloat(activeResource.average_evaluation).toFixed(1)}
         />
-        <LinkButton url={activeResource.url} />
+        <LinkButton url={activeResource.url} label="Ir a recurso" />
       </Card>
       <AddEvaluation
         updatesAddEvaluation={updatesAddEvaluation}

@@ -2,7 +2,7 @@ import { Panel } from 'primereact/panel';
 import { useRouter } from 'next/router';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
-import LinkButton from '../link-button/LinkButton';
+import LinkButton from '@components/common/link-button/LinkButton';
 import styles from './ResourcePanel.module.scss';
 import AddEvaluation from '@components/resource-section/add-evaluation/AddEvaluation';
 
@@ -26,7 +26,7 @@ const ResourcePanel = ({ resource, formOptions }) => {
           <h1>
             {resource.average_evaluation} <i className="pi pi-star-fill"></i>
           </h1>
-          <LinkButton url={resource.url} />
+          <LinkButton url={resource.url} label="Ir a recurso" />
         </Card>
         <AddEvaluation formOptions={formOptions} />
       </div>
