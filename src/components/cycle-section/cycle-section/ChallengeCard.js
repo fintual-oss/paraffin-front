@@ -11,7 +11,7 @@ const ChallengeCard = ({ cycle }) => {
     >
       <p>
         En esta sección podrás encontrar un proyecto con un repositorio base
-        para que puedas aplicar lo aprendido en este ciclo
+        para que puedas aplicar lo aprendido en este ciclo:
       </p>
 
       <div className={styles.challengeField}>
@@ -21,8 +21,9 @@ const ChallengeCard = ({ cycle }) => {
       </div>
       <div className={styles.challengeField}>
         <Fieldset legend="Repositorio GitHub">
-   
-          <p>       <Link href={cycle.boilerplate_url}>Aquí</Link> podras encontrar un repositorio base para construir tu proyecto</p>
+          <p>
+            <Link href={cycle.boilerplate_url}>Aquí podras encontrar un repositorio base para construir tu proyecto</Link>
+          </p>
         </Fieldset>
       </div>
     </Card>
