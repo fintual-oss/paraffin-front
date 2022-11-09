@@ -6,7 +6,7 @@ import CyclesSection from '../cycles-list/CyclesSection';
 import Image from 'next/image';
 import { Card } from 'primereact/card';
 import style from './CurriculumInfoSection.module.scss';
-import laptopImage from '../../../utils/images/person-laptop.png';
+import laptopImage from '@utils/images/person-laptop.png';
 
 const CurriculumInfoSection = ({ curriculumId }) => {
   const {
