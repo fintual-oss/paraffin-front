@@ -12,23 +12,23 @@ const LearningUnitsSection = ({
 }) => {
   return (
     <TabView>
-      <TabPanel header="Lista de unidades">
+      <TabPanel header="Desafío del ciclo">
+        <div style={style}>
+          <ChallengeCard cycle={cycle} />
+        </div>
+      </TabPanel>
+      <TabPanel header="Lista de contenidos">
         <div style={style}>
           <LearningUnitsListTab learningUnits={learningUnits} mutate={mutate} />
         </div>
       </TabPanel>
-      <TabPanel header="Mapa de pre requisitos">
+      <TabPanel header="Mapa interactivo de contenidos">
         <div style={style}>
           <LearningUnitsGraph
             handleLearningUnitClick={handleLearningUnitClick}
             learningUnits={learningUnits}
             successions={successions}
           />
-        </div>
-      </TabPanel>
-      <TabPanel header="Quiero saber más">
-        <div style={style}>
-          <ChallengeCard cycle={cycle} />
         </div>
       </TabPanel>
     </TabView>
