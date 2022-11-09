@@ -32,7 +32,7 @@ const ResourceSidebar = ({
         <Average
           average={parseFloat(activeResource.average_evaluation).toFixed(1)}
         />
-        <LinkButton url={activeResource.url} label={'Ir a recurso'} />
+        <LinkButton url={activeResource.url} label="Ir a recurso" />
       </Card>
       <AddEvaluation
         updatesAddEvaluation={updatesAddEvaluation}
