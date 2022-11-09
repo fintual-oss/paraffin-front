@@ -1,10 +1,10 @@
 import { Sidebar } from 'primereact/sidebar';
 import { Card } from 'primereact/card';
-import { CompleteToggle } from '@components/common/complete-toggle/CompleteToggle';
 import LinkButton from '@components/resource-section/link-button/LinkButton';
 import AddEvaluation from '@components/resource-section/add-evaluation/AddEvaluation';
 import Average from '@components/resources-section/average/Average';
 import EvaluationList from '@components/resource-section/evaluation-list/EvaluationList';
+import ResourceCompleteButton from '@components/resource-section/resource-complete-button/ResourceCompleteButton';
 
 const ResourceSidebar = ({
   onHideHandler,
@@ -12,7 +12,6 @@ const ResourceSidebar = ({
   updatesAddEvaluation,
   resourceId,
   evaluations,
-  checkboxChangeHandler,
 }) => {
   return (
     <Sidebar
@@ -23,9 +22,9 @@ const ResourceSidebar = ({
       dismissable={false}
       style={{ width: '25%' }}
     >
-      <CompleteToggle
+      <ResourceCompleteButton
         completed={activeResource.completed}
-        onChangeHandler={checkboxChangeHandler}
+        resourceId={resourceId}
       />
       <h1>{activeResource.name}</h1>
       <Card title="Evaluación promedio">

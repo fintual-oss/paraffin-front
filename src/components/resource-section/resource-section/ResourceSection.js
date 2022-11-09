@@ -30,45 +30,17 @@ const ResourceSection = ({
     mutate: updateEvaluations,
   } = useGet(endpoints('resourceEvaluations', resourceId));
 
-  const {
-    data: isCompleted,
-    isLoading: isLoadingCompleted,
-    isError: isErrorCompleted,
-    mutate: updateCompleted,
-  } = useGet(endpoints('isResourceCompleted', resourceId));
-
-  const checkboxChangeHandler = (clicked) => {
-    const requestOptions = {
-      method: clicked.value ? 'POST' : 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-    };
-    fetch(endpoints('isResourceCompleted', resourceId), requestOptions).then(
-      (response) => {
-        if (response.ok) {
-          updateCompleted();
-        }
-      }
-    );
-  };
-
-  if (
-    isLoadingResource ||
-    isLoadingAverage ||
-    isLoadingEvaluations ||
-    isLoadingCompleted
-  )
+  if (isLoadingResource || isLoadingAverage || isLoadingEvaluations)
     return <Skeleton shape="rectangle" width="100%" height="100%" />;
 
   if (isErrorResource) return <Error reset={updateResource} />;
   if (isErrorAverage) return <Error reset={updateAverage} />;
   if (isErrorEvaluations) return <Error reset={updateEvaluations} />;
-  if (isErrorCompleted) return <Error reset={updateCompleted} />;
 
   const resource = {
     name: resourceData.name,
     url: resourceData.url,
     average_evaluation: average_evaluation.average_evaluation,
-    completed: isCompleted.completed,
   };
 
   const updatesAddEvaluation = {
@@ -83,7 +55,6 @@ const ResourceSection = ({
       activeResource={resource}
       updatesAddEvaluation={updatesAddEvaluation}
       evaluations={evaluations}
-      checkboxChangeHandler={checkboxChangeHandler}
     />
   );
 };
